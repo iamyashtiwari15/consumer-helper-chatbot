@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Consumer Rights Protection Assistant</title>
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Font Awesome for Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+  
+  <!-- Markdown Support -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>⚖️ Consumer Protection</h2>
+      <section>
+        <h3>Available Agents</h3>
+        <ul>
+          <li>💬 Consumer Rights Advisor</li>
+          <li>📚 Legal Document Search</li>
+          <li>🌐 Web Search Agent</li>
+          <li>📄 Document Analysis</li>
+        </ul>
+      </section>
+      <section>
+        <h3>Domains Covered</h3>
+        <ul>
+          <li>🛒 Consumer Protection Laws</li>
+          <li>📝 Complaint Procedures</li>
+          <li>⚖️ Legal Remedies</li>
+          <li>� Dispute Resolution</li>
+          <li>🏛️ Consumer Courts</li>
+        </ul>
+      </section>
+      <section>
+        <h3>Features</h3>
+        <ul>
+          <li>🔍 Legal Document Search</li>
+          <li>📋 Case Law Analysis</li>
+          <li>🛡️ Rights Explanation</li>
+          <li>📱 E-commerce Rights</li>
+          <li>✅ Complaint Guidelines</li>
+          <li>⚔️ Safety Checks</li>
+        </ul>
+      </section>
+    </aside>
+
+    <!-- Chat Area -->
+    <main class="chat">
+      <div class="chat-header">
+        <h1>⚖️ Consumer Protection Assistant</h1>
+        <p>Get help with consumer rights, complaints, and legal remedies</p>
+      </div>
+
+      <!-- Chat box -->
+      <div class="chat-box" id="chatBox">
+        <!-- Welcome message -->
+        <div class="message bot">
+          <strong>Assistant:</strong><br>
+          👋 Welcome to the Consumer Protection Assistant! I can help you with:
+          
+          - Understanding your consumer rights
+          - Filing complaints
+          - E-commerce related issues
+          - Product & service disputes
+          - Consumer court procedures
+          
+          How can I assist you today?
+        </div>
+      </div>
+
+      <!-- Chat Footer: Upload + Input + Submit -->
+      <div class="chat-footer">
+        <form id="chat-form">
+          <!-- Upload Button -->
+          <label for="image-upload" class="upload-btn">
+            <i class="fas fa-file-upload"></i> Upload Document
+          </label>
+          <input type="file" id="image-upload" accept="image/*,.pdf" hidden />
+
+          <!-- Image Preview -->
+          <div id="preview-container" class="preview-container" style="display: none;">
+            <img id="preview-image" class="preview-image" alt="Preview" />
+            <button type="button" id="remove-image" class="remove-btn">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+
+          <!-- Text Input -->
+          <textarea
+            id="message-input"
+            placeholder="Ask about your consumer rights..."
+            rows="1"
+          ></textarea>
+
+          <!-- Submit Button -->
+          <button type="submit" class="send-btn">
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </form>
+      </div>
+    </main>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    const imageUpload = document.getElementById("image-upload");
+    const previewContainer = document.getElementById("preview-container");
+    const previewImage = document.getElementById("preview-image");
+    const removeImage = document.getElementById("remove-image");
+    const chatForm = document.getElementById("chat-form");
+    const messageInput = document.getElementById("message-input");
+    const chatBox = document.getElementById("chatBox");
+  
+    let selectedImageFile = null;
+  
+    imageUpload.addEventListener("change", function () {
+      const file = this.files[0];
+      if (file && file.type.startsWith("image/")) {
+        selectedImageFile = file;
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          previewImage.src = e.target.result;
+          previewContainer.style.display = "block";
+        };
+        reader.readAsDataURL(file);
+      } else {
+        previewContainer.style.display = "none";
+        selectedImageFile = null;
+      }
+    });
+  
+    removeImage.addEventListener("click", function () {
+      imageUpload.value = "";
+      previewContainer.style.display = "none";
+      selectedImageFile = null;
+    });
+  
+    chatForm.addEventListener("submit", async function (e) {
+      e.preventDefault();
+      const message = messageInput.value.trim();
+/////////////////////////////////
+      let session_id = localStorage.getItem("session_id");
+
+      if (!session_id) {
+        session_id = crypto.randomUUID();  // generate a new UUID
+        localStorage.setItem("session_id", session_id);
+      }
+
+      const formData = new FormData();
+  
+      if (message) {
+        formData.append("message", message);
+      }
+  
+      if (selectedImageFile) {
+        formData.append("file", selectedImageFile);
+      }
+  
+      if (message) {
+        addMessage("You", message);
+      }
+      
+      formData.append("session_id", session_id);
+///////////////////////////////////////////
+      if (selectedImageFile) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          addImage("You", e.target.result);
+        };
+        reader.readAsDataURL(selectedImageFile);
+      }
+  
+      messageInput.value = "";
+      imageUpload.value = "";
+      previewContainer.style.display = "none";
+      selectedImageFile = null;
+  
+      try {
+        const endpoint = formData.has("file")
+          ? "http://127.0.0.1:8000/upload"  // ✅ fixed from /upload-image to /upload
+          : "http://127.0.0.1:8000/chat";
+  
+        const response = await fetch(endpoint, {
+          method: "POST",
+          body: formData
+        });
+  
+        const data = await response.json();
+        addMessage("Assistant", data.reply || "🤖 No reply received.");
+      } catch (err) {
+        console.error("Error:", err);
+        addMessage("Assistant", "⚠️ Something went wrong.");
+      }
+    });
+  
+      function addMessage(sender, text) {
+        const msgDiv = document.createElement("div");
+        msgDiv.className = sender === "You" ? "message user" : "message bot";
+        // Convert markdown to HTML if it's from the bot
+        if (sender === "Assistant") {
+            // Load marked.js for markdown parsing
+            if (!window.marked) {
+                const script = document.createElement('script');
+                script.src = 'https://cdn.jsdelivr.net/npm/marked/marked.min.js';
+                document.head.appendChild(script);
+                script.onload = () => {
+                    msgDiv.innerHTML = `<strong>${sender}:</strong><br>${window.marked.parse(text)}`;
+                };
+            } else {
+                msgDiv.innerHTML = `<strong>${sender}:</strong><br>${window.marked.parse(text)}`;
+            }
+        } else {
+            msgDiv.innerHTML = `<strong>${sender}:</strong> ${text}`;
+        }
+        chatBox.appendChild(msgDiv);
+        chatBox.scrollTop = chatBox.scrollHeight;
+      }    function addImage(sender, src) {
+      const imgDiv = document.createElement("div");
+      imgDiv.className = sender === "You" ? "message user" : "message bot";
+      imgDiv.innerHTML = `<strong>${sender}:</strong><br><img src="${src}" style="max-width: 200px; border-radius: 6px; margin-top: 5px;" />`;
+      chatBox.appendChild(imgDiv);
+      chatBox.scrollTop = chatBox.scrollHeight;
+    }
+  </script>
+  
+</body>
+</html>
