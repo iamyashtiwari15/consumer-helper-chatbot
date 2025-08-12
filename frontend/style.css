@@ -8,8 +8,8 @@
   /* Body Layout */
   body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f8fafc;
-    color: #334155;
+    background-color: #0f172a;
+    color: #e2e8f0;
   }
   
   /* Container Layout */
@@ -22,11 +22,12 @@
   /* Sidebar */
   .sidebar {
     width: 300px;
-    background-color: #0f172a;
+    background-color: #1e293b;
     color: #fff;
     padding: 20px;
     overflow-y: auto;
-    border-right: 1px solid #1e293b;
+    border-right: 1px solid #334155;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
   }
   
   .sidebar h2 {
@@ -34,14 +35,19 @@
     margin-bottom: 20px;
     color: #38bdf8;
     padding-bottom: 10px;
-    border-bottom: 1px solid #1e293b;
+    border-bottom: 1px solid #334155;
   }
   
   .sidebar section {
     margin-bottom: 25px;
-    background-color: #1e293b;
+    background-color: #273548;
     padding: 15px;
     border-radius: 8px;
+    transition: transform 0.2s ease;
+  }
+
+  .sidebar section:hover {
+    transform: translateY(-2px);
   }
   
   .sidebar h3 {
@@ -74,22 +80,24 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    background-color: #ffffff;
+    background-color: #0f172a;
   }
   
   /* Header */
   .chat-header {
     padding: 20px;
-    border-bottom: 1px solid #e2e8f0;
+    border-bottom: 1px solid #334155;
+    background-color: #1e293b;
   }
   
   .chat-header h1 {
     font-size: 1.5rem;
     margin-bottom: 5px;
+    color: #38bdf8;
   }
   
   .chat-header p {
-    color: #64748b;
+    color: #94a3b8;
     font-size: 0.95rem;
   }
   
@@ -98,16 +106,35 @@
     flex: 1;
     padding: 20px;
     overflow-y: auto;
+    background-color: #0f172a;
+  }
+
+  /* Scrollbar Styling */
+  .chat-box::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .chat-box::-webkit-scrollbar-track {
+    background: #1e293b;
+  }
+  
+  .chat-box::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 4px;
+  }
+  
+  .chat-box::-webkit-scrollbar-thumb:hover {
+    background: #475569;
   }
   
   /* Chat Footer */
   .chat-footer {
     padding: 15px;
-    border-top: 1px solid #e2e8f0;
+    border-top: 1px solid #334155;
     display: flex;
     align-items: flex-end;
     gap: 10px;
-    background-color: #f1f5f9;
+    background-color: #1e293b;
   }
   
   #chat-form {
@@ -125,16 +152,16 @@
     padding: 10px 15px;
     border: 1px solid #60a5fa;
     border-radius: 8px;
-    background-color: #eff6ff;
-    color: #1e40af;
+    background-color: #1e293b;
+    color: #60a5fa;
     cursor: pointer;
     font-size: 0.95rem;
     transition: all 0.2s ease;
   }
   
   .upload-btn:hover {
-    background-color: #dbeafe;
-    border-color: #3b82f6;
+    background-color: #273548;
+    transform: translateY(-1px);
   }
   
   /* Preview Container */
@@ -142,7 +169,7 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    background-color: #f8fafc;
+    background-color: #273548;
     padding: 8px 12px;
     border: 1px solid #60a5fa;
     border-radius: 8px;
@@ -156,16 +183,17 @@
   .remove-btn {
     background: none;
     border: none;
-    color: #dc2626;
+    color: #ef4444;
     cursor: pointer;
     font-size: 1.1rem;
     padding: 4px;
     border-radius: 50%;
-    transition: background-color 0.2s ease;
+    transition: all 0.2s ease;
   }
   
   .remove-btn:hover {
-    background-color: #fee2e2;
+    background-color: #991b1b;
+    color: #fecaca;
   }
   
   /* Message Input */
@@ -173,17 +201,23 @@
     flex: 1;
     resize: none;
     padding: 12px 15px;
-    border: 1px solid #cbd5e1;
+    border: 1px solid #334155;
     border-radius: 8px;
     font-size: 1rem;
     width: 100%;
-    transition: border-color 0.2s ease;
+    transition: all 0.2s ease;
+    background-color: #273548;
+    color: #e2e8f0;
   }
   
   #message-input:focus {
     outline: none;
     border-color: #60a5fa;
     box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.1);
+  }
+
+  #message-input::placeholder {
+    color: #94a3b8;
   }
   
   /* Send Button */
@@ -213,19 +247,37 @@
     margin-bottom: 12px;
     max-width: 80%;
     line-height: 1.5;
+    animation: fadeIn 0.3s ease;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
   
   .message.user {
-    background-color: #d1e7dd;
+    background-color: #3b82f6;
+    color: #fff;
     align-self: flex-end;
     text-align: right;
+    margin-left: auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
   
   .message.bot {
-    background-color: #f8f9fa;
-    border: 1px solid #e9ecef;
+    background-color: #273548;
+    border: 1px solid #334155;
+    color: #e2e8f0;
     align-self: flex-start;
     text-align: left;
+    margin-right: auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 
   /* Markdown Styles */
@@ -237,38 +289,42 @@
   .message.bot h6 {
     margin-top: 1em;
     margin-bottom: 0.5em;
-    color: #2c3e50;
+    color: #60a5fa;
   }
 
   .message.bot ul,
   .message.bot ol {
     padding-left: 20px;
     margin: 0.5em 0;
+    color: #e2e8f0;
   }
 
   .message.bot p {
     margin: 0.5em 0;
+    color: #e2e8f0;
   }
 
   .message.bot code {
-    background: #f8f9fa;
+    background: #1e293b;
     padding: 2px 4px;
     border-radius: 4px;
     font-family: monospace;
+    color: #38bdf8;
   }
 
   .message.bot pre {
-    background: #f8f9fa;
+    background: #1e293b;
     padding: 1em;
     border-radius: 4px;
     overflow-x: auto;
+    border: 1px solid #334155;
   }
 
   .message.bot blockquote {
-    border-left: 4px solid #e9ecef;
+    border-left: 4px solid #334155;
     margin: 0.5em 0;
     padding-left: 1em;
-    color: #6c757d;
+    color: #94a3b8;
   }
 
   .message.bot table {
@@ -279,12 +335,17 @@
 
   .message.bot th,
   .message.bot td {
-    border: 1px solid #dee2e6;
+    border: 1px solid #334155;
     padding: 8px;
     text-align: left;
   }
 
   .message.bot th {
-    background-color: #e9ecef;
+    background-color: #1e293b;
+    color: #60a5fa;
+  }
+
+  .message strong {
+    color: #38bdf8;
   }
   

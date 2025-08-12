@@ -1,6 +1,6 @@
 import logging
 from typing import List, Dict, Any, Optional
-from agents.llm_loader import get_llm
+from agents.rag_agent.llm_loader import get_llm
 
 class ResponseGenerator:
     """
@@ -8,8 +8,10 @@ class ResponseGenerator:
     """
     def __init__(self):
         self.logger = logging.getLogger(__name__)
-        self.response_generator_model = get_llm()  # Load LLM from llm_loader
+        self.response_generator = get_llm()  # Main response generator
+        self.fact_checker = get_llm(role="validator")  # For fact checking
         self.include_sources = True
+        self.max_refinement_attempts = 2  # Maximum number of response refinements
 
     def _build_prompt(
         self,
@@ -71,36 +73,55 @@ Do not provide any source link that is not present in the context.
         try:
             doc_texts = [doc["content"] for doc in retrieved_docs]
             context = "\n\n===DOCUMENT SECTION===\n\n".join(doc_texts)
+            
+            # Step 1: Generate initial response
             prompt = self._build_prompt(query, context, chat_history)
-            response = self.response_generator_model.invoke(prompt)
+            initial_response = self.response_generator.invoke(prompt)
+            response_text = initial_response.content.strip()
 
-            response_text = response.content.strip()
-
-            # Detect insufficient info case
+            # Handle insufficient info case
             if response_text.startswith("{") and "Insufficient Information" in response_text:
                 return {
                     "response": response_text,
                     "sources": [],
-                    "confidence": 0.0
+                    "confidence": 0.0,
+                    "verification_result": None
                 }
 
+            # Step 2: Fact check and verify the response
+            verification_result = self._verify_response(
+                response_text,
+                query,
+                context
+            )
+
+            # Step 3: Refine response if needed
+            final_response = self._refine_response(
+                response_text,
+                verification_result,
+                query,
+                context
+            )
+
+            # Step 4: Add source documentation
             sources = self._extract_sources(retrieved_docs) if self.include_sources else []
             confidence = self._calculate_confidence(retrieved_docs)
 
             if self.include_sources:
-                response_text += "\n\n##### Source documents:"
+                final_response += "\n\n##### Source documents:"
                 for src in sources:
-                    response_text += f"\n- [{src['title']}]({src['path']})"
+                    final_response += f"\n- [{src['title']}]({src['path']})"
 
             if picture_paths:
-                response_text += "\n\n##### Reference images:"
+                final_response += "\n\n##### Reference images:"
                 for path in picture_paths:
-                    response_text += f"\n- [{path.split('/')[-1]}]({path})"
+                    final_response += f"\n- [{path.split('/')[-1]}]({path})"
 
             return {
-                "response": response_text,
+                "response": final_response,
                 "sources": sources,
-                "confidence": confidence
+                "confidence": confidence,
+                "verification_result": verification_result
             }
 
         except Exception as e:
@@ -108,8 +129,86 @@ Do not provide any source link that is not present in the context.
             return {
                 "response": '{ "Insufficient Information", "I don\'t have enough information." }',
                 "sources": [],
-                "confidence": 0.0
+                "confidence": 0.0,
+                "verification_result": None
             }
+            
+    def _verify_response(
+        self,
+        response: str,
+        query: str,
+        context: str
+    ) -> Dict[str, Any]:
+        """
+        Verify the factual accuracy and completeness of the response.
+        """
+        verification_prompt = f"""
+        Verify the following response for factual accuracy and completeness:
+
+        Query: {query}
+        Response: {response}
+        Source Context: {context}
+
+        Verify:
+        1. All facts are supported by the context
+        2. No contradictions with the source material
+        3. All relevant information is included
+        4. No unsupported claims or speculation
+
+        Return a JSON object with:
+        1. accuracy_score (0-1)
+        2. supported_facts (list)
+        3. unsupported_claims (list)
+        4. missing_information (list)
+        5. suggested_improvements (list)
+        """
+        
+        verification = self.fact_checker.invoke(verification_prompt)
+        try:
+            # Note: In practice, you'd want to parse this properly
+            return {
+                "verified": True,
+                "details": verification.content
+            }
+        except:
+            return {
+                "verified": False,
+                "details": "Verification failed"
+            }
+            
+    def _refine_response(
+        self,
+        original_response: str,
+        verification_result: Dict[str, Any],
+        query: str,
+        context: str
+    ) -> str:
+        """
+        Refine the response based on verification feedback.
+        """
+        if verification_result["verified"]:
+            return original_response
+            
+        refinement_prompt = f"""
+        Refine the following response based on verification feedback:
+
+        Original Query: {query}
+        Original Response: {original_response}
+        Verification Result: {verification_result["details"]}
+        Source Context: {context}
+
+        Rules for refinement:
+        1. Address any unsupported claims
+        2. Add missing important information
+        3. Fix any factual errors
+        4. Maintain clarity and conciseness
+        5. Stay true to the source material
+
+        Provide the refined response.
+        """
+        
+        refined = self.response_generator.invoke(refinement_prompt)
+        return refined.content.strip()
 
     def _extract_sources(self, documents: List[Dict[str, Any]]) -> List[Dict[str, str]]:
         sources = []

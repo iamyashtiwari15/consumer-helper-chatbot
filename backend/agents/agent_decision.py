@@ -16,8 +16,8 @@ from agents.guardrails import LocalGuardrails
 from agents.rag_agent.document_retriever import retrieve_documents
 
 logging.basicConfig(level=logging.INFO)
-# Initialize agents
-llm = get_llm()
+# Initialize agents with specific roles
+llm = get_llm()  # Use planner role for decision making
 rag_agent = ResponseGenerator()
 web_agent = WebSearchProcessor()
 guard = LocalGuardrails(llm)
@@ -73,16 +73,16 @@ List of agents:
 
 Given the user's input: \"{state['input']}\", respond ONLY as a JSON object like: {{"agent_name": "RAG_AGENT"}}
 """
-    memory = state["messages"] + [HumanMessage(content=prompt)]
-    decision = llm.invoke(memory)
+    # Send only the prompt text instead of message history
+    decision = llm.invoke(prompt)
 
     chosen = "CONVERSATION_AGENT"  # default fallback
-    if isinstance(decision, AIMessage):
-        try:
-            decision_dict = json.loads(decision.content)
-            chosen = decision_dict.get("agent_name", "CONVERSATION_AGENT")
-        except json.JSONDecodeError:
-            print("⚠️ Invalid JSON from agent_decision:", repr(decision.content))
+    try:
+        response_text = decision.content if hasattr(decision, 'content') else str(decision)
+        decision_dict = json.loads(response_text)
+        chosen = decision_dict.get("agent_name", "CONVERSATION_AGENT")
+    except (json.JSONDecodeError, AttributeError) as e:
+        print(f"⚠️ Error parsing agent decision: {str(e)}\nResponse: {repr(decision)}")
 
     return {**state, "agent_name": chosen}
 

@@ -2,6 +2,7 @@ from langchain_core.messages import AIMessage, HumanMessage, SystemMessage
 from agents.llm_loader import get_llm
 import os
 
+# Initialize with conversation role
 llm = get_llm()
 
 def get_consumer_rights_response(messages: list) -> AIMessage:
