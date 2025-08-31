@@ -1,6 +1,6 @@
 import logging
 from typing import List, Dict, Any, Optional
-from agents.rag_agent.llm_loader import get_llm
+from .llm_loader import get_llm
 
 class ResponseGenerator:
     """

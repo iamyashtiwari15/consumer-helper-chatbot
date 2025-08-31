@@ -1,10 +1,20 @@
 # agents/document_retriever.py
 
-from typing import List, Dict, Any
-from agents.rag_agent.query_expander import QueryExpander
+import os
+import logging
+from pathlib import Path
+from typing import List, Dict, Any, Optional
+from .query_expander import QueryExpander
 from agents.rag_agent.llm_loader import get_llm
 from langchain_huggingface import HuggingFaceEmbeddings
 import chromadb
+
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
+logger = logging.getLogger(__name__)
 
 # Step 1: Define a wrapper that matches ChromaDB's required interface
 class ChromaCompatibleEmbeddingFunction:
@@ -17,16 +27,120 @@ class ChromaCompatibleEmbeddingFunction:
     def name(self):
         return "sentence-transformers/all-MiniLM-L6-v2"
 
-# Step 2: Initialize query expander and embedding model
-expander = QueryExpander()
-embedding_function = ChromaCompatibleEmbeddingFunction()
+def extract_section_number(query: str) -> Optional[str]:
+    """Extract section number from query"""
+    import re
+    patterns = [
+        r'section\s+(\d+(?:\([a-z\d]+\))?)',  # Section 33(1)
+        r'sec\.?\s+(\d+(?:\([a-z\d]+\))?)',   # Sec. 33
+        r'section\s+(\d+)',                    # Section 33
+    ]
+    for pattern in patterns:
+        match = re.search(pattern, query.lower())
+        if match:
+            return match.group(1)
+    return None
 
-# Step 3: Setup ChromaDB client and collection
-chroma_client = chromadb.PersistentClient(path="agents/rag_agent/rag_db")  # use a persistent path
+# Step 2: Initialize components with proper error handling
+try:
+    logger.info("Initializing QueryExpander")
+    expander = QueryExpander()
+    
+    logger.info("Initializing ChromaCompatibleEmbeddingFunction")
+    embedding_function = ChromaCompatibleEmbeddingFunction()
+    
+    # Step 3: Setup ChromaDB client and collection with absolute path
+    current_dir = Path(__file__).parent.absolute()
+    db_path = current_dir / "rag_db"
+    db_path.mkdir(parents=True, exist_ok=True)
+    
+    logger.info(f"Initializing ChromaDB at path: {db_path}")
+    chroma_client = chromadb.PersistentClient(path=str(db_path))
+    
+    # Try to get collection count to verify database access
+    logger.info("Setting up ChromaDB collection")
+    collection = chroma_client.get_or_create_collection(
+        name="rag_db",
+        embedding_function=embedding_function
+    )
+    
+    # Log collection info
+    try:
+        count = collection.count()
+        logger.info(f"Successfully connected to ChromaDB. Collection contains {count} documents")
+        if count == 0:
+            logger.warning("WARNING: ChromaDB collection is empty. Please run build_rag_vectorstore.py to index documents.")
+    except Exception as e:
+        logger.warning(f"Could not get collection count: {str(e)}")
+        
+except Exception as e:
+    logger.error("Failed to initialize document retriever components")
+    logger.exception("Initialization error details:")
 collection = chroma_client.get_or_create_collection(
     name="rag_db",
     embedding_function=embedding_function
 )
+
+def retrieve_documents(query: str, k: int = 5) -> List[Dict[str, Any]]:
+    """Retrieve relevant documents with section-aware search"""
+    logger.info(f"Retrieving documents for query: {query}")
+    
+    # Extract section number if present
+    section_num = extract_section_number(query)
+    logger.info(f"Extracted section number: {section_num}")
+    
+    try:
+        # If section number found, prioritize exact matches
+        if section_num:
+            logger.info(f"Attempting exact section match for Section {section_num}")
+            # Try exact section match using string pattern
+            section_pattern = f"SECTION {section_num}|SEC. {section_num}"
+            section_filter = {
+                "section": {"$regex": section_pattern}
+            }
+            
+            try:
+                results = collection.query(
+                    query_texts=[query],
+                    n_results=k,
+                    where=section_filter
+                )
+                
+                if results and len(results['documents']) > 0 and results['documents'][0]:
+                    logger.info(f"Found exact section match. First result metadata: {results.get('metadatas', [[]])[0]}")
+                    return results['documents'][0]
+                else:
+                    logger.info("No exact section match found")
+            except Exception as e:
+                logger.error(f"Error during exact match search: {str(e)}")
+        
+        # Fallback to semantic search
+        logger.info("Falling back to semantic search")
+        expanded_query = expander.expand_query(query)
+        logger.info(f"Expanded query: {expanded_query}")
+        
+        try:
+            results = collection.query(
+                query_texts=[expanded_query],
+                n_results=k
+            )
+            
+            if results and len(results['documents']) > 0 and results['documents'][0]:
+                logger.info(f"Found {len(results['documents'][0])} documents via semantic search")
+                logger.info(f"First result metadata: {results.get('metadatas', [[]])[0]}")
+                return results['documents'][0]
+            else:
+                logger.warning("No documents found in semantic search")
+                return []
+                
+        except Exception as e:
+            logger.error(f"Error during semantic search: {str(e)}")
+            return []
+        
+    except Exception as e:
+        logger.error(f"Error retrieving documents: {str(e)}")
+        logger.exception("Full traceback:")
+        return []
 
 class AgenticDocumentRetriever:
     def __init__(self):

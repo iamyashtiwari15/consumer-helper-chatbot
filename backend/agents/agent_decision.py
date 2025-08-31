@@ -63,15 +63,36 @@ def route_to_agent(state: GraphState):
     if state["agent_name"] == "GUARDRAILS_BLOCK" or state["input_type"] == "image":
         return state  # Already routed in image detection or guardrails block
 
+    # First check if relevant documents are available
+    try:
+        docs = retrieve_documents(state["input"])
+        has_relevant_docs = len(docs) > 0
+    except Exception as e:
+        logging.error(f"Error checking document availability: {str(e)}")
+        has_relevant_docs = False
+
+    if has_relevant_docs:
+        logging.info("Found relevant documents in RAG system, using RAG_AGENT")
+        return {**state, "agent_name": "RAG_AGENT"}
+
     prompt = f"""
 You are a decision-making agent that decides which specialist agent should respond to the user's consumer rights query.
 
 List of agents:
-- CONVERSATION_AGENT: Handles general consumer rights queries or ambiguous input.
-- RAG_AGENT: Retrieves and answers based on consumer rights legal document database.
-- WEB_SEARCH_PROCESSOR_AGENT: Searches trusted consumer rights websites and complaint portals for real-time or uncommon questions.
+- CONVERSATION_AGENT: Handles general consumer rights queries, policy clarifications, or ambiguous input.
+- WEB_SEARCH_PROCESSOR_AGENT: Searches trusted consumer rights websites and complaint portals for real-time information, recent cases, or specific examples.
 
-Given the user's input: \"{state['input']}\", respond ONLY as a JSON object like: {{"agent_name": "RAG_AGENT"}}
+Given the user's input: \"{state['input']}\", respond ONLY as a JSON object like: {{"agent_name": "CONVERSATION_AGENT"}}
+
+Choose WEB_SEARCH_PROCESSOR_AGENT if the query:
+- Requires recent/current information
+- Asks about specific cases or examples
+- References specific companies or products
+
+Choose CONVERSATION_AGENT if the query:
+- Seeks general advice or explanations
+- Asks about basic consumer rights concepts
+- Is conversational or unclear
 """
     # Send only the prompt text instead of message history
     decision = llm.invoke(prompt)
@@ -82,8 +103,9 @@ Given the user's input: \"{state['input']}\", respond ONLY as a JSON object like
         decision_dict = json.loads(response_text)
         chosen = decision_dict.get("agent_name", "CONVERSATION_AGENT")
     except (json.JSONDecodeError, AttributeError) as e:
-        print(f"⚠️ Error parsing agent decision: {str(e)}\nResponse: {repr(decision)}")
+        logging.error(f"⚠️ Error parsing agent decision: {str(e)}\nResponse: {repr(decision)}")
 
+    logging.info(f"Selected agent: {chosen} (no relevant documents found in RAG system)")
     return {**state, "agent_name": chosen}
 
 # Node 4: Call the routed agent
@@ -102,16 +124,35 @@ def call_agent(state: GraphState):
 
         elif agent == "RAG_AGENT":
             retrieved_docs = retrieve_documents(input_text)
-            result = rag_agent.generate_response(input_text, retrieved_docs)
-            # RAG agent response is already in markdown format
-            output = result.get("response", "")
-
-            if "insufficient information" in output.lower():
+            if not retrieved_docs:
+                logging.warning("No documents retrieved from RAG system despite initial check")
+                # Fallback to web search with explanation
                 fallback = web_agent.process_web_results(input_text)
                 fallback_text = getattr(fallback, "content", fallback)
-                # Format web search results in markdown
-                output = f"""### Web Search Results\n\n{fallback_text}\n\n---\n"""
+                output = f"""### Web Search Results
+*Note: While we typically use our legal document database, we've searched trusted online sources for this query.*
+
+{fallback_text}
+
+---"""
                 agent = "WEB_SEARCH_PROCESSOR_AGENT"
+            else:
+                result = rag_agent.generate_response(input_text, retrieved_docs)
+                output = result.get("response", "")
+                
+                # If RAG response indicates insufficient information, enhance with web search
+                if "insufficient information" in output.lower():
+                    fallback = web_agent.process_web_results(input_text)
+                    fallback_text = getattr(fallback, "content", fallback)
+                    output = f"""### Local Document Information
+{output}
+
+### Additional Web Search Results
+*To provide more comprehensive information, we've also searched trusted online sources:*
+
+{fallback_text}
+
+---"""
 
         elif agent == "WEB_SEARCH_PROCESSOR_AGENT":
             response = web_agent.process_web_results(input_text)
