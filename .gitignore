@@ -1,18 +1,48 @@
 # Python virtual environment
 venv/
+env/
+.env/
+.venv/
 
 # Python bytecode
 __pycache__/
 *.py[cod]
+*$py.class
 
 # Environment files
 **/.env
+.env.local
+.env.*.local
 
-# VSCode settings (optional)
+# VSCode settings
 .vscode/
+*.code-workspace
 
-
+# Database and vector stores
 rag_db/
-medical_pdfs/
+**/rag_db/
+**/*.sqlite3
 
-agents/rag_agent/rag_db/
+# Model files and caches
+**/model_cache/
+**/.cache/
+**/*cache*/
+**/models--*/
+*.safetensors
+*.bin
+*.pt
+*.onnx
+vocab.txt
+tokenizer.json
+config.json
+
+# PDF files (if you want to exclude them)
+medical_pdfs/
+*.pdf
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Logs
+*.log
+logs/
