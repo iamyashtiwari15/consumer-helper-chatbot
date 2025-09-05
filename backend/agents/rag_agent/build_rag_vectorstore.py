@@ -1,299 +1,305 @@
-# build_rag_vectorstore.py
+# build_rag_vectorstore_pdf.py
 
 import os
-import re
 import sys
+import re
 import logging
-import functools
-from dataclasses import dataclass, field
-from typing import List, Dict, Any, Tuple
 from pathlib import Path
-import unicodedata
-
-# Add the parent directory to Python path so we can import from agents
-current_dir = Path(__file__).parent.absolute()
-backend_dir = current_dir.parent.parent
-sys.path.append(str(backend_dir))
-
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-os.environ["CHROMA_TELEMETRY_ENABLED"] = "false"
-
+from typing import List, Dict, Tuple
+from dataclasses import dataclass
 from PyPDF2 import PdfReader
-from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import Chroma
 from langchain.docstore.document import Document
 from llm_loader import get_embedding_model
 
-# Content type definitions
-CONTENT_TYPES = {
-    'definition': (r'(?:^|\n)"[^"]+"\s+means', 4),
-    'penalty': (r'penalty|fine', 5),
-    'regulation': (r'shall|must|required|prohibited', 4),
-    'guideline': (r'may|optional|recommended', 3),
-    'general': (r'', 2)
-}
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+os.environ["CHROMA_TELEMETRY_ENABLED"] = "false"
 
-def clean_text(text: str) -> str:
-    """Clean and normalize text content"""
-    text = unicodedata.normalize('NFKC', text)
-    replacements = [
-        (r'\s+', ' '),  # Normalize whitespace
-        (r'[\u200b\u200c\u200d]', ''),  # Remove zero-width spaces
-        (r'[\u2018\u2019]', "'"),  # Normalize quotes
-        (r'[\u201C\u201D]', '"'),
-        (r'(\w)-\s+(\w)', r'\1\2'),  # Fix hyphenation
-        (r'([.!?])\1+', r'\1'),  # Remove repeated punctuation
-        (r'[Ss]ec\.\s*(\d+)', r'Section \1'),  # Normalize section references
-        (r'[Ss]ection\s+(\d+)(?:\s*\(([a-z\d]+)\))?', 
-         lambda m: f"Section {m.group(1)}" + (f"({m.group(2)})" if m.group(2) else ""))
-    ]
-    for pattern, replacement in replacements:
-        text = re.sub(pattern, replacement, text)
-    return text.strip()
+from typing import Optional
 
 @dataclass
-class LegalMetadata:
-    """Metadata for legal document chunks"""
-    filename: str
-    page_number: int
-    chapter: str = ""
-    section: str = ""
-    section_title: str = ""
-    subsection: str = ""
-    paragraph: str = ""
-    referenced_sections: List[str] = field(default_factory=list)
-    content_type: str = ""  # e.g., 'definition', 'regulation', 'penalty'
-    key_terms: List[str] = field(default_factory=list)
-    hierarchy_path: str = ""  # e.g., "chapter_1/section_2/subsection_a"
-    chunk_importance: int = 2  # Default importance
+class Section:
+    number: str
+    title: str
+    content: str
+    start_page: int
+    subsections: dict = None  # Will store subsections like (a), (b), etc.
+    
+@dataclass
+class Chunk:
+    content: str
+    metadata: dict
 
-    def to_dict(self) -> Dict[str, Any]:
-        """Convert metadata to dictionary, joining lists into strings"""
-        return {
-            k: ', '.join(map(str, v)) if isinstance(v, list) else v
-            for k, v in self.__dict__.items()
-            if v or v == 0
-        }
+def clean_text(text: str) -> str:
+    """Remove headers, footers, and clean up text."""
+    lines = text.split('\n')
+    cleaned_lines = []
+    
+    for line in lines:
+        line = line.strip()
+        # Skip empty lines, page numbers, and common headers
+        if not line or re.match(r'^\d+$', line) or \
+           re.match(r'^Page \d+ of \d+$', line) or \
+           line.startswith('THE GAZETTE OF INDIA'):
+            continue
+        cleaned_lines.append(line)
+    
+    return '\n'.join(cleaned_lines)
 
-class LegalDocumentSplitter:
-    """Structure-aware splitter for legal documents"""
+def split_into_paragraphs(text: str, max_chars: int = 1000) -> List[str]:
+    """Split text into paragraphs without breaking sentences."""
+    # First split by double newlines to respect paragraph boundaries
+    paragraphs = text.split('\n\n')
+    results = []
+    current_chunk = []
+    current_length = 0
+    
+    for para in paragraphs:
+        para = para.strip()
+        if not para:
+            continue
+            
+        # If single paragraph exceeds max length, split by sentences
+        if len(para) > max_chars:
+            sentences = re.split(r'(?<=[.!?])\s+', para)
+            for sentence in sentences:
+                if current_length + len(sentence) > max_chars and current_chunk:
+                    results.append(' '.join(current_chunk))
+                    current_chunk = [sentence]
+                    current_length = len(sentence)
+                else:
+                    current_chunk.append(sentence)
+                    current_length += len(sentence)
+        else:
+            if current_length + len(para) > max_chars and current_chunk:
+                results.append(' '.join(current_chunk))
+                current_chunk = [para]
+                current_length = len(para)
+            else:
+                current_chunk.append(para)
+                current_length += len(para)
+    
+    if current_chunk:
+        results.append(' '.join(current_chunk))
+    
+    return results
 
-    # Document structure patterns
-    PATTERNS = {
-        'chapter': r'CHAPTER [A-Z]+',
-        'section': r'^\d+\.\s',  # Matches section numbers like '28. '
-        'section_title': r'^\d+\.\s.*',  # Matches section titles like '28. (1) The State Government...'
-        'subsection': r'^\s*\([a-z\d]+\)',
-        'paragraph': r'^\s*\(\d+\)',
-        'definition': r'(?:^|\n)"[^"]+"\s+means',
-        'cross_reference': r'(?:Section|Sec\.) \d+(?:\([a-z\d]+\))?',
-        'key_terms': r'"([^"]+)"\s+(?:means|refers to|includes)'
-    }
+def extract_section_info(text: str) -> Tuple[str, str]:
+    """Extract section number and title from the section start."""
+    # Match patterns like "Section 1." or "1." at start of line
+    section_match = re.match(r'^(?:Section\s+)?(\d+)\.\s*(.*)$', text.strip())
+    if section_match:
+        number = section_match.group(1)
+        title = section_match.group(2).strip()
+        return f"Section {number}", title
+    return "", ""
 
-    # Define chunk sizes for different content types
-    CHUNK_CONFIG = {
-        'dense': {'size': 500, 'overlap': 75},
-        'narrative': {'size': 1200, 'overlap': 100}
-    }
+def split_into_sections(text: str, page_num: int) -> List[Section]:
+    """Split text into sections based on section markers."""
+    sections = []
+    current_section = None
+    current_content = []
+    
+    lines = text.split('\n')
+    
+    for line in lines:
+        line = line.strip()
+        if not line:
+            continue
+            
+        # Check for new section start
+        if re.match(r'^(?:Section\s+)?\d+\.', line):
+            # Save previous section if it exists
+            if current_section:
+                current_section.content = '\n'.join(current_content).strip()
+                sections.append(current_section)
+            
+            # Start new section
+            number, title = extract_section_info(line)
+            current_section = Section(number=number, title=title, content='', start_page=page_num)
+            current_content = [line]
+        elif current_section:
+            # Only add non-empty lines
+            if line:
+                current_content.append(line)
+    
+    # Add the last section
+    if current_section and current_content:
+        current_section.content = '\n'.join(current_content).strip()
+        sections.append(current_section)
+    
+    return sections
 
-    def __init__(self):
-        """Initialize text splitters for different content types"""
-        splitter_params = {'separators': ["\n\n", "\n", ". ", " "], 'length_function': len}
-        self.splitters = {
-            key: RecursiveCharacterTextSplitter(
-                chunk_size=config['size'],
-                chunk_overlap=config['overlap'],
-                **splitter_params
-            ) for key, config in self.CHUNK_CONFIG.items()
-        }
+def identify_unit(text: str) -> tuple[str, str, str]:
+    """
+    Identify the legal unit type from the given text.
+    Returns: (unit_type, unit_number, content)
+    """
+    # Section (e.g., "Section 1: Title")
+    section_match = re.match(r'^\s*Section\s+(\d+)[\.:]?\s*(.*)', text, re.IGNORECASE)
+    if section_match:
+        return 'section', section_match.group(1), section_match.group(2).strip()
 
-    def remove_unwanted_headers(self, text: str) -> str:
-        """Remove unwanted headers like 'THE GAZETTE OF INDIA EXTRAORDINARY' but keep chapter names."""
-        lines = text.split("\n")
-        filtered_lines = [line for line in lines if not line.strip().startswith("THE GAZETTE OF INDIA")]
-        return "\n".join(filtered_lines)
+    # Subsection (e.g., "(1) Something...")
+    subsection_match = re.match(r'^\s*\((\d+)\)\s*(.*)', text)
+    if subsection_match:
+        return 'subsection', subsection_match.group(1), subsection_match.group(2).strip()
 
-    def extract_metadata(self, text: str, filename: str, page_number: int) -> LegalMetadata:
-        """Extract structural metadata from text"""
-        text = self.remove_unwanted_headers(clean_text(text))  # Remove unwanted headers before processing
-        matches = {
-            pattern: re.search(regex, text)
-            for pattern, regex in self.PATTERNS.items()
-            if pattern not in ['cross_reference', 'key_terms']
-        }
-        references = list(set(re.findall(self.PATTERNS['cross_reference'], text)))
-        key_terms = list(set(m.group(1) for m in re.finditer(self.PATTERNS['key_terms'], text)))
-        hierarchy = []
+    # Clause (e.g., "(i) Something...")
+    clause_match = re.match(r'^\s*\(([ivx]+)\)\s*(.*)', text, re.IGNORECASE)
+    if clause_match:
+        return 'clause', clause_match.group(1), clause_match.group(2).strip()
 
-        # Ensure hierarchy is built correctly
-        for component in ['chapter', 'section', 'subsection', 'paragraph']:
-            if matches.get(component):
-                value = matches[component].group(0)
-                if component in ['subsection', 'paragraph']:
-                    value = value.strip('()')
-                hierarchy.append(f"{component}_{value.split()[-1]}")
+    # Subclause (e.g., "(a) Something...")
+    subclause_match = re.match(r'^\s*\(([a-z])\)\s*(.*)', text)
+    if subclause_match:
+        return 'subclause', subclause_match.group(1), subclause_match.group(2).strip()
 
-        # Validate and correct section metadata
-        section = matches['section'].group(0).strip() if matches.get('section') else ""
-        if not section:
-            logging.warning(f"Missing section metadata on page {page_number} in file {filename}")
+    # Default: plain paragraph
+    return 'paragraph', '', text.strip()
 
-        # Deduplicate and validate references
-        references = [ref for ref in references if ref.strip()]
-        if not references:
-            logging.warning(f"No references found on page {page_number} in file {filename}")
 
-        content_type = next(
-            (ctype for ctype, (pattern, _) in CONTENT_TYPES.items()
-             if pattern and re.search(pattern, text, re.I)),
-            'general'
-        )
-        importance = CONTENT_TYPES[content_type][1]
-
-        return LegalMetadata(
-            filename=filename,
-            page_number=page_number,
-            chapter=matches['chapter'].group(0) if matches.get('chapter') else "",
-            section=section,
-            section_title=matches['section_title'].group(0).strip() if matches.get('section_title') else "",
-            subsection=matches['subsection'].group(0) if matches.get('subsection') else "",
-            paragraph=matches['paragraph'].group(0) if matches.get('paragraph') else "",
-            referenced_sections=references,
-            content_type=content_type,
-            key_terms=key_terms,
-            hierarchy_path='/'.join(hierarchy),
-            chunk_importance=importance
-        )
-
-    def split_document(self, text: str, filename: str, page_number: int) -> List[Document]:
-        """Split document while preserving structure and adding metadata"""
-        text = self.remove_unwanted_headers(clean_text(text))  # Remove unwanted headers before splitting
-        boundaries = [
-            (match.start(), pattern_name, match.group(0))
-            for pattern_name, pattern in self.PATTERNS.items()
-            if pattern_name not in ['cross_reference', 'key_terms']
-            for match in re.finditer(pattern, text)
-        ]
-        if not boundaries:
-            metadata = self.extract_metadata(text, filename, page_number)
-            return self._process_chunk(text, metadata)
-        boundaries.sort(key=lambda x: x[0])
-        chunks = []
-        for i, (start, _, _) in enumerate(boundaries):
-            end = boundaries[i + 1][0] if i < len(boundaries) - 1 else len(text)
-            chunk_text = text[start:end].strip()
-            if chunk_text:
-                metadata = self.extract_metadata(chunk_text, filename, page_number)
-                chunks.extend(self._process_chunk(chunk_text, metadata))
-        return chunks
-
-    def _process_chunk(self, text: str, metadata: LegalMetadata) -> List[Document]:
-        """Process text chunk into valid documents with metadata"""
-        splitter = self.splitters['dense' if re.search(self.PATTERNS['definition'], text) else 'narrative']
-        chunks = []
-        seen_content = set()
-        for sub_chunk in splitter.split_text(text):
-            if len(sub_chunk.strip()) >= 50 and any(p in sub_chunk for p in '.!?') and sub_chunk.count('(') == sub_chunk.count(')'):
-                content_key = ' '.join(sorted(sub_chunk.split()))
-                if content_key not in seen_content:
-                    seen_content.add(content_key)
-                    chunks.append(Document(
-                        page_content=sub_chunk,
-                        metadata=metadata.to_dict()
-                    ))
-        return chunks
-
-def validate_pdf(pdf_path: str) -> Tuple[bool, str]:
-    """Validate PDF file before processing"""
-    if not os.path.exists(pdf_path):
-        return False, "File does not exist"
-    if not os.access(pdf_path, os.R_OK):
-        return False, "File is not readable"
-    if os.path.getsize(pdf_path) == 0:
-        return False, "File is empty"
-    try:
-        with open(pdf_path, 'rb') as f:
-            if f.read(4) != b'%PDF':
-                return False, "Not a valid PDF file"
-    except Exception as e:
-        return False, f"Error reading file header: {str(e)}"
-    return True, "PDF is valid"
-
-def process_pdf_page(page: Any, filename: str, page_num: int, splitter: LegalDocumentSplitter) -> List[Document]:
-    """Process a single PDF page"""
-    text = page.extract_text()
-    if text and len(text.strip()) >= 50:
-        # Replace '\n' with a space in the preview text
-        preview_text = text[:100].replace("\n", " ")
-        logging.info(f"Page {page_num} preview: {preview_text}...")
-        return splitter.split_document(clean_text(text), filename, page_num)
-    return []
-
-def process_pdfs(directory_path: str) -> List[Document]:
-    """Load and process PDFs with structure-aware splitting"""
-    logging.info(f"Processing PDFs from directory: {directory_path}")
+def split_hierarchical(section: Section, source_file: str) -> List[Document]:
+    """Split section into hierarchical chunks with rich metadata."""
     documents = []
-    splitter = LegalDocumentSplitter()
-    stats = {'total_pages': 0, 'processed_pages': 0, 'total_chunks': 0}
+    base_metadata = {
+        'section_number': section.number,
+        'section_title': section.title,
+        'start_page': section.start_page,
+        'source_file': source_file,
+    }
+
+    # Use the content attribute of the Section object
+    lines = section.content.splitlines()
+
+    current = {
+        "subsection": None,
+        "clause": None,
+        "subclause": None,
+        "content": []
+    }
+
+    def flush_current():
+        """Save the current accumulated unit into documents."""
+        if current["content"]:
+            unit_text = " ".join(current["content"]).strip()
+            chunk_metadata = base_metadata.copy()
+            if current["subsection"]:
+                chunk_metadata['subsection'] = current["subsection"]
+            if current["clause"]:
+                chunk_metadata['clause'] = current["clause"]
+            if current["subclause"]:
+                chunk_metadata['subclause'] = current["subclause"]
+            documents.append(Document(
+                page_content=unit_text,
+                metadata=chunk_metadata
+            ))
+            current["content"] = []
+
+    for line in lines:
+        if not line.strip():
+            continue
+
+        unit_type, unit_number, content = identify_unit(line)
+
+        if unit_type == "subsection":
+            flush_current()
+            current["subsection"] = unit_number
+            current["clause"] = None
+            current["subclause"] = None
+            current["content"] = [f"({unit_number}) {content}"]
+
+        elif unit_type == "clause":
+            flush_current()
+            current["clause"] = unit_number
+            current["subclause"] = None
+            current["content"] = [f"({unit_number}) {content}"]
+
+        elif unit_type == "subclause":
+            flush_current()
+            current["subclause"] = unit_number
+            current["content"] = [f"({unit_number}) {content}"]
+
+        else:  # paragraph continuation
+            current["content"].append(content)
+
+        # If the chunk is getting too long, flush it early
+        if sum(len(c) for c in current["content"]) > 1200:
+            flush_current()
+
+    # Flush any leftover
+    flush_current()
+
+    return documents
+
+def process_pdf_files(directory_path: str) -> list:
+    logging.info(f"Processing PDF files from directory: {directory_path}")
+    documents = []
+
     try:
         pdf_files = [f for f in os.listdir(directory_path) if f.lower().endswith('.pdf')]
         if not pdf_files:
             logging.warning("No PDF files found in directory")
             return []
+
         for filename in pdf_files:
             pdf_path = os.path.join(directory_path, filename)
-            if not os.path.exists(pdf_path) or os.path.getsize(pdf_path) == 0:
-                logging.error(f"❌ Invalid PDF file: {filename}")
-                continue
             try:
                 reader = PdfReader(pdf_path)
-                if not reader.pages:
-                    continue
-                file_chunks = []
-                stats['total_pages'] += len(reader.pages)
+                all_sections = []
+
+                # First pass: extract and clean text, identify sections
                 for page_num, page in enumerate(reader.pages, 1):
-                    try:
-                        page_chunks = process_pdf_page(page, filename, page_num, splitter)
-                        if page_chunks:
-                            file_chunks.extend(page_chunks)
-                            stats['processed_pages'] += 1
-                    except Exception as e:
-                        logging.error(f"Error on page {page_num}: {e}")
-                if file_chunks:
-                    documents.extend(file_chunks)
-                    stats['total_chunks'] += len(file_chunks)
-                    logging.info(f"✅ Processed {filename}: {len(file_chunks)} chunks")
+                    text = page.extract_text()
+                    if text and len(text.strip()) > 0:
+                        cleaned_text = clean_text(text)
+                        sections = split_into_sections(cleaned_text, page_num)
+                        all_sections.extend(sections)
+
+                # Second pass: process sections into hierarchical documents
+                for section in all_sections:
+                    if section.content.strip():
+                        # Use the new hierarchical splitting
+                        section_docs = split_hierarchical(section, filename)
+                        documents.extend(section_docs)
+
+                logging.info(f"✅ Processed {filename}: Created {len(documents)} chunks across {len(all_sections)} sections")
+
             except Exception as e:
                 logging.error(f"❌ Failed to process {filename}: {e}")
-        if documents:
-            success_rate = (stats['processed_pages'] / stats['total_pages']) * 100
-            avg_chunk_size = sum(len(doc.page_content) for doc in documents) / len(documents)
-            logging.info(f"\n📊 Processing Results:")
-            logging.info(f"   Pages processed: {stats['processed_pages']}/{stats['total_pages']} ({success_rate:.1f}%)")
-            logging.info(f"   Total chunks: {stats['total_chunks']}")
-            logging.info(f"   Average chunk size: {avg_chunk_size:.0f} characters")
+
         return documents
+
     except Exception as e:
         logging.error(f"❌ Critical error: {e}")
         logging.exception("Traceback:")
         return []
 
-def create_vectorstore_from_directory(pdf_dir: str, persist_directory: str = "./rag_db") -> None:
-    """Create a vector store from legal documents"""
+def create_vectorstore_from_pdf_directory(pdf_dir: str, persist_directory: str = "./rag_db") -> None:
     logging.info("📂 Processing PDF files...")
-    documents = process_pdfs(pdf_dir)
+    documents = process_pdf_files(pdf_dir)
+
     if not documents:
         logging.error("❌ No valid documents to process")
         return
+
     try:
         logging.info("\n📦 Creating vector database...")
         vectordb = Chroma.from_documents(
             documents=documents,
             embedding=get_embedding_model(),
-            persist_directory=persist_directory
+            persist_directory=persist_directory,
+            collection_name="rag_db"  # Specify a fixed collection name
         )
+
+        # Enhance metadata for better retrieval
+        for doc in documents:
+            if "section_number" in doc.metadata:
+                doc.metadata["section_number"] = doc.metadata["section_number"].upper()
+
         vectordb.persist()
         logging.info(f"✅ Vector DB created at {persist_directory}")
+
     except Exception as e:
         logging.error(f"❌ Failed to create vector database: {e}")
         logging.exception("Traceback:")
@@ -303,9 +309,7 @@ if __name__ == "__main__":
         current_dir = Path(__file__).parent.absolute()
         db_path = current_dir / "rag_db"
         db_path.mkdir(parents=True, exist_ok=True)
-        create_vectorstore_from_directory(str(current_dir), str(db_path))
+        create_vectorstore_from_pdf_directory(str(current_dir), str(db_path))
     except Exception as e:
         logging.error(f"Error: {e}")
         logging.exception("Traceback:")
-
-
