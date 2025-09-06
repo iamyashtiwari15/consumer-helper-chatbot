@@ -10,18 +10,13 @@ from langchain_core.messages import AIMessage, HumanMessage, BaseMessage
 
 from agents.llm_loader import get_llm
 from agents.consumer_rights_chat_agent import get_consumer_rights_response  # renamed from medical
-from agents.rag_agent.response_generator import ResponseGenerator
-from agents.web_search.web_search_processor import WebSearchProcessor
-from agents.guardrails import LocalGuardrails
-from agents.rag_agent.document_retriever import retrieve_documents
+from agents.workflow_manager import WorkflowManager
 
 logging.basicConfig(level=logging.INFO)
-# Initialize agents with specific roles
 llm = get_llm()  # Use planner role for decision making
-rag_agent = ResponseGenerator()
-web_agent = WebSearchProcessor()
+manager = WorkflowManager("agents/rag_agent/rag_db")
+from agents.guardrails import LocalGuardrails
 guard = LocalGuardrails(llm)
-
 # Define shared state
 class GraphState(TypedDict):
     input: str
@@ -63,50 +58,17 @@ def route_to_agent(state: GraphState):
     if state["agent_name"] == "GUARDRAILS_BLOCK" or state["input_type"] == "image":
         return state  # Already routed in image detection or guardrails block
 
-    # First check if relevant documents are available
-    try:
-        docs = retrieve_documents(state["input"])
-        has_relevant_docs = len(docs) > 0
-    except Exception as e:
-        logging.error(f"Error checking document availability: {str(e)}")
-        has_relevant_docs = False
-
-    if has_relevant_docs:
-        logging.info("Found relevant documents in RAG system, using RAG_AGENT")
-        return {**state, "agent_name": "RAG_AGENT"}
-
-    prompt = f"""
-You are a decision-making agent that decides which specialist agent should respond to the user's consumer rights query.
-
-List of agents:
-- CONVERSATION_AGENT: Handles general consumer rights queries, policy clarifications, or ambiguous input.
-- WEB_SEARCH_PROCESSOR_AGENT: Searches trusted consumer rights websites and complaint portals for real-time information, recent cases, or specific examples.
-
-Given the user's input: \"{state['input']}\", respond ONLY as a JSON object like: {{"agent_name": "CONVERSATION_AGENT"}}
-
-Choose WEB_SEARCH_PROCESSOR_AGENT if the query:
-- Requires recent/current information
-- Asks about specific cases or examples
-- References specific companies or products
-
-Choose CONVERSATION_AGENT if the query:
-- Seeks general advice or explanations
-- Asks about basic consumer rights concepts
-- Is conversational or unclear
-"""
-    # Send only the prompt text instead of message history
-    decision = llm.invoke(prompt)
-
-    chosen = "CONVERSATION_AGENT"  # default fallback
-    try:
-        response_text = decision.content if hasattr(decision, 'content') else str(decision)
-        decision_dict = json.loads(response_text)
-        chosen = decision_dict.get("agent_name", "CONVERSATION_AGENT")
-    except (json.JSONDecodeError, AttributeError) as e:
-        logging.error(f"⚠️ Error parsing agent decision: {str(e)}\nResponse: {repr(decision)}")
-
-    logging.info(f"Selected agent: {chosen} (no relevant documents found in RAG system)")
-    return {**state, "agent_name": chosen}
+    # Delegate all text query handling to WorkflowManager
+    result = manager.process_query(state["input"])
+    # Always pass WorkflowManager's result as workflow_response
+    if result.get("query_type") in ["greeting", "chitchat"] or (result.get("response") and not result.get("sources")):
+        agent_name = "CONVERSATION_AGENT"
+    elif result.get("sources"):
+        agent_name = "RAG_AGENT"
+    else:
+        agent_name = "CONVERSATION_AGENT"
+    logging.info(f"WorkflowManager selected agent: {agent_name}")
+    return {**state, "agent_name": agent_name, "workflow_response": result}
 
 # Node 4: Call the routed agent
 def call_agent(state: GraphState):
@@ -118,48 +80,14 @@ def call_agent(state: GraphState):
     agent = state["agent_name"]
 
     try:
-        if agent == "CONVERSATION_AGENT":
-            response = get_consumer_rights_response(messages)  # renamed function for domain
-            output = getattr(response, "content", response)  # fallback to str if needed
-
-        elif agent == "RAG_AGENT":
-            retrieved_docs = retrieve_documents(input_text)
-            if not retrieved_docs:
-                logging.warning("No documents retrieved from RAG system despite initial check")
-                # Fallback to web search with explanation
-                fallback = web_agent.process_web_results(input_text)
-                fallback_text = getattr(fallback, "content", fallback)
-                output = f"""### Web Search Results
-*Note: While we typically use our legal document database, we've searched trusted online sources for this query.*
-
-{fallback_text}
-
----"""
-                agent = "WEB_SEARCH_PROCESSOR_AGENT"
-            else:
-                result = rag_agent.generate_response(input_text, retrieved_docs)
-                output = result.get("response", "")
-                
-                # If RAG response indicates insufficient information, enhance with web search
-                if "insufficient information" in output.lower():
-                    fallback = web_agent.process_web_results(input_text)
-                    fallback_text = getattr(fallback, "content", fallback)
-                    output = f"""### Local Document Information
-{output}
-
-### Additional Web Search Results
-*To provide more comprehensive information, we've also searched trusted online sources:*
-
-{fallback_text}
-
----"""
-
-        elif agent == "WEB_SEARCH_PROCESSOR_AGENT":
-            response = web_agent.process_web_results(input_text)
-            response_text = getattr(response, "content", response)
-            # Format web search results in markdown
-            output = f"""### Web Search Results\n\n{response_text}\n\n---\n"""
-
+        if agent == "CONVERSATION_AGENT" or agent == "RAG_AGENT":
+            workflow_response = state.get("workflow_response", {})
+            logging.info(f"[DEBUG] workflow_response: {workflow_response}")
+            output = workflow_response.get("response", "")
+            logging.info(f"[DEBUG] output before fallback: {output}")
+            if not output:
+                output = "Sorry, no information was found for your query. Please try rephrasing or ask about another topic."
+            logging.info(f"[DEBUG] output after fallback: {output}")
         elif agent == "DOCUMENT_ANALYSIS_AGENT":
             try:
                 temp_filename = f"temp_{uuid.uuid4().hex}.png"
@@ -172,7 +100,6 @@ def call_agent(state: GraphState):
             except Exception as e:
                 logging.error(f"Document/image analysis failed: {str(e)}")
                 output = f"❌ Document/image analysis failed: {str(e)}"
-
         else:
             output = "⚠️ Could not process your request."
 

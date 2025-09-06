@@ -15,6 +15,22 @@ from langchain_core.messages import BaseMessage
 
 import os
 
+from agents.workflow_manager import WorkflowManager
+
+def main():
+    db_path = "agents/rag_agent/rag_db"  # Adjust path as needed
+    manager = WorkflowManager(db_path)
+    print("Consumer Helper Chatbot is running.")
+    while True:
+        query = input("Enter your query (or 'exit' to quit): ")
+        if query.lower() == "exit":
+            break
+        response = manager.process_query(query)
+        print("\nResponse:", response.get("response"))
+        print("Sources:", response.get("sources"))
+
+if __name__ == "__main__":
+    main()
 load_dotenv()
 
 llm = get_llm()

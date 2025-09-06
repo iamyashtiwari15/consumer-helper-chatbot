@@ -1,6 +1,6 @@
 import logging
 from typing import List, Dict, Any
-from agents.rag_agent.llm_loader import get_llm
+from backend.agents.rag_agent.llm_loader import get_llm
 class QueryExpander:
     """
     Agentic query expansion with planning and decomposition capabilities.

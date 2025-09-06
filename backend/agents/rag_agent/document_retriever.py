@@ -1,12 +1,27 @@
+def format_docs(results):
+    return [
+        {
+            "content": doc.page_content,
+            "metadata": {
+                **doc.metadata,
+                "source": "local_db",
+                "score": score
+            }
+        }
+        for doc, score in results
+    ]
 # agents/document_retriever.py
 
 import os
 import logging
 from pathlib import Path
-from typing import List, Dict, Any, Optional
-from .query_expander import QueryExpander
-from agents.rag_agent.llm_loader import get_llm, get_embedding_model
-from langchain_community.vectorstores import Chroma
+from typing import List, Dict, Any, Optional, Tuple
+from backend.agents.rag_agent.query_expander import QueryExpander
+from backend.agents.rag_agent.query_classifier import QueryClassifier
+from backend.agents.web_search.web_search_agent import WebSearchAgent
+from langchain.docstore.document import Document
+from backend.agents.rag_agent.llm_loader import get_llm, get_embedding_model
+from langchain_chroma import Chroma
 
 # Configure logging
 logging.basicConfig(
@@ -20,24 +35,32 @@ def extract_section_number(query: str) -> Optional[str]:
     import re
     patterns = [
         r'section\s+(\d+(?:\([a-z\d]+\))?)',  # Section 33(1)
-        r'sec\.?\s+(\d+(?:\([a-z\d]+\))?)',  # Sec. 33
-        r'section\s+(\d+)',                  # Section 33
+        r'sec\.?\s+(\d+(?:\([a-z\d]+\))?)',   # Sec. 33
+        r'section\s+(\d+)',                    # Section 33
     ]
     for pattern in patterns:
         match = re.search(pattern, query.lower())
         if match:
-            # Normalize the extracted section number
-            return match.group(1).upper() 
+            # Normalize the extracted section number to match the format in our database
+            section_num = match.group(1).strip()
+            normalized = f"Section {section_num}"
+            logger.info(f"Extracted section number: {normalized}")
+            return normalized  # Format must match exactly what's in the database
+    logger.info("No section number found in query")
     return None
 
 # Initialize components with proper error handling
 try:
-    logger.info("Initializing QueryExpander")
+    logger.info("Initializing components")
     expander = QueryExpander()
+    classifier = QueryClassifier()
     
     # Setup Chroma with Langchain
     current_dir = Path(__file__).parent.absolute()
     db_path = current_dir / "rag_db"
+    
+    # Initialize logger with debug level for development
+    logger.setLevel(logging.DEBUG)
     
     # Check if the database directory exists
     if not db_path.exists():
@@ -67,118 +90,90 @@ except Exception as e:
     # Re-raise the exception to stop the application from running with a broken state
     raise
 
+# Initialize web search agent
+
 # Hybrid retrieve_documents function
-def retrieve_documents(query: str, k: int = 5) -> List[Dict[str, Any]]:
+def retrieve_documents(query: str, k: int = 5, query_classification: Optional[Dict[str, Any]] = None) -> Tuple[List[Dict[str, Any]], Dict[str, Any]]:
     """
     Retrieve relevant documents using a hybrid approach:
     - Metadata filtering for section-specific queries
     - Semantic search for general queries
-    - Combined results when appropriate
+    - Web search for additional context when needed
+    
+    Returns:
+        Tuple of (retrieved documents, query classification)
     """
     logger.info(f"🔍 Retrieving documents for query: {query}")
+    
+    # Use provided query_classification or fallback to classifier
+    if query_classification is None:
+        try:
+            query_classification = classifier.classify_query(query)
+            logger.info(f"Query classification: {query_classification}")
+        except Exception as e:
+            logger.error(f"Query classification failed: {str(e)}")
+            query_classification = {
+                "query_type": "general-info",
+                "topics": [],
+                "required_info_types": []
+            }
+    
+    # Initialize list to store all documents
+    all_documents = []
+    
     
     # Extract section number if present
     section_num = extract_section_number(query)
     results = []
-    
     try:
         # Get expanded query for semantic search
         expanded_query_dict = expander.expand_query(query)
         search_query = expanded_query_dict["original_query"]
-        
+
+        # Try section-specific retrieval first if section number is present
+        section_docs = []
         if section_num:
-            # For section-specific queries, use metadata filtering
-            filter_dict = {
-                "where": {
-                    "$eq": {
-                        "section_number": section_num
-                    }
-                }
-            }
+            filter_dict = {"section_number": {"$eq": section_num}}
             logger.info(f"Applied section filter: {filter_dict}")
-            
             try:
-                # Get section-specific results
                 section_results = vectordb.similarity_search_with_score(
                     search_query,
                     k=k,
                     filter=filter_dict
                 )
-                
-                # If we find good section-specific results, return them
-                if section_results:
-                    logger.info(f"Found {len(section_results)} section-specific results")
-                    return section_results
+                section_docs = format_docs(section_results)
+                if section_docs:
+                    logger.info(f"Found {len(section_docs)} section-specific results")
+                    all_documents.extend(section_docs)
             except Exception as e:
                 logger.warning(f"Section-specific search failed: {str(e)}")
                 # Continue to general search
-                
-        # For general queries or if section-specific search yields no results
-        # Use semantic search with a filter that matches all sections
-        filter_dict = {
-            "where": {
-                "$contains": {
-                    "section_number": "Section"  # Match all sections
-                }
-            }
-        }
-        logger.info("Performing general semantic search")
-        
-        # Get results using semantic search
-        results = vectordb.similarity_search_with_score(
-            search_query,
-            k=k,
-            filter=filter_dict
-        )
 
-        if not results:
-            logger.warning("⚠️ No documents found matching the search criteria.")
-            return []
-            
-        logger.info(f"Found {len(results)} results through semantic search")
-        return results
-        
+        # If no section-specific results, or for general queries, do semantic search
+        if not section_docs or (query_classification and query_classification.get("query_type", "general-info") != "section-specific"):
+            logger.info("Performing general semantic search")
+            results = vectordb.similarity_search_with_score(
+                search_query,
+                k=k
+            )
+            general_docs = format_docs(results)
+            if general_docs:
+                logger.info(f"Found {len(general_docs)} results through general semantic search")
+                all_documents.extend(general_docs)
+
+        if not all_documents:
+            logger.warning("⚠️ No documents found from any source.")
+            return [], query_classification
+
+        # Sort all documents by score
+        all_documents.sort(key=lambda x: x.get("metadata", {}).get("score", 0), reverse=True)
+        logger.info(f"Returning total of {len(all_documents)} documents from all sources")
+        return all_documents, query_classification
+
     except Exception as e:
         logger.error(f"❌ Error retrieving documents: {str(e)}")
         logger.error("Full traceback:", exc_info=True)
-        raise
-
-    try:
-        # Perform the search using the constructed filter
-        expanded_query_dict = expander.expand_query(query)
-        logger.info(f"Expanded query: {expanded_query_dict}")
-        
-        # Use the original query for vector search since the expanded queries are too verbose
-        # TODO: Implement better query selection strategy from expanded queries
-        search_query = expanded_query_dict["original_query"]
-        
-        results = vectordb.similarity_search_with_score(
-            search_query,
-            k=k,
-            filter=filter_dict
-        )
-
-        if not results:
-            logger.warning("⚠️ No documents found matching the search criteria.")
-            return []
-
-        logger.info(f"✅ Found {len(results)} documents.")
-        
-        # Format the results into a list of dictionaries
-        formatted_results = []
-        for doc, score in results:
-            formatted_results.append({
-                "content": doc.page_content,
-                "metadata": doc.metadata,
-                "score": score
-            })
-        
-        return formatted_results
-
-    except Exception as e:
-        logger.error(f"❌ Error retrieving documents: {str(e)}")
-        logger.exception("Full traceback:")
-        return []
+        return [], query_classification
 
 # The `AgenticDocumentRetriever` class and its methods
 # (`_validate_documents`, `_deduplicate_and_rank`) were complex and

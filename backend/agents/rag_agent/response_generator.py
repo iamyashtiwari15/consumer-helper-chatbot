@@ -1,6 +1,6 @@
 import logging
 from typing import List, Dict, Any, Optional
-from .llm_loader import get_llm
+from backend.agents.rag_agent.llm_loader import get_llm
 
 class ResponseGenerator:
     """
@@ -12,6 +12,89 @@ class ResponseGenerator:
         self.fact_checker = get_llm(role="validator")  # For fact checking
         self.include_sources = True
         self.max_refinement_attempts = 2  # Maximum number of response refinements
+
+    def _build_classified_prompt(
+        self,
+        query: str,
+        context: str,
+        classification: Dict[str, Any],
+        chat_history: Optional[List[Dict[str, str]]] = None
+    ) -> str:
+        """
+        Build a prompt optimized for the specific query type and required information.
+        """
+        query_type = classification.get("query_type", "general-info")
+        topics = classification.get("topics", [])
+        required_info = classification.get("required_info_types", [])
+        needs_steps = classification.get("has_actionable_request", False)
+        
+        # Base instructions
+        base_instructions = self._get_base_instructions()
+        
+        # Add type-specific instructions
+        type_instructions = {
+            "procedure": """
+                1. Provide clear, numbered steps
+                2. Include timeframes where available
+                3. Mention required documents or forms
+                4. Note any fees or charges involved
+                5. Add cautions or important notes
+                """,
+            "complaint": """
+                1. Start with immediate actions to take
+                2. List required documentation
+                3. Explain the complaint process
+                4. Mention alternative resolution methods
+                5. Include relevant authority contacts
+                """,
+            "rights": """
+                1. Clearly state each applicable right
+                2. Explain practical implications
+                3. Note any limitations or conditions
+                4. Include relevant timelines
+                5. Reference specific sections when available
+                """
+        }.get(query_type, "")
+        
+        # Format specific markers
+        format_markers = "Steps:" if needs_steps else "Key Points:"
+        
+        prompt = f"""You are a consumer rights assistant providing accurate information based on legal sources.
+
+User Query: {query}
+
+Query Classification:
+- Type: {query_type}
+- Topics: {', '.join(topics)}
+- Required Information: {', '.join(required_info)}
+
+Context Information:
+{context}
+
+{base_instructions}
+
+Additional Instructions for this query type:
+{type_instructions}
+
+{format_markers}
+
+Based on the provided context, please provide a structured response that specifically addresses the user's needs.
+Focus on being practical and actionable while maintaining accuracy.
+
+If you're unsure or the information is not in the context, say so clearly.
+"""
+        return prompt
+
+    def _get_base_instructions(self) -> str:
+        """Get the base instructions for all responses."""
+        return """Instructions:
+        1. Answer based ONLY on the provided context
+        2. Be clear, concise, and practical
+        3. Use bullet points for clarity
+        4. Include relevant section references
+        5. Add a brief disclaimer
+        6. Format in markdown for readability
+        """
 
     def _build_prompt(
         self,
@@ -67,15 +150,38 @@ Do not provide any source link that is not present in the context.
         self,
         query: str,
         retrieved_docs: List[Dict[str, Any]],
+        query_classification: Optional[Dict[str, Any]] = None,
         picture_paths: Optional[List[str]] = None,
         chat_history: Optional[List[Dict[str, str]]] = None
     ) -> Dict[str, Any]:
         try:
-            doc_texts = [doc["content"] for doc in retrieved_docs]
-            context = "\n\n===DOCUMENT SECTION===\n\n".join(doc_texts)
+            # Get document texts and organize by relevance
+            doc_texts_with_scores = []
+            for doc in retrieved_docs:
+                if isinstance(doc, tuple):  # If doc is (Document, score) tuple
+                    doc_texts_with_scores.append((doc[0].page_content, doc[1]))
+                else:  # If doc is a dict with content
+                    doc_texts_with_scores.append((doc["content"], doc.get("score", 1.0)))
             
-            # Step 1: Generate initial response
-            prompt = self._build_prompt(query, context, chat_history)
+            # Sort by relevance score if available
+            doc_texts_with_scores.sort(key=lambda x: x[1], reverse=True)
+            doc_texts = [text for text, _ in doc_texts_with_scores]
+            
+            # Build context with section markers and metadata
+            context_parts = []
+            for i, (text, score) in enumerate(doc_texts_with_scores):
+                relevance_marker = "🔥 High Relevance" if score > 0.8 else "✓ Relevant" if score > 0.6 else "ℹ️ Context"
+                context_parts.append(f"\n\n=== {relevance_marker} ===\n{text}")
+            
+            context = "\n".join(context_parts)
+            
+            # Determine response format based on query classification
+            if query_classification:
+                prompt = self._build_classified_prompt(query, context, query_classification, chat_history)
+            else:
+                prompt = self._build_prompt(query, context, chat_history)
+                
+            # Generate initial response
             initial_response = self.response_generator.invoke(prompt)
             response_text = initial_response.content.strip()
 
