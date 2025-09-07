@@ -56,12 +56,11 @@ def handle_user_input(
     session_id: str,
     image_bytes: Optional[bytes] = None,
     image_type: Optional[str] = None
-) -> str:
+) -> dict:
     messages = session_memory.get(session_id, [])
 
     # Detect type
-    input_type = "image" if image_bytes else \
-                 "text"
+    input_type = "image" if image_bytes else "text"
 
     image_path = None
     if image_bytes:
@@ -94,17 +93,18 @@ def handle_user_input(
     if image_path and os.path.exists(image_path):
         os.remove(image_path)
 
+    # output["response"] is now a dict (from agent_decision)
     return output["response"]
 
 # ✅ Route: Text-only chat
 @app.post("/chat")
 async def chat(message: str = Form(...), session_id: str = Form(...)):
     try:
-        reply = handle_user_input(user_input=message, session_id=session_id)
-        return {"reply": reply}
+        reply_obj = handle_user_input(user_input=message, session_id=session_id)
+        return reply_obj
     except Exception as e:
         print("Error in /chat:", e)
-        return JSONResponse(status_code=500, content={"reply": "Server error while processing your message."})
+        return JSONResponse(status_code=500, content={"response": "Server error while processing your message."})
 
 # ✅ Route: Image + optional message
 @app.post("/upload")
@@ -118,13 +118,13 @@ async def upload(
         image_type = file.content_type
 
         # Combined image + optional message
-        reply = handle_user_input(
+        reply_obj = handle_user_input(
             user_input=message,
             session_id=session_id,
             image_bytes=contents,
             image_type=image_type
         )
-        return {"reply": reply}
+        return reply_obj
     except Exception as e:
         print("Error in /upload:", e)
         return JSONResponse(status_code=500, content={"reply": "Server error while processing your image."})

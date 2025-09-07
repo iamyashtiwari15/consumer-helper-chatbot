@@ -13,11 +13,8 @@ from backend.agents.rag_agent.response_generator import ResponseGenerator
 
 # Sample queries to test
 QUERIES = [
-    "What does Section 33 say?",
-    "Tell me about consumer rights",
-    "How to file a complaint?",
-    "What is the penalty for fraud?",
-    "hello"
+    "explain me about section 33?",
+    
 ]
 
 def test_rag(query):

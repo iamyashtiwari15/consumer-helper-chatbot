@@ -104,11 +104,17 @@ class WorkflowManager:
                     })
             except Exception as e:
                 logger.warning(f"Web search failed: {e}")
+        logger.info(f"[DEBUG] Gathered {len(docs)} docs for query: {query}")
+        for i, doc in enumerate(docs):
+            logger.info(f"[DEBUG] Doc {i+1}: Content: {doc.get('content', '')[:200]} | Metadata: {doc.get('metadata', {})}")
         return docs
 
     def _generate_response(self, query: str, docs: List[Dict[str, Any]], classification: QueryClassification, chat_history: Optional[List[Dict[str, str]]]) -> WorkflowResponse:
         """Generate the final response using the response generator."""
         try:
+            logger.info(f"[DEBUG] Passing {len(docs)} docs to ResponseGenerator for query: {query}")
+            for i, doc in enumerate(docs):
+                logger.info(f"[DEBUG] Doc {i+1}: Content: {doc.get('content', '')[:200]} | Metadata: {doc.get('metadata', {})}")
             response = self.response_generator.generate_response(
                 query=query,
                 retrieved_docs=docs,
@@ -130,15 +136,6 @@ class WorkflowManager:
         classification: QueryClassification = self.classifier.classify_query(query)
         logger.info(f"Query classification: {classification}")
 
-        # Early exit for ambiguous queries
-        if classification.get("clarification_needed", False):
-            return {
-                "response": classification.get("clarification_question", "Could you please clarify your query?"),
-                "source_docs": [],
-                "strategy": {},
-                "classification": classification
-            }
-
         # Early exit for greeting/chitchat queries
         if classification.get("query_type") in ["greeting", "chitchat"]:
             return {"response": "Hello! How can I assist you with consumer rights or complaints today?", "sources": [], "confidence": 1.0}
@@ -147,4 +144,20 @@ class WorkflowManager:
         logger.info(f"Workflow strategy: {strategy}")
 
         docs = self._gather_context(query, strategy, image_path, query_classification=classification)
-        return self._generate_response(query, docs, classification, chat_history)
+
+        # Only exit early for clarification if no docs are found
+        if classification.get("clarification_needed", False) and not docs:
+            return {
+                "response": classification.get("clarification_question", "Could you please clarify your query?"),
+                "source_docs": [],
+                "strategy": strategy,
+                "classification": classification
+            }
+
+        # If docs are found, generate response and include clarification question if present
+        response = self._generate_response(query, docs, classification, chat_history)
+        if classification.get("clarification_needed", False):
+            # Append clarification to response if not already present
+            clarification = classification.get("clarification_question", "Could you please clarify your query?")
+            response["clarification"] = clarification
+        return response

@@ -1,6 +1,6 @@
 import logging
 from typing import Dict, Any, List
-from .llm_loader import get_llm
+from agents.rag_agent.llm_loader import get_llm
 
 class QueryClassifier:
     """

@@ -16,11 +16,11 @@ import os
 import logging
 from pathlib import Path
 from typing import List, Dict, Any, Optional, Tuple
-from backend.agents.rag_agent.query_expander import QueryExpander
-from backend.agents.rag_agent.query_classifier import QueryClassifier
-from backend.agents.web_search.web_search_agent import WebSearchAgent
+from agents.rag_agent.query_expander import QueryExpander
+from agents.rag_agent.query_classifier import QueryClassifier
+from agents.web_search.web_search_agent import WebSearchAgent
 from langchain.docstore.document import Document
-from backend.agents.rag_agent.llm_loader import get_llm, get_embedding_model
+from agents.rag_agent.llm_loader import get_llm, get_embedding_model
 from langchain_chroma import Chroma
 
 # Configure logging
