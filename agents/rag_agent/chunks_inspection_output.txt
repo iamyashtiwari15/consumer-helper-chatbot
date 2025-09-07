@@ -1,0 +1,2520 @@
+
+--- Chunk 1 ---
+Content:
+1. (1) This Act may  be called the  Consumer Protection  Act, 2019.
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_number': 'Section 1', 'start_page': 1, 'section_title': '(1) This Act may  be called the  Consumer Protection  Act, 2019.'}
+
+--- Chunk 2 ---
+Content:
+(2) It extends  to the whole  of India  except  the State  of Jammu  and Kashmir.
+
+Metadata:
+{'section_title': '(1) This Act may  be called the  Consumer Protection  Act, 2019.', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'subsection': '2', 'start_page': 1, 'section_number': 'Section 1'}
+
+--- Chunk 3 ---
+Content:
+(3) It shall come  into force  on such date as the Central  Government  may, by notification, appoint  and different  dates  may be appointed  for different  States  and for different  provisions of this Act and any reference  in any such provision  to the commencement  of this Act shall be construed as a reference to the coming into force of that provision.
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 1, 'section_title': '(1) This Act may  be called the  Consumer Protection  Act, 2019.', 'subsection': '3', 'section_number': 'Section 1'}
+
+--- Chunk 4 ---
+Content:
+(4) Save  as otherwise  expressly  provided  by the Central  Government,  by notification, this Act shall apply to all goods and services.
+
+Metadata:
+{'section_title': '(1) This Act may  be called the  Consumer Protection  Act, 2019.', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 1, 'subsection': '4', 'section_number': 'Section 1'}
+
+--- Chunk 5 ---
+Content:
+2. In this Act, unless  the context  otherwise  requires,—
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': 'In this Act, unless  the context  otherwise  requires,—', 'start_page': 2, 'section_number': 'Section 2'}
+
+--- Chunk 6 ---
+Content:
+(1) "advertisement" means any audio or visual publicity, representation, endorsement or pronouncement made by means of light,  sound, smoke, gas, print, electronic  media,  internet  or website  and includes  any notice,  circular,  label,  wrapper, invoice or such other documents;
+
+Metadata:
+{'section_title': 'In this Act, unless  the context  otherwise  requires,—', 'start_page': 2, 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'subsection': '1', 'section_number': 'Section 2'}
+
+--- Chunk 7 ---
+Content:
+(2) "appropriate  laboratory"  means  a laboratory  or an organisation —
+
+Metadata:
+{'section_number': 'Section 2', 'subsection': '2', 'section_title': 'In this Act, unless  the context  otherwise  requires,—', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 2}
+
+--- Chunk 8 ---
+Content:
+(i) recognised  by the Central  Government;  or
+
+Metadata:
+{'subsection': '2', 'section_title': 'In this Act, unless  the context  otherwise  requires,—', 'clause': 'i', 'section_number': 'Section 2', 'start_page': 2, 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
+
+--- Chunk 9 ---
+Content:
+(ii) recognised  by a State  Government,  subject  to such guidelines  as may be issued by the Central Government in this behalf; or
+
+Metadata:
+{'section_title': 'In this Act, unless  the context  otherwise  requires,—', 'clause': 'ii', 'start_page': 2, 'section_number': 'Section 2', 'subsection': '2', 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
+
+--- Chunk 10 ---
+Content:
+(iii) established  by or under  any law for the time being  in force,  which  is maintained, financed or aided by the Central Government or a St ate Government for carrying  out analysis  or test of any goods  with a view  to determining  whether such goods suffer from any defect;
+
+Metadata:
+{'subsection': '2', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': 'In this Act, unless  the context  otherwise  requires,—', 'section_number': 'Section 2', 'start_page': 2, 'clause': 'iii'}
+
+--- Chunk 11 ---
+Content:
+(3) "branch  office"  means—
+
+Metadata:
+{'section_title': 'In this Act, unless  the context  otherwise  requires,—', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 2, 'subsection': '3', 'section_number': 'Section 2'}
+
+--- Chunk 12 ---
+Content:
+(i) any office  or place  of work  described  as a branch  by the establishment;  or
+
+Metadata:
+{'start_page': 2, 'clause': 'i', 'section_title': 'In this Act, unless  the context  otherwise  requires,—', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_number': 'Section 2', 'subsection': '3'}
+
+--- Chunk 13 ---
+Content:
+(ii) any establishment carrying  on either the same or substantially the same activity carried on by the head office of the establishment;
+
+Metadata:
+{'start_page': 2, 'subsection': '3', 'section_title': 'In this Act, unless  the context  otherwise  requires,—', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'clause': 'ii', 'section_number': 'Section 2'}
+
+--- Chunk 14 ---
+Content:
+(4) "Central Authority"  means  the Central  Consumer  Protection Authority established under section 10;
+
+Metadata:
+{'section_title': 'In this Act, unless  the context  otherwise  requires,—', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_number': 'Section 2', 'start_page': 2, 'subsection': '4'}
+
+--- Chunk 15 ---
+Content:
+(5) "complainant"  means—
+
+Metadata:
+{'section_title': 'In this Act, unless  the context  otherwise  requires,—', 'subsection': '5', 'section_number': 'Section 2', 'start_page': 2, 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
+
+--- Chunk 16 ---
+Content:
+(i) a consumer;  or
+
+Metadata:
+{'subsection': '5', 'section_title': 'In this Act, unless  the context  otherwise  requires,—', 'start_page': 2, 'section_number': 'Section 2', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'clause': 'i'}
+
+--- Chunk 17 ---
+Content:
+(ii) any voluntary  consumer  association  registered  under  any law for the time being in force; or
+
+Metadata:
+{'subsection': '5', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': 'In this Act, unless  the context  otherwise  requires,—', 'clause': 'ii', 'section_number': 'Section 2', 'start_page': 2}
+
+--- Chunk 18 ---
+Content:
+(iii) the Central  Government  or any State  Government;  or
+
+Metadata:
+{'start_page': 2, 'section_title': 'In this Act, unless  the context  otherwise  requires,—', 'clause': 'iii', 'subsection': '5', 'section_number': 'Section 2', 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
+
+--- Chunk 19 ---
+Content:
+(iv) the Central  Authority;  or
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 2, 'section_number': 'Section 2', 'subsection': '5', 'section_title': 'In this Act, unless  the context  otherwise  requires,—', 'clause': 'iv'}
+
+--- Chunk 20 ---
+Content:
+(v) one or more  consumers,  where  there  are numerous  consumers  having the same interest; or
+
+Metadata:
+{'section_number': 'Section 2', 'clause': 'v', 'subsection': '5', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 2, 'section_title': 'In this Act, unless  the context  otherwise  requires,—'}
+
+--- Chunk 21 ---
+Content:
+(vi) in case of death  of a consumer,  his legal  heir or legal  representative;  or
+
+Metadata:
+{'section_title': 'In this Act, unless  the context  otherwise  requires,—', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'subsection': '5', 'start_page': 2, 'section_number': 'Section 2', 'clause': 'vi'}
+
+--- Chunk 22 ---
+Content:
+(vii) in case of a consumer  being  a minor,  his parent  or legal  guardian;
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 2, 'clause': 'vii', 'subsection': '5', 'section_number': 'Section 2', 'section_title': 'In this Act, unless  the context  otherwise  requires,—'}
+
+--- Chunk 23 ---
+Content:
+(6) "complaint" means any allegation in writing, made by a complainant for obtaining any relief provided by or under this Act, that—
+
+Metadata:
+{'section_title': 'In this Act, unless  the context  otherwise  requires,—', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_number': 'Section 2', 'subsection': '6', 'start_page': 2}
+
+--- Chunk 24 ---
+Content:
+(i) an unfair  contract  or unfair  trade  practice  or a restrictive  trade  practice has been adopted by any trader or service provider;
+
+Metadata:
+{'section_title': 'In this Act, unless  the context  otherwise  requires,—', 'start_page': 2, 'subsection': '6', 'clause': 'i', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_number': 'Section 2'}
+
+--- Chunk 25 ---
+Content:
+(ii) the goods bought by him or agreed to be bought by him suffer from one or more defects;
+
+Metadata:
+{'clause': 'ii', 'section_title': 'In this Act, unless  the context  otherwise  requires,—', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 2, 'subsection': '6', 'section_number': 'Section 2'}
+
+--- Chunk 26 ---
+Content:
+(iii) the services  hired  or availed  of or agreed  to be hired  or availed  of by him suffer from any deficiency;
+
+Metadata:
+{'clause': 'iii', 'subsection': '6', 'start_page': 2, 'section_number': 'Section 2', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': 'In this Act, unless  the context  otherwise  requires,—'}
+
+--- Chunk 27 ---
+Content:
+(iv) a trader  or a service  provider,  as the case may be, has charged  for the goods or for the services mentioned in the complaint, a price in excess of the price—
+
+Metadata:
+{'start_page': 2, 'clause': 'iv', 'section_title': 'In this Act, unless  the context  otherwise  requires,—', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_number': 'Section 2', 'subsection': '6'}
+
+--- Chunk 28 ---
+Content:
+(a) fixed  by or under  any law for the time being  in force;  or
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': 'In this Act, unless  the context  otherwise  requires,—', 'section_number': 'Section 2', 'subclause': 'a', 'start_page': 2, 'subsection': '6', 'clause': 'iv'}
+
+--- Chunk 29 ---
+Content:
+3. (1) The Central  Government  shall,  by notification,  establish  with effect  from  such date as it may specify in that notification, the Central Consumer Protection Council to be known as the Central Council.
+
+Metadata:
+{'start_page': 10, 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_number': 'Section 3', 'section_title': '(1) The Central  Government  shall,  by notification,  establish  with effect  from  such'}
+
+--- Chunk 30 ---
+Content:
+(2) The Central Council shall be an advisory council and consist of the following members,  namely:—
+
+Metadata:
+{'start_page': 10, 'section_title': '(1) The Central  Government  shall,  by notification,  establish  with effect  from  such', 'section_number': 'Section 3', 'subsection': '2', 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
+
+--- Chunk 31 ---
+Content:
+(a) the Minister -in-charge  of the Department  of Consumer  Affairs  in the Central Government, who shall be the Chairperson; and
+
+Metadata:
+{'section_title': '(1) The Central  Government  shall,  by notification,  establish  with effect  from  such', 'subsection': '2', 'start_page': 10, 'section_number': 'Section 3', 'subclause': 'a', 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
+
+--- Chunk 32 ---
+Content:
+(b) such number of other official or non -official members representing such interests as may be prescribed.
+
+Metadata:
+{'section_title': '(1) The Central  Government  shall,  by notification,  establish  with effect  from  such', 'section_number': 'Section 3', 'start_page': 10, 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'subclause': 'b', 'subsection': '2'}
+
+--- Chunk 33 ---
+Content:
+4. (1) The Central  Council  shall meet  as and when  necessary,  but at least one meeting of the Council shall be held every year.
+
+Metadata:
+{'section_title': '(1) The Central  Council  shall meet  as and when  necessary,  but at least one meeting', 'section_number': 'Section 4', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 10}
+
+--- Chunk 34 ---
+Content:
+(2) The Central Council shall meet at such time and place as the Chairperson may think fit and shall observe such procedure in regard to the transaction of its business as may be prescribed.
+
+Metadata:
+{'section_number': 'Section 4', 'start_page': 10, 'section_title': '(1) The Central  Council  shall meet  as and when  necessary,  but at least one meeting', 'subsection': '2', 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
+
+--- Chunk 35 ---
+Content:
+5. The objects of the Central Council shall be to render advice on promotion and protection of the consumers' rights under this Act.
+
+Metadata:
+{'section_title': 'The objects of the Central Council shall be to render advice on promotion and', 'section_number': 'Section 5', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 10}
+
+--- Chunk 36 ---
+Content:
+6. (1) Every  State  Government  shall,  by notification,  establish  with effect  from  such date as it may specify in s uch notification, a State Consumer Protection Council for such State to be known as the State Council.
+
+Metadata:
+{'section_number': 'Section 6', 'section_title': '(1) Every  State  Government  shall,  by notification,  establish  with effect  from  such', 'start_page': 11, 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
+
+--- Chunk 37 ---
+Content:
+(2) The State Council shall be an advisory council and consist of the following members, namely:—
+
+Metadata:
+{'section_title': '(1) Every  State  Government  shall,  by notification,  establish  with effect  from  such', 'section_number': 'Section 6', 'start_page': 11, 'subsection': '2', 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
+
+--- Chunk 38 ---
+Content:
+(a) the Minister -in-charge of Consumer  Affairs in the State Government who shall be the Chairperson;
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_number': 'Section 6', 'section_title': '(1) Every  State  Government  shall,  by notification,  establish  with effect  from  such', 'subsection': '2', 'start_page': 11, 'subclause': 'a'}
+
+--- Chunk 39 ---
+Content:
+(b) such number of other official or non -official members representing such interests as may be prescribed;
+
+Metadata:
+{'subsection': '2', 'start_page': 11, 'section_number': 'Section 6', 'section_title': '(1) Every  State  Government  shall,  by notification,  establish  with effect  from  such', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'subclause': 'b'}
+
+--- Chunk 40 ---
+Content:
+(c) such number  of other  official  or non-official  members,  not exceeding  ten, as may be nominated by the Central Government.
+
+Metadata:
+{'section_title': '(1) Every  State  Government  shall,  by notification,  establish  with effect  from  such', 'section_number': 'Section 6', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'subclause': 'c', 'subsection': '2', 'start_page': 11}
+
+--- Chunk 41 ---
+Content:
+(3) The State  Council  shall meet  as and when  necessary  but not less than two meetings shall be held every year.
+
+Metadata:
+{'section_number': 'Section 6', 'start_page': 11, 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': '(1) Every  State  Government  shall,  by notification,  establish  with effect  from  such', 'subsection': '3'}
+
+--- Chunk 42 ---
+Content:
+(4) The State  Council  shall meet  at such time and place  as the Chairperson  may think fit and shall observe  such procedure  in regard  to the transaction  of its business,  as may be prescribed.
+
+Metadata:
+{'section_title': '(1) Every  State  Government  shall,  by notification,  establish  with effect  from  such', 'subsection': '4', 'start_page': 11, 'section_number': 'Section 6', 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
+
+--- Chunk 43 ---
+Content:
+7. The objects of every State Council shall be to render advice on promotion and protection of consumer rights under this Act within the State.
+
+Metadata:
+{'section_number': 'Section 7', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': 'The objects of every State Council shall be to render advice on promotion and', 'start_page': 11}
+
+--- Chunk 44 ---
+Content:
+8. (1) The State Government shall, by notification, establish for every District with effect  from  such date as it may specify  in such notification,  a District  Consumer  Protection Council to be known as the District Council.
+
+Metadata:
+{'start_page': 11, 'section_number': 'Section 8', 'section_title': '(1) The State Government shall, by notification, establish for every District with', 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
+
+--- Chunk 45 ---
+Content:
+(2) The District Council shall be an advisory council and consist of the following members,  namely:—
+
+Metadata:
+{'section_number': 'Section 8', 'start_page': 11, 'section_title': '(1) The State Government shall, by notification, establish for every District with', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'subsection': '2'}
+
+--- Chunk 46 ---
+Content:
+(a) the Collector of the district (by whatever name called), who shall be the Chairperson; and
+
+Metadata:
+{'section_number': 'Section 8', 'subsection': '2', 'section_title': '(1) The State Government shall, by notification, establish for every District with', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 11, 'subclause': 'a'}
+
+--- Chunk 47 ---
+Content:
+(b) such number  of other  official  and non-official  members  representing  such interests as may be prescribed.
+
+Metadata:
+{'section_title': '(1) The State Government shall, by notification, establish for every District with', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'subsection': '2', 'section_number': 'Section 8', 'subclause': 'b', 'start_page': 11}
+
+--- Chunk 48 ---
+Content:
+(3) The District Council shall meet as and when necessary but not less than two meetings shall be held every year.
+
+Metadata:
+{'start_page': 11, 'subsection': '3', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': '(1) The State Government shall, by notification, establish for every District with', 'section_number': 'Section 8'}
+
+--- Chunk 49 ---
+Content:
+(4) The District Council shall meet at such time and place within the district as the Chairperson  may think  fit and shall observe  such procedure  in regard  to the transaction  of its business as may be prescribed.
+
+Metadata:
+{'subsection': '4', 'section_number': 'Section 8', 'section_title': '(1) The State Government shall, by notification, establish for every District with', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 11}
+
+--- Chunk 50 ---
+Content:
+9. The objects of every District Council shall be to render advice on promotion and protection of consumer rights under this  Act within the district. CHAPTER  III CENTRAL  CONSUMER  PROTECTION  AUTHORITY
+
+Metadata:
+{'start_page': 11, 'section_number': 'Section 9', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': 'The objects of every District Council shall be to render advice on promotion and'}
+
+--- Chunk 51 ---
+Content:
+10. (1) The Central  Government  shall,  by notification,  establish  with effect  from  such date as it may specify in that notification, a Central Consumer Protection  Authority to be known  as the Central  Authority  to regulate  matters  relating  to violation  of rights  of consumers, unfair trade practices and false or misleading advertisements which are prejudicial to the interests of public and consumers and to promote, protect and enforce the rights of consumers as a class.
+
+Metadata:
+{'start_page': 11, 'section_number': 'Section 10', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': '(1) The Central  Government  shall,  by notification,  establish  with effect  from  such'}
+
+--- Chunk 52 ---
+Content:
+(2) The Central  Authority  shall consist  of a Chief  Commissi oner and such number  of other  Commissioners  as may be prescribed,  to be appointed  by the Central  Government  to exercise the powers and discharge the functions under this Act.
+
+Metadata:
+{'section_title': '(1) The Central  Government  shall,  by notification,  establish  with effect  from  such', 'subsection': '2', 'section_number': 'Section 10', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 11}
+
+--- Chunk 53 ---
+Content:
+11. The Central Government may, by notification, make rules to provide for the qualifications  for appointment,  method  of recruitment,  procedure  for appointment,  term of office,  salaries  and allowances,  resignation,  removal  and other  terms  and conditions  of the service of the Chief Commissioner and Commissioners of the  Central  Authority.
+
+Metadata:
+{'section_title': 'The Central Government may, by notification, make rules to provide for the', 'section_number': 'Section 11', 'start_page': 12, 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
+
+--- Chunk 54 ---
+Content:
+12. No act or proceeding  of the Central  Authority  shall be invalid  merely  by reason  of—
+
+Metadata:
+{'start_page': 12, 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_number': 'Section 12', 'section_title': 'No act or proceeding  of the Central  Authority  shall be invalid  merely  by reason  of—'}
+
+--- Chunk 55 ---
+Content:
+(a) any vacancy  in, or any defect  in the constitution  of, the Central  Authority;  or
+
+Metadata:
+{'start_page': 12, 'subclause': 'a', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': 'No act or proceeding  of the Central  Authority  shall be invalid  merely  by reason  of—', 'section_number': 'Section 12'}
+
+--- Chunk 56 ---
+Content:
+(b) any defect  in the appointment  of a person  acting  as the Chief  Commissioner or as a Commissioner; or
+
+Metadata:
+{'section_title': 'No act or proceeding  of the Central  Authority  shall be invalid  merely  by reason  of—', 'section_number': 'Section 12', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 12, 'subclause': 'b'}
+
+--- Chunk 57 ---
+Content:
+(c) any irregularity  in the procedure  of the Central  Authority  not affecting  the merits of the case.
+
+Metadata:
+{'subclause': 'c', 'section_title': 'No act or proceeding  of the Central  Authority  shall be invalid  merely  by reason  of—', 'section_number': 'Section 12', 'start_page': 12, 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
+
+--- Chunk 58 ---
+Content:
+13. (1) The Central  Government  shall provide  the Central  Authority  such number  of officers and other employees as it considers necessary for the efficient performance of its functions under this Act.
+
+Metadata:
+{'section_number': 'Section 13', 'section_title': '(1) The Central  Government  shall provide  the Central  Authority  such number  of', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 12}
+
+--- Chunk 59 ---
+Content:
+(2) The salaries and allowances payable to, and the other terms and conditions of service  of, the officers  and other  employees  of the Central  Authority  appointed  under  this Act shall be such as may be prescribed.
+
+Metadata:
+{'section_title': '(1) The Central  Government  shall provide  the Central  Authority  such number  of', 'section_number': 'Section 13', 'start_page': 12, 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'subsection': '2'}
+
+--- Chunk 60 ---
+Content:
+(3) The Central  Authority may  engage,  in accordance  with the procedure  specified  by regulations, such number of experts and professionals of integrity and ability, who have special knowledge and experience in the areas of co nsumer rights and welfare, consumer policy,  law, medicine,  food safety,  health,  engineering,  product  safety,  commerce,  economics, public affairs or administration, as it deems necessary to assist it in the discharge of its functions under this Act.
+
+Metadata:
+{'subsection': '3', 'section_title': '(1) The Central  Government  shall provide  the Central  Authority  such number  of', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_number': 'Section 13', 'start_page': 12}
+
+--- Chunk 61 ---
+Content:
+14. (1) The Central  Authority shall regulate the procedure for transaction of its business and allocation  of its business  amongst  the Chief  Commissioner  and Commissioners  as may be specified by regulations.
+
+Metadata:
+{'section_title': '(1) The Central  Authority shall regulate the procedure for transaction of its business', 'section_number': 'Section 14', 'start_page': 12, 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
+
+--- Chunk 62 ---
+Content:
+(2) The Chief Commissioner shall have the powers of general superintendence, direction and control in respect of all administrative matters of the Central  Authority: Provided that the Chief Commissioner may delegate such of his powers relating to administrative  matters  of the Central  Authority, as  he may think  fit, to any Commissioner (including  Commissioner  of a regional  office)  or any other  officer  of the Central  Authority.
+
+Metadata:
+{'section_number': 'Section 14', 'subsection': '2', 'section_title': '(1) The Central  Authority shall regulate the procedure for transaction of its business', 'start_page': 12, 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
+
+--- Chunk 63 ---
+Content:
+15. (1) The Central  Authority  shall  have an Investigation  Wing  headed  by a Director - General for the purpose of conducting inquiry or investigation under this  Act as may be directed by the Central Authority.
+
+Metadata:
+{'section_number': 'Section 15', 'start_page': 12, 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': '(1) The Central  Authority  shall  have an Investigation  Wing  headed  by a Director -'}
+
+--- Chunk 64 ---
+Content:
+(2) The Central Government may appoint a Director -General and such number of Additional  Director -General,  Director,  Joint Director, Deputy Director and  Assistant Director, from  amongst  persons  who have experience  in investigation  and possess  such qualifications, in such manner, as may be prescribed.
+
+Metadata:
+{'subsection': '2', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 12, 'section_title': '(1) The Central  Authority  shall  have an Investigation  Wing  headed  by a Director -', 'section_number': 'Section 15'}
+
+--- Chunk 65 ---
+Content:
+(3) Every  Additional  Director -General,  Director,  Joint  Director,  Deputy  Director  and Assistant Director shall exercise his powers, and discharge his functions, subject to the general control, supervision and direction of the Director -General.
+
+Metadata:
+{'start_page': 12, 'section_number': 'Section 15', 'subsection': '3', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': '(1) The Central  Authority  shall  have an Investigation  Wing  headed  by a Director -'}
+
+--- Chunk 66 ---
+Content:
+(4) The Director -General may delegate all or any of his powers to the Additional Director -General  or Director,  Joint  Director  or Deputy  Director  or Assistant Director,  as the case may be, while conducting inquiries or investigations under this  Act.
+
+Metadata:
+{'start_page': 12, 'section_title': '(1) The Central  Authority  shall  have an Investigation  Wing  headed  by a Director -', 'section_number': 'Section 15', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'subsection': '4'}
+
+--- Chunk 67 ---
+Content:
+16. The District Collector (by whatever name called) may, on a complaint or on a reference  made  to him by the Central  Authority  or the Commissioner  of a regional  office, inquire  into or investigate  complaints  regarding  violation  of rights  of consumers  as a class, on matters relating to violations of consumer rights, unfair trade practices and false or misleading  advertisements, within his  jurisdiction  and submit  his report  to the Central  Authority or to the Commissioner of a regional office, as the case may be.
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': 'The District Collector (by whatever name called) may, on a complaint or on a', 'start_page': 13, 'section_number': 'Section 16'}
+
+--- Chunk 68 ---
+Content:
+17. A complaint relating to violation of consumer rights or unfair trade practices or false or misleading  advertisements  which  are prejudicial  to the interests  of consumers  as a class,  may be forwarded  either  in writing  or in electronic  mode,  to any one of the authorities, namely,  the District  Collector  or the Commissioner  of regional  office  or the Central  Authority.
+
+Metadata:
+{'start_page': 13, 'section_number': 'Section 17', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': 'A complaint relating to violation of consumer rights or unfair trade practices or'}
+
+--- Chunk 69 ---
+Content:
+18. (1) The Central  Authority  shall—
+
+Metadata:
+{'section_number': 'Section 18', 'start_page': 13, 'section_title': '(1) The Central  Authority  shall—', 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
+
+--- Chunk 70 ---
+Content:
+(a) protect,  promote  and enforce  the rights  of consumers  as a class,  and prevent violation of consumers rights under this Act;
+
+Metadata:
+{'start_page': 13, 'section_number': 'Section 18', 'section_title': '(1) The Central  Authority  shall—', 'subclause': 'a', 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
+
+--- Chunk 71 ---
+Content:
+(b) prevent  unfair  trade  practices  and ensure  that no person  engages  himself  in unfair trade practices;
+
+Metadata:
+{'subclause': 'b', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': '(1) The Central  Authority  shall—', 'section_number': 'Section 18', 'start_page': 13}
+
+--- Chunk 72 ---
+Content:
+(c) ensure that no false or misleading advertisement is made of any goods or services  which  contravenes  the provisions  of this Act or the rules  or regulations  made thereunder;
+
+Metadata:
+{'section_title': '(1) The Central  Authority  shall—', 'subclause': 'c', 'start_page': 13, 'section_number': 'Section 18', 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
+
+--- Chunk 73 ---
+Content:
+(d) ensure that no person takes part in the publication of any advertisement which is false or misleading.
+
+Metadata:
+{'section_number': 'Section 18', 'section_title': '(1) The Central  Authority  shall—', 'start_page': 13, 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'subclause': 'd'}
+
+--- Chunk 74 ---
+Content:
+(2) Without  prejudice  to the generality  of the provisions  contained  in sub-section  (1), the Central  Authority may, for any of the purposes aforesaid, —
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': '(1) The Central  Authority  shall—', 'subsection': '2', 'start_page': 13, 'section_number': 'Section 18'}
+
+--- Chunk 75 ---
+Content:
+(a) inquire or cause an inquiry or investigation to be made into violations of consumer  rights  or unfair  trade  practices,  either  suo motu  or on a complaint  received  or on the directions from the Central Government;
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'subsection': '2', 'start_page': 13, 'section_number': 'Section 18', 'subclause': 'a', 'section_title': '(1) The Central  Authority  shall—'}
+
+--- Chunk 76 ---
+Content:
+(b) file complaints  before  the District  Commission,  the State  Commission  or the National Commission, as the case may be, under this Act;
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'subsection': '2', 'section_title': '(1) The Central  Authority  shall—', 'section_number': 'Section 18', 'subclause': 'b', 'start_page': 13}
+
+--- Chunk 77 ---
+Content:
+(c) intervene in any proceedings before the District Commission or the State Commission or the National Commission, as the case may be, in respect of any allegation of violation of consumer rights or unfair trade practices;
+
+Metadata:
+{'subsection': '2', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 13, 'subclause': 'c', 'section_title': '(1) The Central  Authority  shall—', 'section_number': 'Section 18'}
+
+--- Chunk 78 ---
+Content:
+(d) review the matters relating to, and the factors inhibiting enjoyment of, consumer  rights,  including  safeguard s provided  for the protection  of consumers  under any other  law for the time being  in force  and recommend  appropriate  remedial  measures for their effective implementation;
+
+Metadata:
+{'section_number': 'Section 18', 'subsection': '2', 'section_title': '(1) The Central  Authority  shall—', 'subclause': 'd', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 13}
+
+--- Chunk 79 ---
+Content:
+(e) recommend adoption of international covenants and best international practices on consumer rights to ensure effective enforcement of consumer rights;
+
+Metadata:
+{'subsection': '2', 'section_title': '(1) The Central  Authority  shall—', 'start_page': 13, 'subclause': 'e', 'section_number': 'Section 18', 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
+
+--- Chunk 80 ---
+Content:
+(f) undertake  and promote  research  in the field of consumer  rights;
+
+Metadata:
+{'section_title': '(1) The Central  Authority  shall—', 'subclause': 'f', 'start_page': 13, 'section_number': 'Section 18', 'subsection': '2', 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
+
+--- Chunk 81 ---
+Content:
+(g) spread  and promote  awareness  on consumer  rights;
+
+Metadata:
+{'section_number': 'Section 18', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 13, 'subsection': '2', 'section_title': '(1) The Central  Authority  shall—', 'subclause': 'g'}
+
+--- Chunk 82 ---
+Content:
+(h) encourage  non-Governmental  organisations  and other  institutions  working in the field of consumer rights to co -operate and work with consumer protection agencies;
+
+Metadata:
+{'subclause': 'h', 'section_number': 'Section 18', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 13, 'section_title': '(1) The Central  Authority  shall—', 'subsection': '2'}
+
+--- Chunk 83 ---
+Content:
+(i) mandate  the use of unique  and universal  goods  identifiers  in such goods,  as may be necessary,  to prevent  unfair  trade  practices  and to protect  consumers'  interest;
+
+Metadata:
+{'subsection': '2', 'section_number': 'Section 18', 'section_title': '(1) The Central  Authority  shall—', 'clause': 'i', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 13}
+
+--- Chunk 84 ---
+Content:
+19. (1) The Central  Authority may, after receiving any information or complaint or directions from the Central Government or of its own motion, conduct or cause to be conducted a preliminary  inquiry  as to whether  there  exists  a prima  facie  case of violation  of consumer rights  or any unfair  trade  practice  or any false or misleading  advertisement,  by any person, which  is prejudicial  to the public  interest  or to the interests  of consumers  and if it is satisfied that there  exists  a prima  facie  case,  it shall cause  investigation  to be made  by the Director - General or by the District Collector.
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_number': 'Section 19', 'start_page': 14, 'section_title': '(1) The Central  Authority may, after receiving any information or complaint or'}
+
+--- Chunk 85 ---
+Content:
+(2) Where,  after preliminary  inquiry,  the Central  Authority  is of the opinion  that the matter  is to be dealt  with by a Regulator  established  under  any other  law for the time being in force, it may refer such matter to the concerned Regulator along with its report.
+
+Metadata:
+{'section_title': '(1) The Central  Authority may, after receiving any information or complaint or', 'section_number': 'Section 19', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 14, 'subsection': '2'}
+
+--- Chunk 86 ---
+Content:
+(3) For the purposes  of investigation  under  sub-section  (1), the Central  Authority,  the Director  General  or the District  Collector  may call upon  a person  referred  to in sub-section ( 1) and also direct him to produce any document or record in h is possession.
+
+Metadata:
+{'section_title': '(1) The Central  Authority may, after receiving any information or complaint or', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 14, 'section_number': 'Section 19', 'subsection': '3'}
+
+--- Chunk 87 ---
+Content:
+20. Where  the Central  Authority  is satisfied  on the basis  of investigation  that there  is sufficient  evidence  to show  violation  of consumer  rights  or unfair  trade  practice  by a person, it may pass such order as may be necessary, including —
+
+Metadata:
+{'section_number': 'Section 20', 'start_page': 14, 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': 'Where  the Central  Authority  is satisfied  on the basis  of investigation  that there  is'}
+
+--- Chunk 88 ---
+Content:
+(a) recalling  of goods  or withdrawal  of services  which  are dangerous,  hazardous or unsafe;
+
+Metadata:
+{'section_number': 'Section 20', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 14, 'section_title': 'Where  the Central  Authority  is satisfied  on the basis  of investigation  that there  is', 'subclause': 'a'}
+
+--- Chunk 89 ---
+Content:
+(b) reimbursement  of the prices  of goods  or services  so recalled  to purchasers  of such goods or services; and
+
+Metadata:
+{'section_title': 'Where  the Central  Authority  is satisfied  on the basis  of investigation  that there  is', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'subclause': 'b', 'section_number': 'Section 20', 'start_page': 14}
+
+--- Chunk 90 ---
+Content:
+(c) discontinuation  of practices  which  are unfair  and prejudicial  to consumers' interest: Provided that the Central Authority shall give the person an opportunity of being heard before passing an order under this section.
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 14, 'section_title': 'Where  the Central  Authority  is satisfied  on the basis  of investigation  that there  is', 'section_number': 'Section 20', 'subclause': 'c'}
+
+--- Chunk 91 ---
+Content:
+21. (1) Where the Central Authority is satisfied after investigation that any advertisement  is false or misleading  and is prejudicial  to the interest  of any consumer  or is in contravention  of consumer  rights,  it may,  by order,  issue  directions  to the concerned  trader or manufacturer or endorser or advertiser or publisher, as the case may be, to discontinue such advertisement  or to modify  the same  in such manner  and within  such time as may be specified in that order.
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_number': 'Section 21', 'section_title': '(1) Where the Central Authority is satisfied after investigation that any', 'start_page': 14}
+
+--- Chunk 92 ---
+Content:
+(2) Notwithstanding  the order  passed  under  sub-section  (1), if the Central  Authority is of the opinion  that it is necessary  to impose  a penalty  in respect  of such false or misleading advertisement, by a manufacturer or an endorser, it may, by order, impose on manufacturer or endorser a penalty which may extend to ten lakh rupees: Provided that the Central Authority may, for every subsequent contraven tion by a manufacturer  or endorser,  impose  a penalty,  which  may extend  to fifty lakh rupees.
+
+Metadata:
+{'section_number': 'Section 21', 'start_page': 14, 'subsection': '2', 'section_title': '(1) Where the Central Authority is satisfied after investigation that any', 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
+
+--- Chunk 93 ---
+Content:
+(3) Notwithstanding any order under sub -sections ( 1) and ( 2), where the Central Authority  deems  it necessary,  it may,  by order,  prohibit  the endorser  of a false or misleading advertisement  from  making  endorsement  of any product  or service  for a period  which  may extend to one year:
+
+Metadata:
+{'section_number': 'Section 21', 'subsection': '3', 'section_title': '(1) Where the Central Authority is satisfied after investigation that any', 'start_page': 14, 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
+
+--- Chunk 94 ---
+Content:
+22. (1) For the purpose  of conducting  an investigation  after preliminary  inquiry  under sub-section  (1) of section  19, the Director -General  or any other  officer  authorised  by him in this behalf,  or the District  Collector,  as the case may be, may,  if he has any reason  to believe that any person has violated any consumer rights or committed unfair trade practice or causes any false or misleading advertisement to be made, shall, —
+
+Metadata:
+{'start_page': 15, 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_number': 'Section 22', 'section_title': '(1) For the purpose  of conducting  an investigation  after preliminary  inquiry  under'}
+
+--- Chunk 95 ---
+Content:
+(a) enter at any reasonable time into any such premises and search for any document  or record  or article or any other  form  of evidence  and seize  such document, record, article or such evidence;
+
+Metadata:
+{'section_title': '(1) For the purpose  of conducting  an investigation  after preliminary  inquiry  under', 'start_page': 15, 'section_number': 'Section 22', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'subclause': 'a'}
+
+--- Chunk 96 ---
+Content:
+(b) make  a note or an inventory  of such record  or article;  or
+
+Metadata:
+{'section_number': 'Section 22', 'subclause': 'b', 'start_page': 15, 'section_title': '(1) For the purpose  of conducting  an investigation  after preliminary  inquiry  under', 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
+
+--- Chunk 97 ---
+Content:
+(c) require any person to produce any record, register or other document or article.
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_number': 'Section 22', 'section_title': '(1) For the purpose  of conducting  an investigation  after preliminary  inquiry  under', 'start_page': 15, 'subclause': 'c'}
+
+--- Chunk 98 ---
+Content:
+(2) The provisions of the Code of Criminal Procedure, 1973, relating to search and seizure shall apply, as far as may be, for search and seizure under this  Act.
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'subsection': '2', 'start_page': 15, 'section_title': '(1) For the purpose  of conducting  an investigation  after preliminary  inquiry  under', 'section_number': 'Section 22'}
+
+--- Chunk 99 ---
+Content:
+(3) Every document, record or article seized under clause ( a) of sub -section ( 1) or produced under clause ( c) of that sub-section shall be returned to the person, from whom they were seized or who produced the same, within a period of twenty days of the date of such seizure or production, as the case may be, after copies thereof or extracts therefrom certified by that per son, in such manner as may be prescribed, have been taken.
+
+Metadata:
+{'subsection': '3', 'start_page': 15, 'section_title': '(1) For the purpose  of conducting  an investigation  after preliminary  inquiry  under', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_number': 'Section 22'}
+
+--- Chunk 100 ---
+Content:
+(4) Where any article seized under sub -section ( 1) are subject to speedy or natural decay, the Director -General or such other officer may dispose of the article in such manner as may be prescribed.
+
+Metadata:
+{'start_page': 15, 'section_title': '(1) For the purpose  of conducting  an investigation  after preliminary  inquiry  under', 'subsection': '4', 'section_number': 'Section 22', 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
+
+--- Chunk 101 ---
+Content:
+(5) In the case of articles other than the articles referred to in sub -section ( 4), provisions contained in clause ( c) of sub -section ( 2) of section 38 shall mutatis mutandis apply in relation to analysis or tests.
+
+Metadata:
+{'section_title': '(1) For the purpose  of conducting  an investigation  after preliminary  inquiry  under', 'subsection': '5', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_number': 'Section 22', 'start_page': 15}
+
+--- Chunk 102 ---
+Content:
+23. The Central  Government  may,  if it considers  necessary,  by notification,  designate any statutory authority or body to exercise the powers and perform the functions of the Central Authority referred to in section 10.
+
+Metadata:
+{'section_title': 'The Central  Government  may,  if it considers  necessary,  by notification,  designate', 'start_page': 16, 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_number': 'Section 23'}
+
+--- Chunk 103 ---
+Content:
+24. A person aggrieved by any order passed by the Central Authority under sections  20 and 21 may file an appeal  to the National  Commission  within  a period  of thirty days from the date of receipt of such order.
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': 'A person aggrieved by any order passed by the Central Authority under', 'section_number': 'Section 24', 'start_page': 16}
+
+--- Chunk 104 ---
+Content:
+25. The Central  Government  may, after due appropriation  made  by Parliament  by law in this behalf,  make  to the Central  Authority  grants  of such sums  of money  as that Government may think fit for being utilised for the purposes of this  Act.
+
+Metadata:
+{'start_page': 16, 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_number': 'Section 25', 'section_title': 'The Central  Government  may, after due appropriation  made  by Parliament  by law in'}
+
+--- Chunk 105 ---
+Content:
+26. (1) The Central  Authority shall maintain proper accounts and other relevant records and prepare  an annual  statement  of accounts  in such form  and manner  as may be prescribed in consultation with the Comptroller and  Auditor -General of India.
+
+Metadata:
+{'section_title': '(1) The Central  Authority shall maintain proper accounts and other relevant records', 'start_page': 16, 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_number': 'Section 26'}
+
+--- Chunk 106 ---
+Content:
+(2) The accounts of the Central  Authority shall be audited by the Comptroller and Auditor -General  of India  at such intervals  as may be specified  by him and any expenditure incurred in connection with such audit shall be payable by the Central Authority to the Comptroller and  Auditor -Gene ral of India.
+
+Metadata:
+{'section_title': '(1) The Central  Authority shall maintain proper accounts and other relevant records', 'subsection': '2', 'start_page': 16, 'section_number': 'Section 26', 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
+
+--- Chunk 107 ---
+Content:
+(3) The Comptroller  and Auditor -General  of India  or any other  person  appointed  by him in connection  with the audit  of the accounts  of the Central  Authority  shall have the same rights, privileges and authority in connection with such audit as the Comptroller and Auditor -General of India generally has, in connection with the audit of the Government accounts  and, in particular,  shall have the right to demand  the production  of books , accounts, connected vouchers and other documents and papers and to inspect any of the offices of the Central Authority.
+
+Metadata:
+{'section_title': '(1) The Central  Authority shall maintain proper accounts and other relevant records', 'subsection': '3', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_number': 'Section 26', 'start_page': 16}
+
+--- Chunk 108 ---
+Content:
+(4) The accounts of the Central Authority as certified by the Comptroller and Auditor -General  of India  or any other  person  appointed  by him in this behalf  together  with the audit  report  thereon  shall be forwarded  annually  to the Central  Government  which  shall cause the same to be laid before each House of Parliament.
+
+Metadata:
+{'section_number': 'Section 26', 'section_title': '(1) The Central  Authority shall maintain proper accounts and other relevant records', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 16, 'subsection': '4'}
+
+--- Chunk 109 ---
+Content:
+27. (1) The Central  Authority  shall  prepare  once in every  year,  in such form,  manner and at such time as may be prescribed,  an annual  report  giving  full account  of its activities during  the previous  year and such other  reports  and returns,  as may be directed,  and copies of such report and returns shall be forwarded to the Central G overnment.
+
+Metadata:
+{'section_number': 'Section 27', 'section_title': '(1) The Central  Authority  shall  prepare  once in every  year,  in such form,  manner', 'start_page': 16, 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
+
+--- Chunk 110 ---
+Content:
+(2) A copy  of the annual  report  received  under  sub-section  (1) shall  be laid, as soon as may be after it is received, before each House of Parliament. CHAPTER  IV CONSUMER  DISPUTES  REDRESSAL  COMMISSION
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': '(1) The Central  Authority  shall  prepare  once in every  year,  in such form,  manner', 'section_number': 'Section 27', 'subsection': '2', 'start_page': 16}
+
+--- Chunk 111 ---
+Content:
+28. (1) The State Government shall, by notification, establish a District Consumer Disputes  Redressal  Commission,  to be known  as the District  Commission,  in each district  of the State: Provided that the State Government may, if it deems fit, establish more than one District Commission in a district.
+
+Metadata:
+{'start_page': 16, 'section_title': '(1) The State Government shall, by notification, establish a District Consumer', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_number': 'Section 28'}
+
+--- Chunk 112 ---
+Content:
+(2) Each District  Commission  shall consist  of—
+
+Metadata:
+{'start_page': 16, 'subsection': '2', 'section_number': 'Section 28', 'section_title': '(1) The State Government shall, by notification, establish a District Consumer', 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
+
+--- Chunk 113 ---
+Content:
+(a) a President;  and
+
+Metadata:
+{'section_number': 'Section 28', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 16, 'section_title': '(1) The State Government shall, by notification, establish a District Consumer', 'subclause': 'a', 'subsection': '2'}
+
+--- Chunk 114 ---
+Content:
+(b) not less than two and not more than such number of members as may be prescribed, in consultation with the Central Government.
+
+Metadata:
+{'subsection': '2', 'start_page': 16, 'section_title': '(1) The State Government shall, by notification, establish a District Consumer', 'section_number': 'Section 28', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'subclause': 'b'}
+
+--- Chunk 115 ---
+Content:
+29. The Central Government may, by notification, make rules to provide for the qualifications,  method  of recruitment,  procedure  for appointment,  term of office,  resignation and removal of the President and members of the District Commission.
+
+Metadata:
+{'section_title': 'The Central Government may, by notification, make rules to provide for the', 'section_number': 'Section 29', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 17}
+
+--- Chunk 116 ---
+Content:
+30. The State  Government  may,  by notification,  make  rules  to provide  for salaries  and allowances  and other  terms  and conditions  of service  of the President,  and members  of the District  Commission.
+
+Metadata:
+{'section_number': 'Section 30', 'section_title': 'The State  Government  may,  by notification,  make  rules  to provide  for salaries  and', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 17}
+
+--- Chunk 117 ---
+Content:
+31. Any person  appointed  as President  or, as the case may be, a member  of the District Commission  immediately  before  the commencement  of this Act shall  hold office  as such as President  or, as the case may be, as member  till the completion  of his term for which  he has been appointed.
+
+Metadata:
+{'start_page': 17, 'section_number': 'Section 31', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': 'Any person  appointed  as President  or, as the case may be, a member  of the District'}
+
+--- Chunk 118 ---
+Content:
+32. If, at any time, there is a vacancy in the office of the President or member of a District  Commission,  the State  Government  may,  by notification,  direct—
+
+Metadata:
+{'start_page': 17, 'section_title': 'If, at any time, there is a vacancy in the office of the President or member of a', 'section_number': 'Section 32', 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
+
+--- Chunk 119 ---
+Content:
+(a) any other  District  Commission  specified  in that notification  to exercise  the jurisdiction in respect of that district also; or
+
+Metadata:
+{'section_title': 'If, at any time, there is a vacancy in the office of the President or member of a', 'start_page': 17, 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_number': 'Section 32', 'subclause': 'a'}
+
+--- Chunk 120 ---
+Content:
+(b) the President  or a member  of any other  District  Commission  specified  in that notification to exercise the powers and discharge the functions of the President or member of that District Commission also.
+
+Metadata:
+{'section_number': 'Section 32', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 17, 'section_title': 'If, at any time, there is a vacancy in the office of the President or member of a', 'subclause': 'b'}
+
+--- Chunk 121 ---
+Content:
+33. (1) The State Government shall provide the District Commission with such  officers and other  employees  as may be required  to assist  the District  Commission  in the discharge of its functions.
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': '(1) The State Government shall provide the District Commission with such  officers', 'start_page': 17, 'section_number': 'Section 33'}
+
+--- Chunk 122 ---
+Content:
+(2) The officers  and other  employees  of the District  Commission  shall discharge  their functions under the general superintendence of the President of the District Commission.
+
+Metadata:
+{'start_page': 17, 'section_title': '(1) The State Government shall provide the District Commission with such  officers', 'section_number': 'Section 33', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'subsection': '2'}
+
+--- Chunk 123 ---
+Content:
+(3) The salaries and allowances payable to, and the other terms and conditions of service  of, the officers  and other  employees  of the District  Commission  shall be such as may be prescribed.
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': '(1) The State Government shall provide the District Commission with such  officers', 'section_number': 'Section 33', 'start_page': 17, 'subsection': '3'}
+
+--- Chunk 124 ---
+Content:
+34. (1) Subject  to the other  provisions  of this Act, the District  Commission  shall have jurisdiction to entertain complaints where the value of the goods or services paid as consideration does not exceed one crore rupees: Provided that where the Central Government deems it necessary s o to do, it may prescribe such other value, as it deems fit.
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_number': 'Section 34', 'section_title': '(1) Subject  to the other  provisions  of this Act, the District  Commission  shall have', 'start_page': 17}
+
+--- Chunk 125 ---
+Content:
+(2) A complaint  shall be instituted  in a District  Commission  within  the local  limits  of whose jurisdiction, —
+
+Metadata:
+{'section_number': 'Section 34', 'subsection': '2', 'section_title': '(1) Subject  to the other  provisions  of this Act, the District  Commission  shall have', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 17}
+
+--- Chunk 126 ---
+Content:
+(a) the opposite  party  or each of the opposite  parties,  where  there  are more  than one, at the time of the institution of the complaint, ordinarily resides or carries on business or has a branch office or personally works for gain; or
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': '(1) Subject  to the other  provisions  of this Act, the District  Commission  shall have', 'subsection': '2', 'subclause': 'a', 'start_page': 17, 'section_number': 'Section 34'}
+
+--- Chunk 127 ---
+Content:
+(b) any of the opposite  parties,  where  there  are more  than one, at the time of the institution  of the complaint,  actually  and voluntarily  resides,  or carries  on business  or has a branch office, or personally works for gain, provided that in such case the permission of the District Commission is given; or
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'subsection': '2', 'section_number': 'Section 34', 'section_title': '(1) Subject  to the other  provisions  of this Act, the District  Commission  shall have', 'start_page': 17, 'subclause': 'b'}
+
+--- Chunk 128 ---
+Content:
+(c) the cause  of action,  wholly  or in part, arises;  or
+
+Metadata:
+{'subsection': '2', 'section_number': 'Section 34', 'section_title': '(1) Subject  to the other  provisions  of this Act, the District  Commission  shall have', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'subclause': 'c', 'start_page': 17}
+
+--- Chunk 129 ---
+Content:
+(d) the complainant  resides  or personally  works  for gain.
+
+Metadata:
+{'subsection': '2', 'subclause': 'd', 'section_number': 'Section 34', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 17, 'section_title': '(1) Subject  to the other  provisions  of this Act, the District  Commission  shall have'}
+
+--- Chunk 130 ---
+Content:
+35. (1) A complaint,  in relation  to any goods  sold or delivered  or agreed  to be sold or delivered or any service provided or agreed to be provided, may  be filed with a District Commission  by—
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': '(1) A complaint,  in relation  to any goods  sold or delivered  or agreed  to be sold or', 'section_number': 'Section 35', 'start_page': 18}
+
+--- Chunk 131 ---
+Content:
+(a) the consumer, —
+
+Metadata:
+{'subclause': 'a', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': '(1) A complaint,  in relation  to any goods  sold or delivered  or agreed  to be sold or', 'section_number': 'Section 35', 'start_page': 18}
+
+--- Chunk 132 ---
+Content:
+(i) to whom such goods are sold or delivered or agreed to be sold or delivered or such service is provided or agreed to be provided; or
+
+Metadata:
+{'clause': 'i', 'section_title': '(1) A complaint,  in relation  to any goods  sold or delivered  or agreed  to be sold or', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_number': 'Section 35', 'start_page': 18}
+
+--- Chunk 133 ---
+Content:
+(ii) who alleges  unfair  trade  practice  in respect  of such goods  or service;
+
+Metadata:
+{'section_number': 'Section 35', 'clause': 'ii', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': '(1) A complaint,  in relation  to any goods  sold or delivered  or agreed  to be sold or', 'start_page': 18}
+
+--- Chunk 134 ---
+Content:
+(b) any recognised  consumer  association,  whether  the consumer  to whom  such goods  are sold or delivered  or agreed  to be sold or delivered  or such service  is provided or agreed  to be provided,  or who alleges  unfair  trade  practice  in respect  of such goods or service, is a member of such association or not;
+
+Metadata:
+{'section_title': '(1) A complaint,  in relation  to any goods  sold or delivered  or agreed  to be sold or', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_number': 'Section 35', 'start_page': 18, 'clause': 'ii', 'subclause': 'b'}
+
+--- Chunk 135 ---
+Content:
+(c) one or more consumers, where there are numerous consumers having the same  interest,  with the permission  of the District  Commission,  on behalf  of, or for the benefit of, all consumers so interested; or
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': '(1) A complaint,  in relation  to any goods  sold or delivered  or agreed  to be sold or', 'start_page': 18, 'section_number': 'Section 35', 'clause': 'ii', 'subclause': 'c'}
+
+--- Chunk 136 ---
+Content:
+(d) the Central  Government,  the Central  Authority  or the State  Government,  as the case may be: Provided  that the complaint  under  this sub-section  may be filed electronically  in such manner as may be prescribed. Explanation. —For the purposes of this sub-section, "recognised consumer association" means any voluntary consumer association registered under any law for the time being in force.
+
+Metadata:
+{'clause': 'ii', 'subclause': 'd', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_number': 'Section 35', 'section_title': '(1) A complaint,  in relation  to any goods  sold or delivered  or agreed  to be sold or', 'start_page': 18}
+
+--- Chunk 137 ---
+Content:
+(2) Every  complaint  filed under  sub-section  (1) shall be accompanied  with such fee and payable in such manner, including electronic form, as may be prescribed.
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_number': 'Section 35', 'start_page': 18, 'subsection': '2', 'section_title': '(1) A complaint,  in relation  to any goods  sold or delivered  or agreed  to be sold or'}
+
+--- Chunk 138 ---
+Content:
+36. (1) Every proceeding before the District Commission shall be conducted by the President of that Commission and atleast one member thereof, sitting together: Provided  that where  a member,  for any reason,  is unable  to conduct  a proceeding  till it is completed, the President and the other member shall continue the proceeding from the stage at which it was last heard by the previous member.
+
+Metadata:
+{'section_number': 'Section 36', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': '(1) Every proceeding before the District Commission shall be conducted by the', 'start_page': 18}
+
+--- Chunk 139 ---
+Content:
+(2) On receipt  of a complaint  made  under  section  35, the District  Commission  may,  by order, admit the complaint for being proceeded with or reject the same: Provided  that a complaint  shall not be rejected  under  this section  unless  an opportunity of being heard has been given to the complainant: Provided further that the admissibility of the complaint shall ordinarily be decided within twenty -one days from the date on which the complaint was filed.
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 18, 'section_title': '(1) Every proceeding before the District Commission shall be conducted by the', 'section_number': 'Section 36', 'subsection': '2'}
+
+--- Chunk 140 ---
+Content:
+(3) Where  the District  Commission  does not decide  the issue  of admissibility  of the complaint within the period so specified, it s hall be deemed to have been admitted.
+
+Metadata:
+{'start_page': 18, 'subsection': '3', 'section_title': '(1) Every proceeding before the District Commission shall be conducted by the', 'section_number': 'Section 36', 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
+
+--- Chunk 141 ---
+Content:
+37. (1) At the first hearing  of the complaint  after its admission,  or at any later stage,  if it appears  to the District  Commission  that there  exists  elements  of a settlement  which  may be acceptable  to the parties,  except  in such cases  as may be prescribed,  it may direct  the parties to give in writing, within five days, consent to have their dispute settled by mediation in accordance with the provisions of Chapter V.
+
+Metadata:
+{'section_number': 'Section 37', 'start_page': 18, 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': '(1) At the first hearing  of the complaint  after its admission,  or at any later stage,  if'}
+
+--- Chunk 142 ---
+Content:
+(2) Where the parties agree for settlement by mediation and give their consent in writing,  the District  Commission  shall,  within  five days of receipt  of such consent,  refer  the
+
+Metadata:
+{'section_number': 'Section 37', 'section_title': '(1) At the first hearing  of the complaint  after its admission,  or at any later stage,  if', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 18, 'subsection': '2'}
+
+--- Chunk 143 ---
+Content:
+38. (1) The District  Commission  shall,  on admission  of a complaint,  or in respect  of cases referred for mediation on failure of settlement by mediation, proceed with such complaint.
+
+Metadata:
+{'section_title': '(1) The District  Commission  shall,  on admission  of a complaint,  or in respect  of', 'section_number': 'Section 38', 'start_page': 19, 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
+
+--- Chunk 144 ---
+Content:
+(2) Where  the complaint  relates  to any goods,  the District  Commission  shall,—
+
+Metadata:
+{'section_number': 'Section 38', 'start_page': 19, 'section_title': '(1) The District  Commission  shall,  on admission  of a complaint,  or in respect  of', 'subsection': '2', 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
+
+--- Chunk 145 ---
+Content:
+(a) refer a copy of the admitted  complaint,  within  twenty -one days from  the date of its admission  to the opposite  party  mentioned  in the complaint  directing  him to give his version of the case within a period of thirty days or such extended period not exceeding fifteen days as may be granted by it;
+
+Metadata:
+{'start_page': 19, 'subclause': 'a', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'subsection': '2', 'section_title': '(1) The District  Commission  shall,  on admission  of a complaint,  or in respect  of', 'section_number': 'Section 38'}
+
+--- Chunk 146 ---
+Content:
+(b) if the opposite  party  on receipt  of a complaint  referred  to him under  clause  (a) denies  or disputes  the allegations  contained  in the complaint,  or omits  or fails to take any action to represent his case within the time  given by the District Commission, proceed to settle the consumer dispute in the manner specified in clauses ( c) to ( g);
+
+Metadata:
+{'section_number': 'Section 38', 'subclause': 'b', 'subsection': '2', 'section_title': '(1) The District  Commission  shall,  on admission  of a complaint,  or in respect  of', 'start_page': 19, 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
+
+--- Chunk 147 ---
+Content:
+(c) if the complaint alleges a defect in the goods which cannot be determined without proper analysis or test of the goods, obtain a sample  of the goods from the complainant,  seal it and authenticate  it in the manner  as may be prescribed  and refer the sample so sealed to the appropriate laboratory along with a direction that such laboratory to make an analysis or test, whichever may be necess ary, with a view to finding out whether such goods suffer from any defect alleged in the complaint or from any other defect and to report its findings thereon to the District Commission within  a period  of forty-five days of the receipt  of the reference  or within  such extended period as may be granted by it;
+
+Metadata:
+{'subclause': 'c', 'subsection': '2', 'section_title': '(1) The District  Commission  shall,  on admission  of a complaint,  or in respect  of', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 19, 'section_number': 'Section 38'}
+
+--- Chunk 148 ---
+Content:
+(d) before any sample of the goods is referred to any appropriate laboratory under  clause  (c), require  the complainant  to deposit  to the credit  of the Commission such fees as may be specified,  for payment  to the appropriate  laboratory  for carrying out the necessary analysis or test in relation to the goods in question;
+
+Metadata:
+{'section_title': '(1) The District  Commission  shall,  on admission  of a complaint,  or in respect  of', 'subclause': 'd', 'section_number': 'Section 38', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 19, 'subsection': '2'}
+
+--- Chunk 149 ---
+Content:
+(e) remit  the amount  deposited  to its credit  under  clause  (d) to the appropriate laboratory  to enable  it to carry  out the analysis  or test mentioned  in clause  (c) and on receipt of the report from the appropriate laboratory, it shall forward a copy of the report along with such remarks as it may feel appropriate to the opposite party;
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': '(1) The District  Commission  shall,  on admission  of a complaint,  or in respect  of', 'subclause': 'e', 'section_number': 'Section 38', 'start_page': 19, 'subsection': '2'}
+
+--- Chunk 150 ---
+Content:
+(f) if any of the parties  disputes  the correctness  of the findings of the appropriate laboratory,  or disputes  the correctness  of the methods  of analysis  or test adopted  by the appropriate  laboratory,  require  the opposite  party  or the complainant  to submit  in writing his objections with regard to the report made by the appropriate laboratory;
+
+Metadata:
+{'subclause': 'f', 'start_page': 19, 'section_number': 'Section 38', 'subsection': '2', 'section_title': '(1) The District  Commission  shall,  on admission  of a complaint,  or in respect  of', 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
+
+--- Chunk 151 ---
+Content:
+(g) give a reasonable opportunity to the complainant as well as the opposite party of being heard as to the correctness or otherwise of the report made by the appropriate laboratory and also as to the objection made in relation ther eto under clause ( f) and issue an appropriate order under section 39.
+
+Metadata:
+{'subclause': 'g', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'subsection': '2', 'section_title': '(1) The District  Commission  shall,  on admission  of a complaint,  or in respect  of', 'start_page': 19, 'section_number': 'Section 38'}
+
+--- Chunk 152 ---
+Content:
+(3) The District Commission shall, if the complaint admitted by it under sub -section ( 2) of section  36 relates  to goods  in respect  of which  the procedure  specified  in sub-section  (2) cannot be followed, or if the complaint relates to any services, —
+
+Metadata:
+{'section_number': 'Section 38', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'subsection': '3', 'start_page': 19, 'section_title': '(1) The District  Commission  shall,  on admission  of a complaint,  or in respect  of'}
+
+--- Chunk 153 ---
+Content:
+(a) refer a copy of such complaint  to the opposite  party  directing  him to give his version of the case within a period of thirty days or such extended period not exceeding fifteen days as may be granted by the District Commission;
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': '(1) The District  Commission  shall,  on admission  of a complaint,  or in respect  of', 'section_number': 'Section 38', 'start_page': 19, 'subsection': '3', 'subclause': 'a'}
+
+--- Chunk 154 ---
+Content:
+(b) if the opposite  party,  on receipt  of a copy  of the complaint,  referred  to him under clause ( a) denies or disputes the allegations contained in the complaint, or omits or fails to take any action to represent his case wit hin the time given by the District Commission, it shall proceed to settle the consumer dispute —
+
+Metadata:
+{'subsection': '3', 'section_title': '(1) The District  Commission  shall,  on admission  of a complaint,  or in respect  of', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'subclause': 'b', 'start_page': 19, 'section_number': 'Section 38'}
+
+--- Chunk 155 ---
+Content:
+39. (1) Where  the District  Commission  is satisfied  that the goods  complained  against suffer from any of the defects specified in the complaint or that any of the allegations contained in the complaint about the services or any unfair trade practices, or claims for compensation  under  product  liability  are proved,  it shall  issue  an order to the opposite  party directing him to do one or more of the following, namely: —
+
+Metadata:
+{'start_page': 21, 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_number': 'Section 39', 'section_title': '(1) Where  the District  Commission  is satisfied  that the goods  complained  against'}
+
+--- Chunk 156 ---
+Content:
+(a) to remove the defect pointed out by the appropriate laboratory from the goods in question;
+
+Metadata:
+{'section_number': 'Section 39', 'start_page': 21, 'subclause': 'a', 'section_title': '(1) Where  the District  Commission  is satisfied  that the goods  complained  against', 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
+
+--- Chunk 157 ---
+Content:
+(b) to replace the goods with new goods of similar description which shall be free from any defect;
+
+Metadata:
+{'section_number': 'Section 39', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 21, 'subclause': 'b', 'section_title': '(1) Where  the District  Commission  is satisfied  that the goods  complained  against'}
+
+--- Chunk 158 ---
+Content:
+(c) to return  to the complainant  the price,  or, as the case may be, the charges  paid by the complainant along with such interest on such price or charges as may be decided;
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_number': 'Section 39', 'subclause': 'c', 'start_page': 21, 'section_title': '(1) Where  the District  Commission  is satisfied  that the goods  complained  against'}
+
+--- Chunk 159 ---
+Content:
+(d) to pay such amount  as may be awarded  by it as compensation  to the consumer for any loss or injury  suffered  by the consumer  due to the negligence  of the opposite party: Provided that the District Commission shall have the power to grant punitive damages in such circumstances as it deems fit;
+
+Metadata:
+{'subclause': 'd', 'section_title': '(1) Where  the District  Commission  is satisfied  that the goods  complained  against', 'section_number': 'Section 39', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 21}
+
+--- Chunk 160 ---
+Content:
+(e) to pay such amount  as may be awarded  by it as compensation  in a product liability action under Chapter VI;
+
+Metadata:
+{'section_number': 'Section 39', 'start_page': 21, 'section_title': '(1) Where  the District  Commission  is satisfied  that the goods  complained  against', 'subclause': 'e', 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
+
+--- Chunk 161 ---
+Content:
+(f) to remove  the defects  in goods  or deficiencies  in the services  in question;
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_number': 'Section 39', 'section_title': '(1) Where  the District  Commission  is satisfied  that the goods  complained  against', 'subclause': 'f', 'start_page': 21}
+
+--- Chunk 162 ---
+Content:
+(g) to discontinue  the unfair  trade  practice  or restrictive  trade  practice  and not to repeat them;
+
+Metadata:
+{'start_page': 21, 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': '(1) Where  the District  Commission  is satisfied  that the goods  complained  against', 'subclause': 'g', 'section_number': 'Section 39'}
+
+--- Chunk 163 ---
+Content:
+(h) not to offer  the hazardous or  unsafe  goods  for sale;
+
+Metadata:
+{'section_title': '(1) Where  the District  Commission  is satisfied  that the goods  complained  against', 'subclause': 'h', 'section_number': 'Section 39', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 21}
+
+--- Chunk 164 ---
+Content:
+(i) to withdraw  the hazardous  goods  from  being  offered  for sale;
+
+Metadata:
+{'section_title': '(1) Where  the District  Commission  is satisfied  that the goods  complained  against', 'start_page': 21, 'section_number': 'Section 39', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'clause': 'i'}
+
+--- Chunk 165 ---
+Content:
+(j) to cease  manufacture  of hazardous  goods  and to desist  from  offering  services which are hazardous in nature;
+
+Metadata:
+{'start_page': 21, 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'subclause': 'j', 'section_title': '(1) Where  the District  Commission  is satisfied  that the goods  complained  against', 'clause': 'i', 'section_number': 'Section 39'}
+
+--- Chunk 166 ---
+Content:
+(k) to pay such sum as may be determined  by it, if it is of the opinion  that loss or injury has been suffered by a large number of consumers who are not identifiable conveniently: Provided that the minimum amount of sum so payable shall not be less than twenty -five per cent.  of the value  of such defective  goods  sold or service  provided,  as the case may be, to such consumers;
+
+Metadata:
+{'section_title': '(1) Where  the District  Commission  is satisfied  that the goods  complained  against', 'clause': 'i', 'subclause': 'k', 'start_page': 21, 'section_number': 'Section 39', 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
+
+--- Chunk 167 ---
+Content:
+40. The District  Commission  shall have  the power  to review  any of the order  passed by it if there  is an error  apparent  on the face of the record,  either  of its own motion  or on an application made by any of the parties within thirty days of such order.
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_number': 'Section 40', 'section_title': 'The District  Commission  shall have  the power  to review  any of the order  passed', 'start_page': 22}
+
+--- Chunk 168 ---
+Content:
+41. Any person  aggrieved  by an order  made  by the District  Commission  may prefer  an appeal  against  such order  to the State  Commission  on the grounds  of facts or law within  a period of forty -five days from the date of the order, in such form and manner, as may be prescribed: Provided that the State Commission may entertain an appeal after the expiry of the said period  of forty -five days,  if it is satisfied  that there  was sufficient  cause  for not filing  it within that period: Provided further that no appeal by a person, who is required to pay any amount in terms  of an order  of the District  Commission,  shall be entertained  by the State  Commission unless the appellant has  deposited fifty per cent. of that amount in the manner as may be prescribed: Provided  also that no appeal  shall lie from  any order  passed  under  sub-section  (1) of by the District Commission pursuant to a settlement by mediation under
+
+Metadata:
+{'start_page': 22, 'section_number': 'Section 41', 'section_title': 'Any person  aggrieved  by an order  made  by the District  Commission  may prefer  an', 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
+
+--- Chunk 169 ---
+Content:
+42. (1) The State Government shall, by notification, establish a State Consumer Disputes Redressal Commission, to be known as the State Commission, in the State.
+
+Metadata:
+{'section_title': '(1) The State Government shall, by notification, establish a State Consumer', 'section_number': 'Section 42', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 22}
+
+--- Chunk 170 ---
+Content:
+(2) The State  Commission  shall ordinarily  function  at the State  capital  and perform  its functions  at such other  places  as the State  Government  may in consultation  with the State Commission notify in the Official Gazette: Provided  that the State  Government  may,  by notification,  establish  regional  benches of the State Commission, at such places, as it deems fit.
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'subsection': '2', 'start_page': 22, 'section_number': 'Section 42', 'section_title': '(1) The State Government shall, by notification, establish a State Consumer'}
+
+--- Chunk 171 ---
+Content:
+(3) Each  State  Commission  shall consist  of—
+
+Metadata:
+{'start_page': 22, 'subsection': '3', 'section_number': 'Section 42', 'section_title': '(1) The State Government shall, by notification, establish a State Consumer', 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
+
+--- Chunk 172 ---
+Content:
+(a) a President;  and
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'subclause': 'a', 'section_title': '(1) The State Government shall, by notification, establish a State Consumer', 'subsection': '3', 'section_number': 'Section 42', 'start_page': 22}
+
+--- Chunk 173 ---
+Content:
+(b) not less than four or not more than such number of members as may be prescribed in consultation with the Central Government.
+
+Metadata:
+{'start_page': 22, 'subsection': '3', 'subclause': 'b', 'section_title': '(1) The State Government shall, by notification, establish a State Consumer', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_number': 'Section 42'}
+
+--- Chunk 174 ---
+Content:
+43. The Central Government may, by not ification, make rules to provide for the qualification for appointment, method of recruitment, procedure of appointment, term of office, resignation and removal of the President and members of the State Commission.
+
+Metadata:
+{'start_page': 23, 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': 'The Central Government may, by not ification, make rules to provide for the', 'section_number': 'Section 43'}
+
+--- Chunk 175 ---
+Content:
+44. The State  Government  may,  by notification , make  rules  to provide  for salaries  and allowances  and other  terms  and conditions  of service  of the President  and members  of the State  Commission.
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': 'The State  Government  may,  by notification , make  rules  to provide  for salaries  and', 'section_number': 'Section 44', 'start_page': 23}
+
+--- Chunk 176 ---
+Content:
+45. Any person  appointed  as President  or, as the case may be, a member  of the State Commission  immediately  before  the commencement  of this Act shall hold office  as such,  as President  or member,  as the case may be, till the completion  of his term.
+
+Metadata:
+{'section_number': 'Section 45', 'start_page': 23, 'section_title': 'Any person  appointed  as President  or, as the case may be, a member  of the State', 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
+
+--- Chunk 177 ---
+Content:
+46. (1) The State  Government  shall determine  the nature  and categories  of the officers and other  employees  required  to assist  the State  Commission  in the discharge  of its functions and provide the Commission with such officers and other employees as it may think fit.
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': '(1) The State  Government  shall determine  the nature  and categories  of the officers', 'start_page': 23, 'section_number': 'Section 46'}
+
+--- Chunk 178 ---
+Content:
+(2) The officers and other employees of the State Commission shall discharge their functions under the general superintendence of the President.
+
+Metadata:
+{'section_number': 'Section 46', 'section_title': '(1) The State  Government  shall determine  the nature  and categories  of the officers', 'start_page': 23, 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'subsection': '2'}
+
+--- Chunk 179 ---
+Content:
+(3) The salaries and allowances payable to and the other terms and conditions of service  of, the officers  and other  employees  of the State  Commission  shall be such as may be prescribed.
+
+Metadata:
+{'section_number': 'Section 46', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 23, 'section_title': '(1) The State  Government  shall determine  the nature  and categories  of the officers', 'subsection': '3'}
+
+--- Chunk 180 ---
+Content:
+47. (1) Subject to the other provisions of t his Act, the State Commission shall have jurisdiction —
+
+Metadata:
+{'section_title': '(1) Subject to the other provisions of t his Act, the State Commission shall have', 'start_page': 23, 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_number': 'Section 47'}
+
+--- Chunk 181 ---
+Content:
+(a) to entertain—
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_number': 'Section 47', 'section_title': '(1) Subject to the other provisions of t his Act, the State Commission shall have', 'start_page': 23, 'subclause': 'a'}
+
+--- Chunk 182 ---
+Content:
+(i) complaints  where  the value  of the goods  or services  paid as consideration,  exceeds  rupees  one crore,  but does not exceed  rupees  ten crore: Provided  that where  the Central  Government  deems  it necessary  so to do, it may prescribe such other value, as it deems fit;
+
+Metadata:
+{'clause': 'i', 'section_number': 'Section 47', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': '(1) Subject to the other provisions of t his Act, the State Commission shall have', 'start_page': 23}
+
+--- Chunk 183 ---
+Content:
+(ii) complaints  against  unfair  contracts,  where  the value  of goods  or services paid as consideration does not exceed ten crore rupees;
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'clause': 'ii', 'start_page': 23, 'section_number': 'Section 47', 'section_title': '(1) Subject to the other provisions of t his Act, the State Commission shall have'}
+
+--- Chunk 184 ---
+Content:
+(iii) appeals against the orders of any District Commission within the State; and
+
+Metadata:
+{'start_page': 23, 'section_title': '(1) Subject to the other provisions of t his Act, the State Commission shall have', 'clause': 'iii', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_number': 'Section 47'}
+
+--- Chunk 185 ---
+Content:
+(b) to call for the records  and pass appropriate  orders  in any consumer  dispute which  is pending  before  or has been decided  by any District  Commission  within  the State, where it appears to the State Commission that such District Commission has exercised  a jurisdiction  not vested  in it by law, or has failed  to exercise  a jurisdiction  so vested  or has acted  in exercise  of its jurisdiction  illegally  or with materi al irregularity.
+
+Metadata:
+{'clause': 'iii', 'section_number': 'Section 47', 'section_title': '(1) Subject to the other provisions of t his Act, the State Commission shall have', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 23, 'subclause': 'b'}
+
+--- Chunk 186 ---
+Content:
+(2) The jurisdiction,  powers  and authority  of the State  Commission  may be exercised by Benches thereof, and a Bench may be constituted by the President with one or more members as the President may deem fit: Provided  that the senior -most  member  shall preside  over the Bench.
+
+Metadata:
+{'section_number': 'Section 47', 'start_page': 23, 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': '(1) Subject to the other provisions of t his Act, the State Commission shall have', 'subsection': '2'}
+
+--- Chunk 187 ---
+Content:
+(3) Where  the members  of a Bench  differ  in opinion  on any point,  the points  shall be decided  according  to the opinion  of the majority,  if there  is a majority,  but if the members  are equally divided, they shall state the point or points on which they differ, and make a reference to the President  who shall either  hear the point  or points  himself  or refer the case for hearing on such point  or points  by one or more  of the other  members  and such point  or points  shall
+
+Metadata:
+{'section_number': 'Section 47', 'subsection': '3', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': '(1) Subject to the other provisions of t his Act, the State Commission shall have', 'start_page': 23}
+
+--- Chunk 188 ---
+Content:
+48. On the application  of the complainant  or of its own motion,  the State  Commission may, at any stage of the proceeding, transfer any complaint pending before a District Commission to another District Commission within the State if the interest of justice so requires.
+
+Metadata:
+{'section_title': 'On the application  of the complainant  or of its own motion,  the State  Commission', 'section_number': 'Section 48', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 24}
+
+--- Chunk 189 ---
+Content:
+49. (1) The provisions  relating  to complaints  under  sections  35, 36, 37, 38 and 39 shall, with such modifications  as may be necessary,  be applicable  to the disposal  of complaints  by the State Commission.
+
+Metadata:
+{'start_page': 24, 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': '(1) The provisions  relating  to complaints  under  sections  35, 36, 37, 38 and 39 shall,', 'section_number': 'Section 49'}
+
+--- Chunk 190 ---
+Content:
+(2) Without  prejudice  to the provisions  of sub-section  (1), the State  Commission  may also declare any terms of contract, which is unfair to any consumer, to be null and void.
+
+Metadata:
+{'section_number': 'Section 49', 'section_title': '(1) The provisions  relating  to complaints  under  sections  35, 36, 37, 38 and 39 shall,', 'subsection': '2', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 24}
+
+--- Chunk 191 ---
+Content:
+50. The State  Commission  shall have the power  to review  any of the order  passed  by it if there is an error apparent on the face of the record, either of its own motion or on an application made by  any of the parties within thirty days of such order.
+
+Metadata:
+{'section_number': 'Section 50', 'section_title': 'The State  Commission  shall have the power  to review  any of the order  passed  by', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 24}
+
+--- Chunk 192 ---
+Content:
+51. (1) Any person  aggrieved  by an order  made  by the State  Commission  in exercise  of its powers conferred by sub -clause ( i) or ( ii) of clause ( a) of sub -section ( 1) of section 47 may prefer  an appeal  against  such order  to the National  Commission  within  a period  of thirty days from the date of the order in such form and manner as may be prescribed: Provided  that the National  Commission  shall not entertain  the appeal  after the expiry of the said period  of thirty  days unless  it is satisfied  that there  was sufficient  cause  for not filing it within that period: Provided further that no appeal by a person, who is required to pay any amount in terms  of an order  of the State  Commission,  shall be entertained  by the National  Commission unless the appellant has deposited fifty per cent. of that amount in the manner as may be prescribed.
+
+Metadata:
+{'start_page': 24, 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_number': 'Section 51', 'section_title': '(1) Any person  aggrieved  by an order  made  by the State  Commission  in exercise  of'}
+
+--- Chunk 193 ---
+Content:
+(2) Save as otherwise expressly provided under this  Act or by any other law for the time being  in force,  an appeal  shall lie to the National  Commission  from any order  passed  in appeal by any State Commission, if the National Commission is satisfied that the case involves a substantial question of law.
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 24, 'section_title': '(1) Any person  aggrieved  by an order  made  by the State  Commission  in exercise  of', 'subsection': '2', 'section_number': 'Section 51'}
+
+--- Chunk 194 ---
+Content:
+(3) In an appeal involving a question of law, the memorandum of appeal shall precisely state the substantial question of law involved in the appeal.
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': '(1) Any person  aggrieved  by an order  made  by the State  Commission  in exercise  of', 'section_number': 'Section 51', 'start_page': 24, 'subsection': '3'}
+
+--- Chunk 195 ---
+Content:
+(4) Where  the National  Commission  is satisfied  that a substantial  question  of law is involved  in any case,  it shall formulate  that question  and hear the appeal  on that question:
+
+Metadata:
+{'subsection': '4', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_number': 'Section 51', 'section_title': '(1) Any person  aggrieved  by an order  made  by the State  Commission  in exercise  of', 'start_page': 24}
+
+--- Chunk 196 ---
+Content:
+52. An appeal  filed before  the State  Commission  or the National  Commission,  as the case may be, shall  be heard  as expeditiously  as possible  and every  endeavour  shall  be made to dispose of the appeal within a period of ninety days from the date of its admission: Provided  that no adjournment  shall  ordinarily  be granted  by the State  Commission  or the National Commission, as the case may be, unless sufficient cause is shown and the reasons for grant of adjournment have been recorded in writing by such Commission: Provided  further  that the State  Commission  or the National  Commission,  as the case may be, shall make such orders as to the costs occasioned by the adjournment, as may be specified by regulations: Provided also that in the event of an appeal being disposed of after the period so specified, the State Commission or the National Commission, as the case may be, shall record in writing the reasons for the same at the time of disposing of the said appeal.
+
+Metadata:
+{'section_title': 'An appeal  filed before  the State  Commission  or the National  Commission,  as the', 'start_page': 25, 'section_number': 'Section 52', 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
+
+--- Chunk 197 ---
+Content:
+53. (1) The Central Government shall, by notification, establish a National Consumer Disputes Redressal Commission, to be known as the  National Commission.
+
+Metadata:
+{'section_number': 'Section 53', 'section_title': '(1) The Central Government shall, by notification, establish a National Consumer', 'start_page': 25, 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
+
+--- Chunk 198 ---
+Content:
+(2) The National  Commission  shall ordinarily  function  at the National  Capital  Region and perform  its functions  at such other  places  as the Central  Government  may in consultation with the National  Commission  notify  in the Official  Gazette: Provided that the Central Government may, by notification, establish regional Benches of the National Commission, at such places, as it deems fit.
+
+Metadata:
+{'section_number': 'Section 53', 'section_title': '(1) The Central Government shall, by notification, establish a National Consumer', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'subsection': '2', 'start_page': 25}
+
+--- Chunk 199 ---
+Content:
+54. The National  Commission  shall consist  of—
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 25, 'section_number': 'Section 54', 'section_title': 'The National  Commission  shall consist  of—'}
+
+--- Chunk 200 ---
+Content:
+(a) a President;  and
+
+Metadata:
+{'section_title': 'The National  Commission  shall consist  of—', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 25, 'section_number': 'Section 54', 'subclause': 'a'}
+
+--- Chunk 201 ---
+Content:
+(b) not less than four and not more than such  number of members as may be prescribed.
+
+Metadata:
+{'start_page': 25, 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'subclause': 'b', 'section_number': 'Section 54', 'section_title': 'The National  Commission  shall consist  of—'}
+
+--- Chunk 202 ---
+Content:
+55. (1) The Central Government may, by notification, make rules to provide for qualifications, appointment, term of office, salaries and allowances, resignation, removal and other terms and conditions of service of the President and members of the National Commission: Provided  that the President  and members  of the National  Commission  shall hold office for such term as specified  in the rules  made  by the Central  Government  but not exceeding five years  from  the date on which  he enters  upon  his office  and shall be eligible  for re-appointment: Provided  further  that no President  or members  shall hold office  as such after he has attained  such age as specified  in the rules  made  by the Central  Government  which  shall not exceed,—
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': '(1) The Central Government may, by notification, make rules to provide for', 'start_page': 25, 'section_number': 'Section 55'}
+
+--- Chunk 203 ---
+Content:
+(a) in the case of the President,  the age of seventy  years;
+
+Metadata:
+{'section_title': '(1) The Central Government may, by notification, make rules to provide for', 'start_page': 25, 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'subclause': 'a', 'section_number': 'Section 55'}
+
+--- Chunk 204 ---
+Content:
+(b) in the case of any other  member,  the age of sixty -seven  years.
+
+Metadata:
+{'section_title': '(1) The Central Government may, by notification, make rules to provide for', 'section_number': 'Section 55', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 25, 'subclause': 'b'}
+
+--- Chunk 205 ---
+Content:
+(2) Neither  the salary  and allowances  nor the other  terms  and conditions  of service  of President  and members  of the National  Commission  shall be varied  to his disadvantage  after his appointment.
+
+Metadata:
+{'section_title': '(1) The Central Government may, by notification, make rules to provide for', 'subsection': '2', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_number': 'Section 55', 'start_page': 25}
+
+--- Chunk 206 ---
+Content:
+56. The President and every other member appointed immediately before the commencement  of section  177 of the Finance  Act, 2017  shall continue  to be governed  by the provisions  of the Consumer  Protection  Act, 1986  and the rules  made  thereunder  as if this Act had not come into force.
+
+Metadata:
+{'section_number': 'Section 56', 'section_title': 'The President and every other member appointed immediately before the', 'start_page': 26, 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
+
+--- Chunk 207 ---
+Content:
+57. (1) The Central  Government  shall provide,  in consultation  with the President  of the National  Commission,  such number  of officers  and other  employees  to assist  the National Commission in the discharge of its functions as it may think fit.
+
+Metadata:
+{'start_page': 26, 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_number': 'Section 57', 'section_title': '(1) The Central  Government  shall provide,  in consultation  with the President  of the'}
+
+--- Chunk 208 ---
+Content:
+(2) The officers  and other  employees  of the National  Commission  shall discharge  their functions  under  the general  superintendence  of the President  of the National  Commission.
+
+Metadata:
+{'start_page': 26, 'subsection': '2', 'section_number': 'Section 57', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': '(1) The Central  Government  shall provide,  in consultation  with the President  of the'}
+
+--- Chunk 209 ---
+Content:
+(3) The salaries and allowances payable to, and the other terms and conditions of service of, the officers and other employees of the National Commission shall be su ch as may be prescribed.
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': '(1) The Central  Government  shall provide,  in consultation  with the President  of the', 'start_page': 26, 'section_number': 'Section 57', 'subsection': '3'}
+
+--- Chunk 210 ---
+Content:
+58. (1) Subject  to the other  provisions  of this Act, the National  Commission  shall have jurisdiction —
+
+Metadata:
+{'start_page': 26, 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': '(1) Subject  to the other  provisions  of this Act, the National  Commission  shall have', 'section_number': 'Section 58'}
+
+--- Chunk 211 ---
+Content:
+(a) to entertain—
+
+Metadata:
+{'subclause': 'a', 'section_number': 'Section 58', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': '(1) Subject  to the other  provisions  of this Act, the National  Commission  shall have', 'start_page': 26}
+
+--- Chunk 212 ---
+Content:
+(i) complaints  where  the value  of the goods  or services  paid as consideration exceeds rupees ten crore: Provided  that where  the Central  Government  deems  it necessary  so to do, it may prescribe such other value, as it deems fit;
+
+Metadata:
+{'start_page': 26, 'section_number': 'Section 58', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'clause': 'i', 'section_title': '(1) Subject  to the other  provisions  of this Act, the National  Commission  shall have'}
+
+--- Chunk 213 ---
+Content:
+(ii) complaints  against  unfair  contracts,  where  the value  of goods  or services paid as consideration exceeds ten crore rupees;
+
+Metadata:
+{'section_title': '(1) Subject  to the other  provisions  of this Act, the National  Commission  shall have', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'clause': 'ii', 'section_number': 'Section 58', 'start_page': 26}
+
+--- Chunk 214 ---
+Content:
+(iii) appeals  against  the orders of  any State Commission;
+
+Metadata:
+{'clause': 'iii', 'start_page': 26, 'section_title': '(1) Subject  to the other  provisions  of this Act, the National  Commission  shall have', 'section_number': 'Section 58', 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
+
+--- Chunk 215 ---
+Content:
+(iv) appeals  against  the orders of the Central  Authority;  and
+
+Metadata:
+{'section_title': '(1) Subject  to the other  provisions  of this Act, the National  Commission  shall have', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'clause': 'iv', 'section_number': 'Section 58', 'start_page': 26}
+
+--- Chunk 216 ---
+Content:
+(b) to call for the records  and pass appropriate  orders  in any consumer  dispute which is pending before or has been decided by any State Commission where it appears to the National  Commission that such State Commission has exercised a jurisdiction  not vested  in it by law, or has failed  to exercise  a jurisdiction  so vested,  or has acted  in the exercise  of its jurisdiction  illegally  or with material  irregularity.
+
+Metadata:
+{'clause': 'iv', 'start_page': 26, 'section_number': 'Section 58', 'section_title': '(1) Subject  to the other  provisions  of this Act, the National  Commission  shall have', 'subclause': 'b', 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
+
+--- Chunk 217 ---
+Content:
+(2) The jurisdiction,  powers  and authority  of the National  Commission  may be exercised by Benches thereof and a Bench may be constituted by the President with one or more members as he may deem fit: Provided  that the senior -most  member  of the Bench  shall preside  over the Bench.
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': '(1) Subject  to the other  provisions  of this Act, the National  Commission  shall have', 'start_page': 26, 'section_number': 'Section 58', 'subsection': '2'}
+
+--- Chunk 218 ---
+Content:
+(3) Where  the members  of a Bench  differ  in opinion  on any point,  the points  shall be decided  according  to the opinion  of the majority,  if there  is a majority,  but if the members  are equally divided, they shall state the point or points on which they differ, and make a reference to the President  who shall either  hear the point  or points  himself  or refer the case for hearing on such point  or points  by one or more  of the other  members  and such point  or points  shall be decided  according  to the opinion  of the majority  of the members  who have heard  the case, including those who first heard it: Provided  that the President  or the other  member,  as the case may be, shall give opinion on the point or points so referred within a period of two months from the date of such reference.
+
+Metadata:
+{'subsection': '3', 'section_title': '(1) Subject  to the other  provisions  of this Act, the National  Commission  shall have', 'start_page': 26, 'section_number': 'Section 58', 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
+
+--- Chunk 219 ---
+Content:
+59. (1) The provisions  relating  to complaints  under  sections  35, 36, 37, 38 and 39 shall, with such modifications as may be considered necessary, be applicable to  the disposal of complaints by the National Commission.
+
+Metadata:
+{'section_title': '(1) The provisions  relating  to complaints  under  sections  35, 36, 37, 38 and 39 shall,', 'start_page': 26, 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_number': 'Section 59'}
+
+--- Chunk 220 ---
+Content:
+(2) Without  prejudice  to sub-section  (1), the National  Commission  may also declare any terms of contract, which is unfair to any consumer to be null and void.
+
+Metadata:
+{'section_title': '(1) The provisions  relating  to complaints  under  sections  35, 36, 37, 38 and 39 shall,', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 26, 'section_number': 'Section 59', 'subsection': '2'}
+
+--- Chunk 221 ---
+Content:
+60. The National  Commission  shall have the power  to review  any of the order  passed by it if there  is an error  apparent  on the face of the record,  either  of its own motion  or on an application made by any of the parties within thirty days of such order.
+
+Metadata:
+{'section_title': 'The National  Commission  shall have the power  to review  any of the order  passed', 'start_page': 27, 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_number': 'Section 60'}
+
+--- Chunk 222 ---
+Content:
+61. Where an order is passed by the National Commission ex parte , the aggrieved party may make an application to the Commission for setting aside such order.
+
+Metadata:
+{'start_page': 27, 'section_number': 'Section 61', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': 'Where an order is passed by the National Commission ex parte , the aggrieved'}
+
+--- Chunk 223 ---
+Content:
+62. On the application of the complainant or of its own motion, the National Commission may,  at any stage  of the proceeding,  in the interest  of justice,  transfer  any complaint  pending before the District Commission of one State to a District Commission of another State or before one State Commission to another State Commission.
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_number': 'Section 62', 'start_page': 27, 'section_title': 'On the application of the complainant or of its own motion, the National Commission'}
+
+--- Chunk 224 ---
+Content:
+63. When the office of President of  the National Commission is vacant or a person occupying  such office  is, by reason  of absence  or otherwise,  unable  to perform  the duties  of his office,  these  shall be performed  by the senior -most  member  of the National  Commission: Provided that where a retired Judge of a High Court or a person who has been a Judicial  Member  is a member  of the National  Commission,  such member  or where  the number of such members is more than one, the senior -most person amongst such members, shall preside over the National Commission in the absence of President of that Commission.
+
+Metadata:
+{'section_title': 'When the office of President of  the National Commission is vacant or a person', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_number': 'Section 63', 'start_page': 27}
+
+--- Chunk 225 ---
+Content:
+64. No act or proceeding of the District Commission, the State Commission or the National  Commission  shall be invalid  by reason  only of the existence  of any vacancy  amongst its members or any defect in the constitution thereof.
+
+Metadata:
+{'section_title': 'No act or proceeding of the District Commission, the State Commission or the', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_number': 'Section 64', 'start_page': 27}
+
+--- Chunk 226 ---
+Content:
+65. (1) All notices,  required  by this Act to be served,  shall be served  by delivering  or transmitting  a copy  thereof  by registered  post acknowledgment  due addressed  to opposite party against whom complaint is made or to the complainant by speed post or by such courier  service,  approved  by the District  Commission,  the State  Commission  or the National Commission, as the case may be, or by any other mode of transmission of documents including electronic means.
+
+Metadata:
+{'section_title': '(1) All notices,  required  by this Act to be served,  shall be served  by delivering  or', 'section_number': 'Section 65', 'start_page': 27, 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
+
+--- Chunk 227 ---
+Content:
+(2) Without prejudice to the provisions contained in sub -section ( 1), the notice required by this Act may be served  on an electronic  service  provider  at the address  provided  by it on the electronic  platform  from  where  it provides  its services  as such and for this purpose,  the electronic  service  provider  shall designate  a nodal  officer  to accept  and process  such notices.
+
+Metadata:
+{'start_page': 27, 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'subsection': '2', 'section_number': 'Section 65', 'section_title': '(1) All notices,  required  by this Act to be served,  shall be served  by delivering  or'}
+
+--- Chunk 228 ---
+Content:
+(3) When an acknowledgment or any other receipt purporting to be signed by the opposite party or his agent or, as the case may be, by the complainant is received by the District Commission, the State Commission or the National Commission, as the case may be, or postal  article  containing  the notice  is received  back by such District  Commission,  State Commission or the National Commission, with an endorsement purporting to have been made  by a postal  employee  or by any person  authorised  by the courier  service  to the effect that the opposite  party  or his agent  or complainant  had refused  to take delivery  of the postal article  containing  the notice  or had refused  to accept  the notice  by any other  means  specified in sub-section  (1) when  tendered  or transmitted  to him, the District  Commission  or the State Commission  or the National  Commission,  as the case may be, shall declare  that the notice has been duly served on the opposite party or to the complainant, as the case may be: Provided that where the notice was properly addressed, pre -paid and duly sent by registered post acknowledgment due, a declaration referred to in this sub -section shall be made  notwithstanding  the fact that the acknowledgment  has been  lost or misplaced,  or for
+
+Metadata:
+{'section_number': 'Section 65', 'section_title': '(1) All notices,  required  by this Act to be served,  shall be served  by delivering  or', 'subsection': '3', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 27}
+
+--- Chunk 229 ---
+Content:
+any other  reason,  has not been received  by the District  Commission,  the State  Commission or the National  Commission,  as the case may be, within  thirty  days from  the date of issue  of notice.
+
+Metadata:
+{'subsection': '3', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 27, 'section_title': '(1) All notices,  required  by this Act to be served,  shall be served  by delivering  or', 'section_number': 'Section 65'}
+
+--- Chunk 230 ---
+Content:
+66. Where  the National  Commission  or the State  Commission,  as the case may be, on an application by a complainant or otherwise, is of the opinion that it involves the larger interest of consumers, it may direct any individual or organisation  or expert to assist the National Commission or the State Commission, as the case may be.
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_number': 'Section 66', 'start_page': 28, 'section_title': 'Where  the National  Commission  or the State  Commission,  as the case may be, on'}
+
+--- Chunk 231 ---
+Content:
+67. Any person,  aggrieved  by an order  made  by the National  Commission  in exercise of its powers  conferred  by sub-clause  (i) or (ii) of clause  (a) of sub-section  (1) of section  58, may prefer  an appeal  against  such order  to the Supreme  Court  within  a period  of thirty  days from the date of the order: Provided  that the Supreme  Court  may entertain  an appeal  after the expiry  of the said period  of thirty  days if it is satisfied  that there  was sufficient  cause  for not filing  it within  that period: Provided further that no appeal by a person who is required to pay any amount in terms of an order of the National Commission shall be entertained by the Supreme Court unless t hat person has deposited fifty per cent. of that amount in the manner as may be prescribed.
+
+Metadata:
+{'section_number': 'Section 67', 'start_page': 28, 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': 'Any person,  aggrieved  by an order  made  by the National  Commission  in exercise'}
+
+--- Chunk 232 ---
+Content:
+68. Every order of a District Commission or the State Commission or the National Commission,  as the case may be, shall,  if no appeal  has been preferred  against  such order under the provisions of this Act, be final.
+
+Metadata:
+{'section_number': 'Section 68', 'section_title': 'Every order of a District Commission or the State Commission or the National', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 28}
+
+--- Chunk 233 ---
+Content:
+69. (1) The District  Commission,  the State  Commission  or the National  Commission shall not admit a complaint unless it is filed within two years from the date on which the cause of action has arisen.
+
+Metadata:
+{'section_number': 'Section 69', 'start_page': 28, 'section_title': '(1) The District  Commission,  the State  Commission  or the National  Commission', 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
+
+--- Chunk 234 ---
+Content:
+(2) Notwithstanding anything contained in sub -section ( 1), a complaint may be entertained after the period specified in sub -section ( 1), if the complainant satisfies the District Commission, the State Commission or the National Commission, as the case may be, that he had sufficient cause for not filing the complaint within such period: Provided  that no such complaint  shall be entertained  unless  the District  Commission or the State  Commission  or the National  Commission,  as the case may be, records  its reasons for condoning such delay.
+
+Metadata:
+{'subsection': '2', 'section_title': '(1) The District  Commission,  the State  Commission  or the National  Commission', 'section_number': 'Section 69', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 28}
+
+--- Chunk 235 ---
+Content:
+70. (1) The National  Commission  shall have  the authority  to lay down  such adequate standards  in consultation  with the Central  Government  from time to time,  for better  protection of the interests  of consumers  and for that purpose,  shall  have  administrative  control  over all the State Commissions in the following matters, namely: —
+
+Metadata:
+{'section_number': 'Section 70', 'section_title': '(1) The National  Commission  shall have  the authority  to lay down  such adequate', 'start_page': 28, 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
+
+--- Chunk 236 ---
+Content:
+(a) monitoring  performance  of the State  Commissions  in terms  of their disposal by calling for periodical returns regarding the institution, disposal and pendency of cases;
+
+Metadata:
+{'start_page': 28, 'section_title': '(1) The National  Commission  shall have  the authority  to lay down  such adequate', 'subclause': 'a', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_number': 'Section 70'}
+
+--- Chunk 237 ---
+Content:
+(b) investigating into any allegations against the President and members of a State  Commission  and submitting  inquiry  report  to the State  Government  concerned along with copy endorsed to the Central Government for necessary action;
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_number': 'Section 70', 'subclause': 'b', 'start_page': 28, 'section_title': '(1) The National  Commission  shall have  the authority  to lay down  such adequate'}
+
+--- Chunk 238 ---
+Content:
+(c) issuance of instructions regarding adoption of uniform procedure in the hearing  of matters,  prior  service  of copies  of documents  produced  by one party  to the opposite  parties,  furnishing  of english  translation  of judgments  written  in any language, speedy grant of copies of documents;
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'subclause': 'c', 'section_number': 'Section 70', 'start_page': 28, 'section_title': '(1) The National  Commission  shall have  the authority  to lay down  such adequate'}
+
+--- Chunk 239 ---
+Content:
+71. Every order made by a District Commission, State Commission or the National Commission  shall be enforced  by it in the same  manner  as if it were a decree  made  by a Court in a suit before  it and the provisions  of Order  XXI of the First Schedule  to the Code  of Civil Procedure, 1908 shall, as far as may be, applicable, subject to the modification that every reference  therein  to the decree  shall be construed  as reference  to the order  made  under  this Act.
+
+Metadata:
+{'start_page': 29, 'section_number': 'Section 71', 'section_title': 'Every order made by a District Commission, State Commission or the National', 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
+
+--- Chunk 240 ---
+Content:
+72. (1) Whoever  fails to comply  with any order  made  by the District  Commission  or the State  Commission  or the National  Commission,  as the case may be, shall be punishable  with imprisonment  for a term which  shall not be less than one month,  but which  may extend  to three years, or with fine, which shall not be less than twenty -five thousand rupees, but which may extend to one lakh rupees, or with both.
+
+Metadata:
+{'section_title': '(1) Whoever  fails to comply  with any order  made  by the District  Commission  or the', 'section_number': 'Section 72', 'start_page': 29, 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
+
+--- Chunk 241 ---
+Content:
+(2) Notwithstanding  anything  contained  in the Code  of Criminal  Procedure,  1973,  the District Commission, the State Commission or the National Commission, as the case may be, shall have the power of a Judicial Magistrate of first class for the trial of offences under sub-section ( 1), and on conferment of such powers, the District Commission or the State Commission  or the National  Commission,  as the case may be, shall be deemed  to be a Judicial Magistrate of first class for the purposes of the Code of Criminal Procedure, 1973.
+
+Metadata:
+{'section_title': '(1) Whoever  fails to comply  with any order  made  by the District  Commission  or the', 'subsection': '2', 'section_number': 'Section 72', 'start_page': 29, 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
+
+--- Chunk 242 ---
+Content:
+(3) Save as otherwise provided, the offences under sub -section ( 1) shall be tried summarily by the District Commission or the State Commission or the National Commission, as the case may be.
+
+Metadata:
+{'subsection': '3', 'section_title': '(1) Whoever  fails to comply  with any order  made  by the District  Commission  or the', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 29, 'section_number': 'Section 72'}
+
+--- Chunk 243 ---
+Content:
+73. (1) Notwithstanding  anything  contained  in the Code  of Criminal  Procedure,  1973, where an order is passed under sub -section ( 1) of section 72, an appeal shall lie, both on facts and on law from —
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 29, 'section_title': '(1) Notwithstanding  anything  contained  in the Code  of Criminal  Procedure,  1973,', 'section_number': 'Section 73'}
+
+--- Chunk 244 ---
+Content:
+(a) the order  made  by the District  Commission  to the State  Commission;
+
+Metadata:
+{'section_number': 'Section 73', 'section_title': '(1) Notwithstanding  anything  contained  in the Code  of Criminal  Procedure,  1973,', 'start_page': 29, 'subclause': 'a', 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
+
+--- Chunk 245 ---
+Content:
+(b) the order  made  by the State  Commission  to the National  Commission;  and
+
+Metadata:
+{'section_number': 'Section 73', 'start_page': 29, 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'subclause': 'b', 'section_title': '(1) Notwithstanding  anything  contained  in the Code  of Criminal  Procedure,  1973,'}
+
+--- Chunk 246 ---
+Content:
+(c) the order  made  by the National  Commission  to the Supreme  Court.
+
+Metadata:
+{'section_number': 'Section 73', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': '(1) Notwithstanding  anything  contained  in the Code  of Criminal  Procedure,  1973,', 'start_page': 29, 'subclause': 'c'}
+
+--- Chunk 247 ---
+Content:
+(2) Except  as provided  in sub-section  (1), no appeal  shall lie before  any court,  from any order  of a District  Commission  or a State  Commission  or the National  Commission,  as the case may be.
+
+Metadata:
+{'start_page': 29, 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': '(1) Notwithstanding  anything  contained  in the Code  of Criminal  Procedure,  1973,', 'section_number': 'Section 73', 'subsection': '2'}
+
+--- Chunk 248 ---
+Content:
+(3) Every appeal under this section shall be preferred within a period of thirty days from the date of order of a District Commission or a State Commission or the National Commission, as the case may be:
+
+Metadata:
+{'section_number': 'Section 73', 'subsection': '3', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': '(1) Notwithstanding  anything  contained  in the Code  of Criminal  Procedure,  1973,', 'start_page': 29}
+
+--- Chunk 249 ---
+Content:
+74. (1) The State  Government  shall establish,  by notification,  a consumer  mediation cell to be attached  to each of the District  Commissions  and the State  Commissions  of that State.
+
+Metadata:
+{'section_number': 'Section 74', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': '(1) The State  Government  shall establish,  by notification,  a consumer  mediation', 'start_page': 30}
+
+--- Chunk 250 ---
+Content:
+(2) The Central  Government  shall establish,  by notification,  a consumer  mediation  cell to be attached to the National Commission and each of the regional Benches.
+
+Metadata:
+{'start_page': 30, 'section_number': 'Section 74', 'subsection': '2', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': '(1) The State  Government  shall establish,  by notification,  a consumer  mediation'}
+
+--- Chunk 251 ---
+Content:
+(3) A consumer  mediation  cell shall consist  of such persons  as may be prescribed.
+
+Metadata:
+{'section_number': 'Section 74', 'subsection': '3', 'section_title': '(1) The State  Government  shall establish,  by notification,  a consumer  mediation', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 30}
+
+--- Chunk 252 ---
+Content:
+(4) Every  consumer  mediation  cell shall maintain—
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 30, 'section_number': 'Section 74', 'subsection': '4', 'section_title': '(1) The State  Government  shall establish,  by notification,  a consumer  mediation'}
+
+--- Chunk 253 ---
+Content:
+(a) a list of empanelled  mediators;
+
+Metadata:
+{'subsection': '4', 'start_page': 30, 'section_title': '(1) The State  Government  shall establish,  by notification,  a consumer  mediation', 'section_number': 'Section 74', 'subclause': 'a', 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
+
+--- Chunk 254 ---
+Content:
+(b) a list of cases  handled  by the cell;
+
+Metadata:
+{'section_number': 'Section 74', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': '(1) The State  Government  shall establish,  by notification,  a consumer  mediation', 'start_page': 30, 'subsection': '4', 'subclause': 'b'}
+
+--- Chunk 255 ---
+Content:
+(c) record  of proceeding;  and
+
+Metadata:
+{'section_number': 'Section 74', 'subsection': '4', 'section_title': '(1) The State  Government  shall establish,  by notification,  a consumer  mediation', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 30, 'subclause': 'c'}
+
+--- Chunk 256 ---
+Content:
+(d) any other  information  as may be specified  by regulations.
+
+Metadata:
+{'start_page': 30, 'section_title': '(1) The State  Government  shall establish,  by notification,  a consumer  mediation', 'subclause': 'd', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_number': 'Section 74', 'subsection': '4'}
+
+--- Chunk 257 ---
+Content:
+(5) Every consumer mediation cell shall submit a quarterly report to the District Commission,  State  Commission  or the National  Commission  to which  it is attached,  in the manner specified by regulations.
+
+Metadata:
+{'section_title': '(1) The State  Government  shall establish,  by notification,  a consumer  mediation', 'section_number': 'Section 74', 'subsection': '5', 'start_page': 30, 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
+
+--- Chunk 258 ---
+Content:
+75. (1) For the purpose  of mediation,  the National  Commission  or the State  Commission or the District  Commission,  as the case may be, shall  prepare  a panel  of the mediators  to be maintained by the consumer mediation cell attached to it, on the recommendation of a selection committee consisting of the President and a member of that Commission.
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_number': 'Section 75', 'start_page': 30, 'section_title': '(1) For the purpose  of mediation,  the National  Commission  or the State  Commission'}
+
+--- Chunk 259 ---
+Content:
+(2) The qualifications and experience required for empanelment as mediator, the procedure  for empanelment,  the manner  of training  empanelled  mediators,  the fee payable  to empanelled  mediator, the terms and conditions for empanelment, the code of conduct for empanelled  mediators,  the grounds  on which,  and the manner  in which,  empanelled  mediators shall be removed  or empanelment  shall be cancelled  and other  matters  relating  thereto,  shall be such as may be specified by regulations.
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': '(1) For the purpose  of mediation,  the National  Commission  or the State  Commission', 'subsection': '2', 'section_number': 'Section 75', 'start_page': 30}
+
+--- Chunk 260 ---
+Content:
+(3) The panel  of mediators  prepared  under  sub-section  (1) shall be valid  for a period  of five years,  and the empanelled  mediators  shall be eligible  to be considered  for re-empanelment for another term, subject to  such conditions as may be specified by regulations.
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': '(1) For the purpose  of mediation,  the National  Commission  or the State  Commission', 'section_number': 'Section 75', 'subsection': '3', 'start_page': 30}
+
+--- Chunk 261 ---
+Content:
+76. The District Commission, the State Commission or the National Commission shall, while  nominating  any person  from  the panel  of mediators  referred  to in section  75, consider his suitability for resolving the consumer dispute involved.
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 30, 'section_title': 'The District Commission, the State Commission or the National Commission shall,', 'section_number': 'Section 76'}
+
+--- Chunk 262 ---
+Content:
+77. It shall be the duty of the mediator  to disclose—
+
+Metadata:
+{'start_page': 30, 'section_title': 'It shall be the duty of the mediator  to disclose—', 'section_number': 'Section 77', 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
+
+--- Chunk 263 ---
+Content:
+(a) any personal,  professional  or financial  interest  in the outcome  of the consumer dispute;
+
+Metadata:
+{'section_title': 'It shall be the duty of the mediator  to disclose—', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_number': 'Section 77', 'start_page': 30, 'subclause': 'a'}
+
+--- Chunk 264 ---
+Content:
+(b) the circumstances  which  may give rise to a justifiable  doubt  as to his independence or  impartiality;  and
+
+Metadata:
+{'section_number': 'Section 77', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'subclause': 'b', 'section_title': 'It shall be the duty of the mediator  to disclose—', 'start_page': 30}
+
+--- Chunk 265 ---
+Content:
+(c) such other facts as may be specified by regulations.
+
+Metadata:
+{'section_number': 'Section 77', 'start_page': 30, 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'subclause': 'c', 'section_title': 'It shall be the duty of the mediator  to disclose—'}
+
+--- Chunk 266 ---
+Content:
+78. Where the District Commission or the State Commission or the National Commission,  as the case may be, is satisfied,  on the information  furnished  by the mediator  or on the information r eceived from any other person including parties to the complaint and after hearing the mediator, it shall replace such mediator by another mediator.
+
+Metadata:
+{'start_page': 30, 'section_number': 'Section 78', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': 'Where the District Commission or the State Commission or the National'}
+
+--- Chunk 267 ---
+Content:
+79. (1) The mediation shall be held in the consumer mediation cell attached to the District  Commission,  the State  Commission  or the National  Commission,  as the case may be.
+
+Metadata:
+{'start_page': 31, 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_number': 'Section 79', 'section_title': '(1) The mediation shall be held in the consumer mediation cell attached to the'}
+
+--- Chunk 268 ---
+Content:
+(2) Where  a consumer  dispute  is referred  for mediation  by the District  Commission  or the State Commission or the National Commission, as the case may be, the mediator nominated by such Commission shall have regard to the rights and obligations of the parties, the usages  of trade,  if any, the circumstances  giving  rise to the consumer  disput e and such other relevant  factors,  as he may deem  necessary  and shall be guided  by the principles  of natural justice while carrying out mediation.
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'subsection': '2', 'start_page': 31, 'section_title': '(1) The mediation shall be held in the consumer mediation cell attached to the', 'section_number': 'Section 79'}
+
+--- Chunk 269 ---
+Content:
+(3) The mediator  so nominated  shall conduct  mediation  within  such time and in such manner as may be specified by regulations.
+
+Metadata:
+{'section_number': 'Section 79', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 31, 'subsection': '3', 'section_title': '(1) The mediation shall be held in the consumer mediation cell attached to the'}
+
+--- Chunk 270 ---
+Content:
+80. (1) Pursuant to mediation, if an agreement is reached between the parties with respect  to all of the issues  involved  in the consumer  dispute  or with respect  to only some  of the issues,  the terms  of such agreement  shall be reduced  to writing  accordingly,  and signed by the parties to such dispute or their authorised representatives.
+
+Metadata:
+{'section_number': 'Section 80', 'section_title': '(1) Pursuant to mediation, if an agreement is reached between the parties with', 'start_page': 31, 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
+
+--- Chunk 271 ---
+Content:
+(2) The mediator  shall prepare  a settlement  report  of the settlement  and forward  the signed agreement along with such report to the concerned Commission.
+
+Metadata:
+{'section_number': 'Section 80', 'subsection': '2', 'start_page': 31, 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': '(1) Pursuant to mediation, if an agreement is reached between the parties with'}
+
+--- Chunk 272 ---
+Content:
+(3) Where  no agree ment  is reached  between  the parties  within  the specified  time or the mediator is of the opinion that settlement is not possible, he shall prepare his report accordingly and submit the same to the concerned Commission.
+
+Metadata:
+{'subsection': '3', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_number': 'Section 80', 'section_title': '(1) Pursuant to mediation, if an agreement is reached between the parties with', 'start_page': 31}
+
+--- Chunk 273 ---
+Content:
+81. (1) The District Commission or the State Commission or the National Commission, as the case may be, shall, within seven days of the receipt of the settlement report, pass suitable order recording such settlement of consumer dispute and dispose of the matter accordingly.
+
+Metadata:
+{'start_page': 31, 'section_number': 'Section 81', 'section_title': '(1) The District Commission or the State Commission or the National Commission,', 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
+
+--- Chunk 274 ---
+Content:
+(2) Where  the consumer  dispute  is settled  only in part, the District  Commission  or the State Commission or the National Commission, as the case may be, shall record settlement of the issues which have been so settled and continue to hear other issues involved in such consumer dispute.
+
+Metadata:
+{'subsection': '2', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 31, 'section_number': 'Section 81', 'section_title': '(1) The District Commission or the State Commission or the National Commission,'}
+
+--- Chunk 275 ---
+Content:
+(3) Where the consumer dispute could not be settled by mediation, the District Commission  or the State  Commission  or the National  Commission,  as the case may be, shall continue to hear all the issues involved in such consumer dispute. CHAPTER  VI PRODUCT  LIABILITY
+
+Metadata:
+{'section_title': '(1) The District Commission or the State Commission or the National Commission,', 'start_page': 31, 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'subsection': '3', 'section_number': 'Section 81'}
+
+--- Chunk 276 ---
+Content:
+82. This Chapter  shall apply  to every  claim  for compensation  under  a product  liability action by a complainant for any harm caused by a defective product manufactured by a product  manufacturer  or serviced  by a product  service  provider  or sold by a product  seller.
+
+Metadata:
+{'section_title': 'This Chapter  shall apply  to every  claim  for compensation  under  a product  liability', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 31, 'section_number': 'Section 82'}
+
+--- Chunk 277 ---
+Content:
+83. A product liability action may be brought by a complainant against a product manufacturer  or a product  service  provider  or a product  seller,  as the case may be, for any harm caused to him on account of a defective product.
+
+Metadata:
+{'section_number': 'Section 83', 'start_page': 31, 'section_title': 'A product liability action may be brought by a complainant against a product', 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
+
+--- Chunk 278 ---
+Content:
+84. (1) A product manufacturer shall  be liable in a  product liability action,  if—
+
+Metadata:
+{'section_number': 'Section 84', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': '(1) A product manufacturer shall  be liable in a  product liability action,  if—', 'start_page': 31}
+
+--- Chunk 279 ---
+Content:
+(a) the product contains  a manufacturing  defect; or
+
+Metadata:
+{'section_number': 'Section 84', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': '(1) A product manufacturer shall  be liable in a  product liability action,  if—', 'start_page': 31, 'subclause': 'a'}
+
+--- Chunk 280 ---
+Content:
+(b) the product  is defective  in design;  or
+
+Metadata:
+{'section_number': 'Section 84', 'section_title': '(1) A product manufacturer shall  be liable in a  product liability action,  if—', 'subclause': 'b', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 31}
+
+--- Chunk 281 ---
+Content:
+(c) there  is a deviation  from  manufacturing  specifications;  or
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'subclause': 'c', 'section_title': '(1) A product manufacturer shall  be liable in a  product liability action,  if—', 'section_number': 'Section 84', 'start_page': 31}
+
+--- Chunk 282 ---
+Content:
+(d) the product  does not conform  to the express  warranty;  or
+
+Metadata:
+{'section_title': '(1) A product manufacturer shall  be liable in a  product liability action,  if—', 'subclause': 'd', 'start_page': 31, 'section_number': 'Section 84', 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
+
+--- Chunk 283 ---
+Content:
+(e) the product  fails to contain  adequate  instructions  of correct  usage  to prevent any harm or any warning regarding improper or incorrect usage. .
+
+Metadata:
+{'start_page': 31, 'section_number': 'Section 84', 'section_title': '(1) A product manufacturer shall  be liable in a  product liability action,  if—', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'subclause': 'e'}
+
+--- Chunk 284 ---
+Content:
+85. A product  service  provider  shall be liable  in a product  liability  action,  if—
+
+Metadata:
+{'start_page': 32, 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': 'A product  service  provider  shall be liable  in a product  liability  action,  if—', 'section_number': 'Section 85'}
+
+--- Chunk 285 ---
+Content:
+(a) the service  provided  by him was faulty  or imperfect  or deficient  or inadequate in quality, nature or manner of performance which is required to be provided by or under  any law for the time being  in force,  or pursuant  to any contract  or otherwise;  or
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': 'A product  service  provider  shall be liable  in a product  liability  action,  if—', 'subclause': 'a', 'section_number': 'Section 85', 'start_page': 32}
+
+--- Chunk 286 ---
+Content:
+(b) there was an act of omission or co mmission or negligence or conscious withholding any information which caused harm; or
+
+Metadata:
+{'section_number': 'Section 85', 'subclause': 'b', 'start_page': 32, 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': 'A product  service  provider  shall be liable  in a product  liability  action,  if—'}
+
+--- Chunk 287 ---
+Content:
+(c) the service provider did not issue adequate instructions or warnings to prevent any harm; or
+
+Metadata:
+{'subclause': 'c', 'section_number': 'Section 85', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 32, 'section_title': 'A product  service  provider  shall be liable  in a product  liability  action,  if—'}
+
+--- Chunk 288 ---
+Content:
+(d) the service  did not conform  to express  warranty  or the terms  and conditions of the contract.
+
+Metadata:
+{'start_page': 32, 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'subclause': 'd', 'section_title': 'A product  service  provider  shall be liable  in a product  liability  action,  if—', 'section_number': 'Section 85'}
+
+--- Chunk 289 ---
+Content:
+86. A product seller who is not a product manufacturer shall be liable in a product liability  action,  if—
+
+Metadata:
+{'start_page': 32, 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_number': 'Section 86', 'section_title': 'A product seller who is not a product manufacturer shall be liable in a product'}
+
+--- Chunk 290 ---
+Content:
+(a) he has exercised substantial control over the designing, testing, manufacturing, packaging or labelling of a product that caused harm; or
+
+Metadata:
+{'section_title': 'A product seller who is not a product manufacturer shall be liable in a product', 'start_page': 32, 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_number': 'Section 86', 'subclause': 'a'}
+
+--- Chunk 291 ---
+Content:
+(b) he has altered or modified the product and such alteration or modification was the substantial factor in causing the harm; or
+
+Metadata:
+{'section_title': 'A product seller who is not a product manufacturer shall be liable in a product', 'section_number': 'Section 86', 'subclause': 'b', 'start_page': 32, 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
+
+--- Chunk 292 ---
+Content:
+(c) he has made an express warranty of a product independent of any express warranty  made  by a manufacturer  and such product  failed  to conform  to the express warranty made by the product seller which caused the harm; or
+
+Metadata:
+{'section_title': 'A product seller who is not a product manufacturer shall be liable in a product', 'subclause': 'c', 'start_page': 32, 'section_number': 'Section 86', 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
+
+--- Chunk 293 ---
+Content:
+(d) the product  has been sold by him and the identity  of product  manufacturer of such product  is not known,  or if known,  the service  of notice  or process  or warrant cannot  be effected  on him or he is not subject  to the law which  is in force  in India  or the order, if any, passed or to be passed cannot be enforced against him; or
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'subclause': 'd', 'section_number': 'Section 86', 'section_title': 'A product seller who is not a product manufacturer shall be liable in a product', 'start_page': 32}
+
+--- Chunk 294 ---
+Content:
+(e) he failed  to exercise  reasonable  care in assembling,  inspecting  or maintaining such product or he did not pass on the warnings or instructions of the product manufacturer regarding the dangers involved or proper usage of the product while selling such product and such failure was the proximate cause of the harm.
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': 'A product seller who is not a product manufacturer shall be liable in a product', 'section_number': 'Section 86', 'subclause': 'e', 'start_page': 32}
+
+--- Chunk 295 ---
+Content:
+87. (1) A product  liability  action  cannot  be brought  against  the product  seller  if, at the time of harm, the product was misused, altered, or modified.
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': '(1) A product  liability  action  cannot  be brought  against  the product  seller  if, at the', 'start_page': 32, 'section_number': 'Section 87'}
+
+--- Chunk 296 ---
+Content:
+(2) In any product  liability  action  based  on the failure  to provide  adequate  warnings  or instructions, the product manufacturer shall not be liable, if —
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': '(1) A product  liability  action  cannot  be brought  against  the product  seller  if, at the', 'start_page': 32, 'section_number': 'Section 87', 'subsection': '2'}
+
+--- Chunk 297 ---
+Content:
+(a) the product  was purchased  by an employer  for use at the workplace  and the product manufacturer had provided warnings or instructions to such employer;
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 32, 'section_number': 'Section 87', 'subsection': '2', 'section_title': '(1) A product  liability  action  cannot  be brought  against  the product  seller  if, at the', 'subclause': 'a'}
+
+--- Chunk 298 ---
+Content:
+(b) the product was sold as a component or material to be used in another product  and necessary  warnings  or instructions  were given  by the product  manufacturer to the purchaser of such component or material, but the harm was caused to the complainant by use of the end product in which such component or material was used;
+
+Metadata:
+{'section_number': 'Section 87', 'section_title': '(1) A product  liability  action  cannot  be brought  against  the product  seller  if, at the', 'subclause': 'b', 'subsection': '2', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 32}
+
+--- Chunk 299 ---
+Content:
+(c) the product  was one which  was legally  meant  to be used or dispensed  only by or under the supervision of an expert or a class of experts and the product manufacturer  had employed  reasonable  means  to give the warnings  or instructions  for usage of such product to such ex pert or class of experts; or
+
+Metadata:
+{'section_number': 'Section 87', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'subsection': '2', 'start_page': 32, 'section_title': '(1) A product  liability  action  cannot  be brought  against  the product  seller  if, at the', 'subclause': 'c'}
+
+--- Chunk 300 ---
+Content:
+(d) the complainant,  while  using  such product,  was under  the influence  of alcohol or any prescription drug which had not been prescribed by a medical practitioner.
+
+Metadata:
+{'section_number': 'Section 87', 'section_title': '(1) A product  liability  action  cannot  be brought  against  the product  seller  if, at the', 'start_page': 32, 'subclause': 'd', 'subsection': '2', 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
+
+--- Chunk 301 ---
+Content:
+88. Whoever, fails to comply with any direction of the Central Authority under sections  20 and 21, shall be punished  with imprisonment  for a term which  may extend  to six months or with fine which may extend to twenty lakh rupees, or with both.
+
+Metadata:
+{'section_number': 'Section 88', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': 'Whoever, fails to comply with any direction of the Central Authority under', 'start_page': 33}
+
+--- Chunk 302 ---
+Content:
+89. Any manufacturer or service provider who causes a false or misleading advertisement  to be made  which  is prejudicial  to the interest  of consumers  shall be punished with imprisonment  for a term which  may extend  to two years  and with fine which  may extend to ten lakh rupees;  and for every  subsequent  offence,  be punished  with imprisonment  for a term which  may extend  to five years  and with fine which  may extend  to fifty lakh rupees.
+
+Metadata:
+{'section_number': 'Section 89', 'section_title': 'Any manufacturer or service provider who causes a false or misleading', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 33}
+
+--- Chunk 303 ---
+Content:
+90. (1) Whoever,  by himself  or by any other person on his behalf, manufactures for sale or stores  or sells or distributes  or imports  any product  containing  an adulterant  shall be punished, if such act —
+
+Metadata:
+{'start_page': 33, 'section_number': 'Section 90', 'section_title': '(1) Whoever,  by himself  or by any other person on his behalf, manufactures for', 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
+
+--- Chunk 304 ---
+Content:
+(a) does not result  in any injury  to the consumer,  with imprisonment  for a term which  may extend  to six months  and with fine which  may extend  to one lakh rupees;
+
+Metadata:
+{'start_page': 33, 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': '(1) Whoever,  by himself  or by any other person on his behalf, manufactures for', 'section_number': 'Section 90', 'subclause': 'a'}
+
+--- Chunk 305 ---
+Content:
+(b) causing injury not amounting to grievous hurt to the consumer, with imprisonment  for a term which  may extend  to one year and with fine which  may extend to three lakh rupees;
+
+Metadata:
+{'section_number': 'Section 90', 'section_title': '(1) Whoever,  by himself  or by any other person on his behalf, manufactures for', 'subclause': 'b', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 33}
+
+--- Chunk 306 ---
+Content:
+(c) causing  injury  resulting  in grievous  hurt to the consumer,  with imprisonment for a term which  may extend  to seven  years  and with fine which  may extend  to five lakh rupees; and
+
+Metadata:
+{'subclause': 'c', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_number': 'Section 90', 'section_title': '(1) Whoever,  by himself  or by any other person on his behalf, manufactures for', 'start_page': 33}
+
+--- Chunk 307 ---
+Content:
+(d) results  in the death  of a consumer,  with imprisonment  for a term which  shall not be less than seven  years,  but which  may extend  to imprisonment  for life and with fine which shall not be less than ten lakh rupees.
+
+Metadata:
+{'subclause': 'd', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': '(1) Whoever,  by himself  or by any other person on his behalf, manufactures for', 'start_page': 33, 'section_number': 'Section 90'}
+
+--- Chunk 308 ---
+Content:
+(2) The offences  under  clauses  (c) and (d) of sub-section  (1) shall be cognizable  and non-bailable.
+
+Metadata:
+{'start_page': 33, 'subsection': '2', 'section_number': 'Section 90', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': '(1) Whoever,  by himself  or by any other person on his behalf, manufactures for'}
+
+--- Chunk 309 ---
+Content:
+(3) Notwithstanding  the punishment  under  sub-section  (1), the court  may,  in case of first conviction, suspend any licence issued to the person referred to in that sub -section, under  any law for the time being  in force,  for a period  up to two years,  and in case of second or subsequent conviction, cancel the licence. Explanation .—For the purposes  of this section,—
+
+Metadata:
+{'subsection': '3', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 33, 'section_title': '(1) Whoever,  by himself  or by any other person on his behalf, manufactures for', 'section_number': 'Section 90'}
+
+--- Chunk 310 ---
+Content:
+(a) "adulterant" means any material including extraneous matter which is employed or used for making a product unsafe;
+
+Metadata:
+{'section_title': '(1) Whoever,  by himself  or by any other person on his behalf, manufactures for', 'section_number': 'Section 90', 'subsection': '3', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 33, 'subclause': 'a'}
+
+--- Chunk 311 ---
+Content:
+(b) "grievous  hurt"  shall have the same  meaning  as assigned  to it in section  320 of the Indian Penal Code.
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'subsection': '3', 'section_number': 'Section 90', 'start_page': 33, 'subclause': 'b', 'section_title': '(1) Whoever,  by himself  or by any other person on his behalf, manufactures for'}
+
+--- Chunk 312 ---
+Content:
+91. (1) Whoever,  by himself  or by any other person on his behalf, manufactures for sale or stores  or sells or distributes  or imports  any spurious  goods  shall be punished,  if such act—
+
+Metadata:
+{'section_number': 'Section 91', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': '(1) Whoever,  by himself  or by any other person on his behalf, manufactures for', 'start_page': 33}
+
+--- Chunk 313 ---
+Content:
+(a) causing injury not amounting to grievous hurt to the consumer, with imprisonment  for a term which  may extend  to one year and with fine which  may extend to three lakh rupees; .
+
+Metadata:
+{'subclause': 'a', 'section_number': 'Section 91', 'section_title': '(1) Whoever,  by himself  or by any other person on his behalf, manufactures for', 'start_page': 33, 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
+
+--- Chunk 314 ---
+Content:
+92. No cognizance  shall be taken  by a competent  court  of any offence  under  sections  88 and 89 except  on a complaint  filed by the Central  Authority  or any officer  authorised  by it in this behalf.
+
+Metadata:
+{'section_number': 'Section 92', 'section_title': 'No cognizance  shall be taken  by a competent  court  of any offence  under  sections  88', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 34}
+
+--- Chunk 315 ---
+Content:
+93. The Director General or any other officer, exercising powers under section 22, who knows that there are no reasonable grounds for so doing, and yet —
+
+Metadata:
+{'start_page': 34, 'section_number': 'Section 93', 'section_title': 'The Director General or any other officer, exercising powers under section 22, who', 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
+
+--- Chunk 316 ---
+Content:
+(a) searches, or  causes  to be searched  any premises;  or
+
+Metadata:
+{'start_page': 34, 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': 'The Director General or any other officer, exercising powers under section 22, who', 'section_number': 'Section 93', 'subclause': 'a'}
+
+--- Chunk 317 ---
+Content:
+(b) seizes  any record,  register  or other  document  or article, shall,  for every  such offence,  be punished  with imprisonment  for a term which  may extend  to one year, or with fine which may extend to ten thousand rupees or with both. CHAPTER  VIII MISCELLANE OUS
+
+Metadata:
+{'start_page': 34, 'subclause': 'b', 'section_number': 'Section 93', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': 'The Director General or any other officer, exercising powers under section 22, who'}
+
+--- Chunk 318 ---
+Content:
+94. For the purposes  of preventing  unfair  trade  practices  in e-commerce,  direct  selling and also to protect  the interest  and rights  of consumers,  the Central  Government  may take such measures in the manner as may be prescribed.
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_number': 'Section 94', 'start_page': 34, 'section_title': 'For the purposes  of preventing  unfair  trade  practices  in e-commerce,  direct  selling'}
+
+--- Chunk 319 ---
+Content:
+95. The Presidents  and members  of the District  Commission,  the State  Commission and the National Commission, and officers and other employees thereof, the Chief Commissioner and the Commissioner of the Central  Authority, the Director General, the Additional  Director  General,  the Director,  the Joint  Director,  the Deputy  Director  and the Assistant  Director  and all other  officers  and employees  of the Central  Authority  and other persons  performing  any duty under  this Act, while  acting  or purporting  to act in pursuance of any of the pr ovisions of this Act, shall be deemed to be public servants within the meaning of section 21 of the Indian Penal Code.
+
+Metadata:
+{'start_page': 34, 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': 'The Presidents  and members  of the District  Commission,  the State  Commission', 'section_number': 'Section 95'}
+
+--- Chunk 320 ---
+Content:
+96. (1) Any offence  punishable  under  sections  88 and 89, may,  either  before  or after the institution of the prosecution, be compounded, on payment of such amount as may be prescribed: Provided  that no compounding  of such offence  shall  be made  without  the leave  of the court before which a complaint has been filed under section 92: Provided  further  that such sum shall  not, in any case,  exceed  the maximum  amount  of the fine, which may be imposed under this  Act for the offence so compounded.
+
+Metadata:
+{'section_title': '(1) Any offence  punishable  under  sections  88 and 89, may,  either  before  or after', 'section_number': 'Section 96', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 34}
+
+--- Chunk 321 ---
+Content:
+(2) The Central  Authority  or any officer  as may be specially  authorised  by him in this behalf, may compound offences under sub -section  (1).
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': '(1) Any offence  punishable  under  sections  88 and 89, may,  either  before  or after', 'subsection': '2', 'section_number': 'Section 96', 'start_page': 34}
+
+--- Chunk 322 ---
+Content:
+97. The penalty  collected  under  section  21 and the amount  collected  under  section  96 shall be credited to such fund as may be prescribed.
+
+Metadata:
+{'section_title': 'The penalty  collected  under  section  21 and the amount  collected  under  section  96', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_number': 'Section 97', 'start_page': 35}
+
+--- Chunk 323 ---
+Content:
+98. No suit, prosecution  or other  legal  proceeding  shall lie against  the Presidents  and members  of the District  Commission,  the State  Commission  and the National  Commission, the Chief Commissioner, the Commissioner, any officer or employee and other person performing  any duty under  this Act, for any act which  is in good  faith done  or intended  to be done in pursuance of this  Act or under any rule or order made thereunder.
+
+Metadata:
+{'section_number': 'Section 98', 'section_title': 'No suit, prosecution  or other  legal  proceeding  shall lie against  the Presidents  and', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 35}
+
+--- Chunk 324 ---
+Content:
+99. (1) Without  prejudice to the foregoing provisions of this  Act, the Central  Authority, shall,  in exercise  of its powers  or the performance  of its functions  under  this Act, be bound by such directions  on questions  of policy,  as the Central  Government  may give in writing  to it from time to time: Provided  that the Central  Authority  shall,  as far as practicable,  be given  an opportunity to express its views before any direction is given under this sub -section.
+
+Metadata:
+{'section_title': '(1) Without  prejudice to the foregoing provisions of this  Act, the Central  Authority,', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_number': 'Section 99', 'start_page': 35}
+
+--- Chunk 325 ---
+Content:
+(2) The decision  of the Central  Government  whether  a question  is one of policy  or not shall be final.
+
+Metadata:
+{'section_number': 'Section 99', 'subsection': '2', 'section_title': '(1) Without  prejudice to the foregoing provisions of this  Act, the Central  Authority,', 'start_page': 35, 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
+
+--- Chunk 326 ---
+Content:
+100. The provisions of this  Act shall be in addition to and not in derogation of the provisions of any other law for the time being in force.
+
+Metadata:
+{'start_page': 35, 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_number': 'Section 100', 'section_title': 'The provisions of this  Act shall be in addition to and not in derogation of the'}
+
+--- Chunk 327 ---
+Content:
+101. (1) The Central  Government  may,  by notification,  make  rules  for carrying  out any of the provisions contained in this Act.
+
+Metadata:
+{'section_number': 'Section 101', 'start_page': 35, 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': '(1) The Central  Government  may,  by notification,  make  rules  for carrying  out any'}
+
+--- Chunk 328 ---
+Content:
+(2) Without  prejudice  to the generality  of the foregoing  power,  such rules  may provide for, —
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 35, 'subsection': '2', 'section_number': 'Section 101', 'section_title': '(1) The Central  Government  may,  by notification,  make  rules  for carrying  out any'}
+
+--- Chunk 329 ---
+Content:
+(a) the other class or classes of persons including public utility entities under clause ( 19) of section 2;
+
+Metadata:
+{'section_title': '(1) The Central  Government  may,  by notification,  make  rules  for carrying  out any', 'start_page': 35, 'section_number': 'Section 101', 'subsection': '2', 'subclause': 'a', 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
+
+--- Chunk 330 ---
+Content:
+(b) the contest,  lottery,  game  of chance  or skill which  are to be exempted  under item ( b) of sub -clause ( iii) of clause ( 47) of section 2;
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': '(1) The Central  Government  may,  by notification,  make  rules  for carrying  out any', 'subsection': '2', 'section_number': 'Section 101', 'subclause': 'b', 'start_page': 35}
+
+--- Chunk 331 ---
+Content:
+(c) the manner  of issuing  bill or cash memo  or receipt  for goods  sold or services rendered under sub -clause ( vii) of clause ( 47) of section 2;
+
+Metadata:
+{'subsection': '2', 'section_title': '(1) The Central  Government  may,  by notification,  make  rules  for carrying  out any', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 35, 'subclause': 'c', 'section_number': 'Section 101'}
+
+--- Chunk 332 ---
+Content:
+(d) the number  of other  official  or non-official  members  of the Central  Council under clause ( b) of sub-section ( 2) of section 3;
+
+Metadata:
+{'subclause': 'd', 'subsection': '2', 'section_title': '(1) The Central  Government  may,  by notification,  make  rules  for carrying  out any', 'start_page': 35, 'section_number': 'Section 101', 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
+
+--- Chunk 333 ---
+Content:
+(e) the time and place  of meeting  of Central  Council  and the procedure  for the transaction of its business under sub -section ( 2) of section 4;
+
+Metadata:
+{'start_page': 35, 'subsection': '2', 'section_number': 'Section 101', 'section_title': '(1) The Central  Government  may,  by notification,  make  rules  for carrying  out any', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'subclause': 'e'}
+
+--- Chunk 334 ---
+Content:
+(f) the number  of Commissioners  in the Central  Authority  under  sub-section  (2) of section 10;
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': '(1) The Central  Government  may,  by notification,  make  rules  for carrying  out any', 'subsection': '2', 'subclause': 'f', 'start_page': 35, 'section_number': 'Section 101'}
+
+--- Chunk 335 ---
+Content:
+102. (1) The State  Governments  may,  by notification,  make  rules  for carrying  out the provisions of this Act: Provided  that the Central  Government  may, frame  model  rules in respect  of all or any of the matters  with respect  to which  the State  Government  may make  rules  under  this section, and where  any such model  rules  have  been framed  in respect  of any such matter,  they shall apply  to the State  until the rules  in respect  of that matter  is made  by the State  Government and while  making  any such rules,  so far as is practicable,  they shall conform  to such model rules.
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': '(1) The State  Governments  may,  by notification,  make  rules  for carrying  out the', 'start_page': 37, 'section_number': 'Section 102'}
+
+--- Chunk 336 ---
+Content:
+(2) In particular,  and without  prejudice  to the generality  of the foregoing  power,  such rules  may provide  for all or any of the following  matters,  namely:—
+
+Metadata:
+{'subsection': '2', 'start_page': 37, 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': '(1) The State  Governments  may,  by notification,  make  rules  for carrying  out the', 'section_number': 'Section 102'}
+
+--- Chunk 337 ---
+Content:
+(a) the other class or classes of persons including public utility entities under clause ( 19) of section 2;
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_number': 'Section 102', 'subsection': '2', 'section_title': '(1) The State  Governments  may,  by notification,  make  rules  for carrying  out the', 'subclause': 'a', 'start_page': 37}
+
+--- Chunk 338 ---
+Content:
+(b) the contest,  lottery,  game  of chance  or skill which  are to be exempted  under item ( b) of sub -clause ( iii) of clause ( 47) of section 2;
+
+Metadata:
+{'section_title': '(1) The State  Governments  may,  by notification,  make  rules  for carrying  out the', 'subsection': '2', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 37, 'section_number': 'Section 102', 'subclause': 'b'}
+
+--- Chunk 339 ---
+Content:
+(c) the number of other official or non -official members of the State Council under clause ( b) of sub -section ( 2) of section 6;
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'subclause': 'c', 'start_page': 37, 'section_number': 'Section 102', 'subsection': '2', 'section_title': '(1) The State  Governments  may,  by notification,  make  rules  for carrying  out the'}
+
+--- Chunk 340 ---
+Content:
+(d) the time and place  of meeting  of the State  Council  and the procedure  for the transaction of its business u nder sub -section ( 4) of section 6;
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'subsection': '2', 'section_number': 'Section 102', 'section_title': '(1) The State  Governments  may,  by notification,  make  rules  for carrying  out the', 'start_page': 37, 'subclause': 'd'}
+
+--- Chunk 341 ---
+Content:
+(e) the number of other official and non -official members of District Council under clause ( b) of sub -section ( 2) of section 8;
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'subsection': '2', 'start_page': 37, 'section_number': 'Section 102', 'section_title': '(1) The State  Governments  may,  by notification,  make  rules  for carrying  out the', 'subclause': 'e'}
+
+--- Chunk 342 ---
+Content:
+(f) the time and place  of meeting  of the District  Council  and procedure  for the transaction of its business under sub -section ( 4) of section 8;
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 37, 'section_title': '(1) The State  Governments  may,  by notification,  make  rules  for carrying  out the', 'section_number': 'Section 102', 'subclause': 'f', 'subsection': '2'}
+
+--- Chunk 343 ---
+Content:
+103. (1) The National Commission may, with the previous approval of the Central Government,  by notification,  make  regulations  not inconsistent  with this Act to provide  for all matters  for which  provision  is necessary  or expedient  for the purpose  of giving  effect  to the provisions of this Act.
+
+Metadata:
+{'section_title': '(1) The National Commission may, with the previous approval of the Central', 'section_number': 'Section 103', 'start_page': 38, 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
+
+--- Chunk 344 ---
+Content:
+(2) In particular,  and without  prejudice  to the generality  of the foregoing  power,  such regulations may make provisions for —
+
+Metadata:
+{'start_page': 38, 'subsection': '2', 'section_number': 'Section 103', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': '(1) The National Commission may, with the previous approval of the Central'}
+
+--- Chunk 345 ---
+Content:
+(a) the costs  for adjournment  to be imposed  by the District  Commission  under the second proviso to sub -section ( 7) of section 38;
+
+Metadata:
+{'subsection': '2', 'subclause': 'a', 'section_title': '(1) The National Commission may, with the previous approval of the Central', 'section_number': 'Section 103', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 38}
+
+--- Chunk 346 ---
+Content:
+(b) the costs for adjournment to be imposed by the State Commission or the National Commission, as the case may be, under the second proviso to section 52;
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 38, 'section_number': 'Section 103', 'subsection': '2', 'section_title': '(1) The National Commission may, with the previous approval of the Central', 'subclause': 'b'}
+
+--- Chunk 347 ---
+Content:
+(c) the maintenance of any other information by t he consumer mediation cell under sub -section ( 4) of section 74;
+
+Metadata:
+{'section_number': 'Section 103', 'start_page': 38, 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'subclause': 'c', 'subsection': '2', 'section_title': '(1) The National Commission may, with the previous approval of the Central'}
+
+--- Chunk 348 ---
+Content:
+(d) the manner  of submission  of quarterly  report  by consumer  mediation  cell to the District Commission, the State Commission or the National Commission under sub-section ( 5) of section 74;
+
+Metadata:
+{'section_number': 'Section 103', 'section_title': '(1) The National Commission may, with the previous approval of the Central', 'start_page': 38, 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'subclause': 'd', 'subsection': '2'}
+
+--- Chunk 349 ---
+Content:
+(e) the qualifications  and experience  required  for empanelment  as mediator,  the procedure for empanelment, the manner of training empanelled mediators, the fee payable  to empanelled  mediator,  the terms  and conditions  for empanelment,  the code of conduct  for empane lled mediators,  the grounds  on which,  and the manner  in which, empanelled mediators shall be removed or empanelment shall be cancelled and the other matters relating thereto under sub -section ( 2) of section 75;
+
+Metadata:
+{'start_page': 38, 'subsection': '2', 'section_title': '(1) The National Commission may, with the previous approval of the Central', 'section_number': 'Section 103', 'subclause': 'e', 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
+
+--- Chunk 350 ---
+Content:
+104. (1) The Central Authority may, with the previous approval of the Central Government,  by notification,  make  regulations  not inconsistent  with this Act, for the purpose of giving effect to the provisions of this Act.
+
+Metadata:
+{'section_number': 'Section 104', 'section_title': '(1) The Central Authority may, with the previous approval of the Central', 'start_page': 39, 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
+
+--- Chunk 351 ---
+Content:
+(2) In particular,  and without  prejudice  to the generality  of the foregoing  power,  such regulations  may provide  for all or any of the following  matters,  namely:—
+
+Metadata:
+{'section_number': 'Section 104', 'section_title': '(1) The Central Authority may, with the previous approval of the Central', 'start_page': 39, 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'subsection': '2'}
+
+--- Chunk 352 ---
+Content:
+(a) the procedure for engaging experts and professionals and the number of such experts and professionals under sub -section ( 3) of section 13;
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_number': 'Section 104', 'section_title': '(1) The Central Authority may, with the previous approval of the Central', 'subsection': '2', 'subclause': 'a', 'start_page': 39}
+
+--- Chunk 353 ---
+Content:
+(b) the procedure for transaction of business and the allocation of business of the Chie f Commissioner and Commissioner under sub -section ( 1) of section 14;
+
+Metadata:
+{'source_file': 'CP Act 2019_1732700731 (2).pdf', 'subsection': '2', 'subclause': 'b', 'section_number': 'Section 104', 'section_title': '(1) The Central Authority may, with the previous approval of the Central', 'start_page': 39}
+
+--- Chunk 354 ---
+Content:
+(c) the form,  manner  and time within  which,  inquiries  or investigation  made  by the Director -General  shall be submitted  to the Central  Authority  under  sub-section  (5) of section 15; and
+
+Metadata:
+{'section_title': '(1) The Central Authority may, with the previous approval of the Central', 'subsection': '2', 'start_page': 39, 'subclause': 'c', 'section_number': 'Section 104', 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
+
+--- Chunk 355 ---
+Content:
+(d) such other  matter  for which  provision  is to be, or may be, made  by regulation.
+
+Metadata:
+{'start_page': 39, 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': '(1) The Central Authority may, with the previous approval of the Central', 'section_number': 'Section 104', 'subsection': '2', 'subclause': 'd'}
+
+--- Chunk 356 ---
+Content:
+105. (1) Every  rule and every  regulation  made  under  this Act shall be laid, as soon as may be after it is made,  before  each House  of Parliament,  while  it is in session,  for a total period  of thirty  days which  may be comprised  in one session  or in two or more  successive sessions, and if, before the expiry of the session immediately following the session or the successive  sessions  aforesaid,  both Houses  agree  in making  any modification  in the rule or regulation  or both Houses  agree  that the rule or regulation  shall thereafter  have effect  only in such modified form or be of no effect, as the case may be; so, however, that any such modification  or annulment  shall be without  prejudice  to the validity  of anything  previously done under that rule or regulation.
+
+Metadata:
+{'section_number': 'Section 105', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_title': '(1) Every  rule and every  regulation  made  under  this Act shall be laid, as soon as', 'start_page': 39}
+
+--- Chunk 357 ---
+Content:
+(2) Every  rule made  by a State  Government  under  this Act shall be laid as soon as may be after it is made, before the State Legislature.
+
+Metadata:
+{'section_title': '(1) Every  rule and every  regulation  made  under  this Act shall be laid, as soon as', 'section_number': 'Section 105', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'start_page': 39, 'subsection': '2'}
+
+--- Chunk 358 ---
+Content:
+106. If any difficulty  arises  in giving  effect  to the provisions  of this Act, the Central Government may, by order in the Official Gazette, make such provisions not inconsistent with the provisions  of this Act as appear  to it to be necessary  or expedient  for removing  the difficulty: Provided that no such order shall be made after the expiry of a period of two years from the commencement of this Act.
+
+Metadata:
+{'start_page': 39, 'section_number': 'Section 106', 'section_title': 'If any difficulty  arises  in giving  effect  to the provisions  of this Act, the Central', 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
+
+--- Chunk 359 ---
+Content:
+107. (1) The Consumer  Protection  Act, 1986  is hereby  repealed.
+
+Metadata:
+{'section_title': '(1) The Consumer  Protection  Act, 1986  is hereby  repealed.', 'source_file': 'CP Act 2019_1732700731 (2).pdf', 'section_number': 'Section 107', 'start_page': 39}
+
+--- Chunk 360 ---
+Content:
+(2) Notwithstanding such repeal, anything done or any action taken or purported to have been done  or taken  under  the Act hereby  repealed  shall,  in so far as it is not inconsistent with the provisions  of this Act, be deemed  to have been done or taken  under  the corresponding provisions of this Act.
+
+Metadata:
+{'section_title': '(1) The Consumer  Protection  Act, 1986  is hereby  repealed.', 'start_page': 39, 'section_number': 'Section 107', 'subsection': '2', 'source_file': 'CP Act 2019_1732700731 (2).pdf'}
