@@ -1,6 +1,7 @@
 import logging
 from typing import List, Dict, Any, Optional
 from agents.rag_agent.llm_loader import get_llm
+from agents.rag_agent.classifier_schema import QueryClassification
 
 class ResponseGenerator:
     """
@@ -17,16 +18,16 @@ class ResponseGenerator:
         self,
         query: str,
         context: str,
-        classification: Dict[str, Any],
+        classification: QueryClassification,
         chat_history: Optional[List[Dict[str, str]]] = None
     ) -> str:
         """
         Build a prompt optimized for the specific query type and required information.
         """
-        query_type = classification.get("query_type", "general-info")
-        topics = classification.get("topics", [])
-        required_info = classification.get("required_info_types", [])
-        needs_steps = classification.get("has_actionable_request", False)
+        query_type = classification.query_type
+        topics = classification.topics
+        required_info = getattr(classification, "required_info_types", [])
+        needs_steps = classification.has_actionable_request
         
         # Base instructions
         base_instructions = self._get_base_instructions()

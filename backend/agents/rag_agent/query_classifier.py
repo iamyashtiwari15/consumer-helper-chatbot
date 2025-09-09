@@ -1,75 +1,67 @@
 import logging
-from typing import Dict, Any, List
+from typing import Any, Dict
 from agents.rag_agent.llm_loader import get_llm
+from agents.rag_agent.classifier_schema import QueryClassification
+from langchain_core.output_parsers import PydanticOutputParser
+
 
 class QueryClassifier:
     """
     Classifies user queries to determine the best response strategy.
     """
-    
+
     def __init__(self):
         self.logger = logging.getLogger(__name__)
         self.classifier = get_llm(role="classifier")
-        
-    def classify_query(self, query: str) -> Dict[str, Any]:
+        self.parser = PydanticOutputParser(pydantic_object=QueryClassification)
+
+    def classify_query(self, query: str) -> QueryClassification:
         """
-        Classify the query to determine:
-        1. Query type (section-specific, general-info, procedure, rights, complaint)
-        2. Topics involved
-        3. Required information types
-        4. Ambiguity detection (clarification_needed, clarification_question)
+        Classify the query and return a validated QueryClassification object.
         """
-        
-        prompt = f"""Analyze the following consumer query and classify it:
+        format_instructions = self.parser.get_format_instructions()
+        prompt = f"""
+Classify the following consumer query. Use the format below.
 
 Query: {query}
 
-Provide classification in this exact JSON format:
-{{
-    "query_type": "one of: greeting, chitchat, section-specific, general-info, procedure, rights, complaint",
-    "topics": ["list", "of", "relevant", "topics"],
-    "required_info_types": ["list", "of", "required", "information", "types"],
-    "has_actionable_request": true/false,
-    "requires_external_sources": true/false,
-    "clarification_needed": true/false,
-    "clarification_question": "If the query is ambiguous or too broad, suggest a follow-up question to clarify the user's intent. Otherwise, return an empty string."
-}}
+{format_instructions}
 
-Example classifications:
+**Example Classifications:**
 1. "Hello" -> greeting, clarification_needed: false, clarification_question: ""
 2. "How are you?" -> chitchat, clarification_needed: false, clarification_question: ""
 3. "What does Section 33 say?" -> section-specific, clarification_needed: false, clarification_question: ""
 4. "How to file a complaint?" -> procedure, clarification_needed: false, clarification_question: ""
 5. "What are my rights as a consumer?" -> rights, clarification_needed: true, clarification_question: "Could you please specify which rights you are interested in? For example, rights related to product returns, data privacy, or service contracts?"
 6. "Steps after online fraud" -> procedure + complaint, clarification_needed: false, clarification_question: ""
-Focus on consumer protection and legal context."""
-
+7. "What is the phone number of the consumer court in Delhi?" -> general-info, requires_external_sources: true, clarification_needed: false, clarification_question: ""
+8. "Find the latest amendments to CPA 2019" -> general-info, requires_external_sources: true, clarification_needed: false, clarification_question: ""
+9. "Who is the current president of the National Consumer Disputes Redressal Commission?" -> general-info, requires_external_sources: true, clarification_needed: false, clarification_question: ""
+10. "Show me recent news about consumer protection" -> general-info, requires_external_sources: true, clarification_needed: false, clarification_question: ""
+11. "Explain the process for filing a complaint online" -> procedure, requires_external_sources: false, clarification_needed: false, clarification_question: ""
+12. "Give me the address of the consumer helpline" -> general-info, requires_external_sources: true, clarification_needed: false, clarification_question: ""
+13. "What are the penalties for misleading advertisements?" -> general-info, requires_external_sources: false, clarification_needed: false, clarification_question: ""
+14. "Who are the members of the Central Consumer Protection Authority?" -> general-info, requires_external_sources: true, clarification_needed: false, clarification_question: ""
+15. "What was the consumer law before CPA 2019?" -> general-info, requires_external_sources: true, clarification_needed: false, clarification_question: ""
+16. "Show me amendments after 2020" -> general-info, requires_external_sources: true, clarification_needed: false, clarification_question: ""
+17. "Compare CPA 1986 and CPA 2019" -> general-info, requires_external_sources: true, clarification_needed: false, clarification_question: ""
+18. "What changed before and after the 2020 amendments?" -> general-info, requires_external_sources: true, clarification_needed: false, clarification_question: ""
+"""
         result = self.classifier.invoke(prompt)
         try:
-            # The LLM should return a JSON string
-            import json
-            classification = result.content
-            if isinstance(classification, str):
-                classification = json.loads(classification)
-            # Ensure new fields are present
-            if "clarification_needed" not in classification:
-                classification["clarification_needed"] = False
-            if "clarification_question" not in classification:
-                classification["clarification_question"] = ""
-            return classification
+            return self.parser.parse(result.content)
         except Exception as e:
             self.logger.error(f"Error parsing classification: {e}")
-            return {
-                "query_type": "general-info",
-                "topics": [],
-                "required_info_types": [],
-                "has_actionable_request": False,
-                "requires_external_sources": False,
-                "clarification_needed": False,
-                "clarification_question": ""
-            }
+            return QueryClassification(
+                query_type="general-info",
+                topics=[],
+                has_actionable_request=False,
+                requires_external_sources=False,
+                clarification_needed=False,
+                clarification_question=""
+            )
 
-    def get_response_strategy(self, classification: Dict[str, Any]) -> Dict[str, Any]:
+    def get_response_strategy(self, classification: QueryClassification) -> Dict[str, Any]:
         """
         Determine the best strategy to answer the query based on its classification.
         """
@@ -80,27 +72,45 @@ Focus on consumer protection and legal context."""
             "needs_step_by_step": False,
             "response_format": "default"
         }
-        
-        query_type = classification.get("query_type", "general-info")
-        
+
+        # Base type rules
+        query_type = getattr(classification, "query_type", "general-info")
+
         if query_type == "procedure":
             strategy.update({
                 "needs_step_by_step": True,
                 "response_format": "steps",
                 "needs_examples": True
             })
-            
+
         elif query_type == "complaint":
             strategy.update({
                 "needs_web_search": True,
                 "needs_step_by_step": True,
                 "response_format": "steps"
             })
-            
-        if classification.get("requires_external_sources", False):
+
+        # Handle external sources requirement
+        if getattr(classification, "requires_external_sources", False):
             strategy["needs_web_search"] = True
-            
-        if classification.get("has_actionable_request", False):
+
+        # Handle actionable requests
+        if getattr(classification, "has_actionable_request", False):
             strategy["needs_step_by_step"] = True
-            
+
+        # Extra heuristic layer for robustness
+        query_text = getattr(classification, "query_text", "").lower()
+
+        # Time-based queries -> always need web
+        if any(keyword in query_text for keyword in ["before", "after", "since", "latest", "amendment", "update", "change", "2020", "2021", "2022", "2023", "2024"]):
+            strategy["needs_web_search"] = True
+
+        # Comparison queries -> set comparison mode
+        if any(keyword in query_text for keyword in ["compare", "difference", "vs", "versus"]):
+            strategy.update({
+                "needs_web_search": True,
+                "response_format": "comparison",
+                "needs_step_by_step": False
+            })
+
         return strategy

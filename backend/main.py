@@ -57,11 +57,18 @@ def handle_user_input(
     image_bytes: Optional[bytes] = None,
     image_type: Optional[str] = None
 ) -> dict:
+
     messages = session_memory.get(session_id, [])
+    # Convert messages to chat_history format for QueryMerger
+    chat_history = []
+    for msg in messages:
+        # Use 'role' instead of 'type' for compatibility
+        if hasattr(msg, "content") and hasattr(msg, "type"):
+            chat_history.append({"role": msg.type, "content": msg.content})
+        elif hasattr(msg, "content"):
+            chat_history.append({"role": "unknown", "content": msg.content})
 
-    # Detect type
     input_type = "image" if image_bytes else "text"
-
     image_path = None
     if image_bytes:
         ext = image_type.split("/")[-1]
@@ -69,11 +76,10 @@ def handle_user_input(
         with open(image_path, "wb") as f:
             f.write(image_bytes)
 
-    # Prepare input state
     input_state = {
         "input": user_input or "",
-        "image": image_bytes,  # raw bytes
-        "image_path": image_path,  # path for analysis agent
+        "image": image_bytes,
+        "image_path": image_path,
         "image_type": image_type or "",
         "input_type": input_type,
         "agent_name": "",
@@ -81,19 +87,13 @@ def handle_user_input(
         "involved_agents": [],
         "bypass_guardrails": False,
         "messages": messages,
+        "chat_history": chat_history,
     }
 
-    # Run through decision graph
     output = consumer_rights_agent_graph.invoke(input_state)
-
-    # Update chat history
     session_memory[session_id] = output["messages"]
-
-    # Clean up temporary image file
     if image_path and os.path.exists(image_path):
         os.remove(image_path)
-
-    # output["response"] is now a dict (from agent_decision)
     return output["response"]
 
 # ✅ Route: Text-only chat

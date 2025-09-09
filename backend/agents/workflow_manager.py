@@ -1,20 +1,16 @@
 import logging
 from typing import TypedDict, Optional, Dict, Any, List
+from urllib import response
 from agents.rag_agent.query_classifier import QueryClassifier
 from agents.rag_agent.document_retriever import retrieve_documents
 from agents.rag_agent.response_generator import ResponseGenerator
 from agents.rag_agent.section_retriever import SectionRetriever
-from agents.web_search.web_search_agent import WebSearchAgent
+from agents.web_search.tavily_search import FlexibleTavilySearchAgent
+from agents.query_merger import AdvancedQueryMerger
+from agents.rag_agent.classifier_schema import QueryClassification
 # from backend.agents.vision_agents.image_analysis_agent import extract_text_from_image  # Uncomment when integrating image agent
 
 logger = logging.getLogger(__name__)
-
-class QueryClassification(TypedDict, total=False):
-    query_type: str
-    topics: List[str]
-    required_info_types: List[str]
-    has_actionable_request: bool
-    requires_external_sources: bool
 
 class WorkflowStrategy(TypedDict, total=False):
     use_rag: bool
@@ -38,11 +34,13 @@ class WorkflowManager:
         self.classifier = QueryClassifier()
         self.response_generator = ResponseGenerator()
         self.section_retriever = SectionRetriever(db_path)
-        self.web_search_agent = WebSearchAgent()
+        self.web_search_agent = FlexibleTavilySearchAgent()
         # self.image_agent = extract_text_from_image  # Uncomment when integrating image agent
 
-    def _determine_strategy(self, classification: QueryClassification, image_path: Optional[str]) -> WorkflowStrategy:
-        """Decide which modules to activate based on query classification and image presence."""
+    def _determine_strategy(self, classification: QueryClassification, query: str, image_path: Optional[str]) -> WorkflowStrategy:
+        """
+        Decide which modules to activate based on a hybrid of LLM classification and deterministic rules.
+        """
         strategy: WorkflowStrategy = {
             "use_rag": False,
             "use_web": False,
@@ -50,7 +48,7 @@ class WorkflowManager:
             "use_image": bool(image_path),
             "skip_response": False
         }
-        qtype = classification.get("query_type", "general-info")
+        qtype = classification.query_type
         # Handle greetings and chitchat efficiently
         if qtype == "chitchat" or qtype == "greeting":
             strategy["skip_response"] = True
@@ -63,7 +61,12 @@ class WorkflowManager:
             strategy["use_rag"] = True
         elif qtype in ["procedure", "rights", "complaint", "general-info"]:
             strategy["use_rag"] = True
-            if classification.get("requires_external_sources", False):
+            # Hybrid logic for web search
+            web_keywords = [
+                "internet", "web", "online", "search", "google", "phone number", "contact", "website",
+                "latest", "current", "news", "address", "who is", "members", "recent", "find", "lookup"
+            ]
+            if classification.requires_external_sources or any(kw in query.lower() for kw in web_keywords):
                 strategy["use_web"] = True
         return strategy
 
@@ -95,7 +98,12 @@ class WorkflowManager:
         # Web context
         if strategy.get("use_web"):
             try:
-                web_results = self.web_search_agent.search(query)
+                # Use unrestricted search for general-info queries, restricted otherwise
+                trusted_sites = True
+                if query_classification and hasattr(query_classification, "query_type"):
+                    if getattr(query_classification, "query_type", "") == "general-info":
+                        trusted_sites = False
+                web_results = self.web_search_agent.search(query, trusted_sites_only=trusted_sites)
                 if web_results:
                     docs.append({
                         "content": web_results,
@@ -132,32 +140,36 @@ class WorkflowManager:
 
     def process_query(self, query: str, image_path: Optional[str] = None, chat_history: Optional[List[Dict[str, str]]] = None) -> WorkflowResponse:
         logger.info(f"Received query: {query}")
-        # Classify the query
-        classification: QueryClassification = self.classifier.classify_query(query)
+        # Use AdvancedQueryMerger to rewrite the query for context-aware input
+        merged_query = AdvancedQueryMerger.merge(query, chat_history or [])
+        # Classify the merged query
+        classification: QueryClassification = self.classifier.classify_query(merged_query)
         logger.info(f"Query classification: {classification}")
 
         # Early exit for greeting/chitchat queries
-        if classification.get("query_type") in ["greeting", "chitchat"]:
-            return {"response": "Hello! How can I assist you with consumer rights or complaints today?", "sources": [], "confidence": 1.0}
+        if classification.query_type in ["greeting", "chitchat"]:
+            return {"response": "Hello! How can I assist you with consumer rights or complaints today?", "sources": [], "confidence": 1.0, "query_type": classification.query_type}
 
-        strategy = self._determine_strategy(classification, image_path)
+        strategy = self._determine_strategy(classification, merged_query, image_path)
         logger.info(f"Workflow strategy: {strategy}")
 
-        docs = self._gather_context(query, strategy, image_path, query_classification=classification)
+        docs = self._gather_context(merged_query, strategy, image_path, query_classification=classification)
 
         # Only exit early for clarification if no docs are found
-        if classification.get("clarification_needed", False) and not docs:
+        if classification.clarification_needed and not docs:
             return {
-                "response": classification.get("clarification_question", "Could you please clarify your query?"),
+                "response": classification.clarification_question or "Could you please clarify your query?",
                 "source_docs": [],
                 "strategy": strategy,
-                "classification": classification
+                "classification": classification,
+                "query_type": classification.query_type
             }
 
         # If docs are found, generate response and include clarification question if present
-        response = self._generate_response(query, docs, classification, chat_history)
-        if classification.get("clarification_needed", False):
-            # Append clarification to response if not already present
-            clarification = classification.get("clarification_question", "Could you please clarify your query?")
+        response = self._generate_response(merged_query, docs, classification, chat_history)
+        if classification.clarification_needed:
+            clarification = classification.clarification_question or "Could you please clarify your query?"
             response["clarification"] = clarification
+        response["query_type"] = classification.query_type
         return response
+

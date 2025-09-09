@@ -146,56 +146,49 @@
     });
   
     chatForm.addEventListener("submit", async function (e) {
-      e.preventDefault();
-      const message = messageInput.value.trim();
-/////////////////////////////////
-      let session_id = localStorage.getItem("session_id");
-
-      if (!session_id) {
-        session_id = crypto.randomUUID();  // generate a new UUID
-        localStorage.setItem("session_id", session_id);
-      }
-
-      const formData = new FormData();
-  
-      if (message) {
-        formData.append("message", message);
-      }
-  
-      if (selectedImageFile) {
-        formData.append("file", selectedImageFile);
-      }
-  
-      if (message) {
-        addMessage("You", message);
-      }
-      
-      formData.append("session_id", session_id);
-///////////////////////////////////////////
-      if (selectedImageFile) {
-        const reader = new FileReader();
-        reader.onload = function (e) {
-          addImage("You", e.target.result);
-        };
-        reader.readAsDataURL(selectedImageFile);
-      }
-  
-      messageInput.value = "";
-      imageUpload.value = "";
-      previewContainer.style.display = "none";
-      selectedImageFile = null;
-  
       try {
+        e.preventDefault();
+        // Defensive: stop propagation and prevent reload
+        if (e.stopPropagation) e.stopPropagation();
+        if (e.returnValue) e.returnValue = false;
+
+        const message = messageInput.value.trim();
+        let session_id = localStorage.getItem("session_id");
+        if (!session_id) {
+          session_id = crypto.randomUUID();
+          localStorage.setItem("session_id", session_id);
+        }
+        const formData = new FormData();
+        if (message) formData.append("message", message);
+        if (selectedImageFile) formData.append("file", selectedImageFile);
+        formData.append("session_id", session_id);
+
+        // Only show user message/image after backend response
+        messageInput.value = "";
+        imageUpload.value = "";
+        previewContainer.style.display = "none";
+        selectedImageFile = null;
+
         const endpoint = formData.has("file")
-          ? "http://127.0.0.1:8000/upload"  // ✅ fixed from /upload-image to /upload
+          ? "http://127.0.0.1:8000/upload"
           : "http://127.0.0.1:8000/chat";
-  
         const response = await fetch(endpoint, {
           method: "POST",
           body: formData
         });
-  
+        if (!response.ok) {
+          throw new Error(`HTTP error: ${response.status}`);
+        }
         const data = await response.json();
+        // Show user message/image only after backend response
+        if (message) addMessage("You", message);
+        if (formData.has("file")) {
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            addImage("You", e.target.result);
+          };
+          reader.readAsDataURL(formData.get("file"));
+        }
         // Robustly handle backend response
         if (typeof data === "object" && data !== null) {
           let answer = typeof data.response === "string" ? data.response : JSON.stringify(data);
@@ -216,7 +209,7 @@
           addMessage("Assistant", typeof data === "string" ? data : "🤖 No reply received.");
         }
       } catch (err) {
-        console.error("Error:", err);
+        console.error("Error in chat submit handler:", err);
         addMessage("Assistant", "⚠️ Something went wrong.");
       }
     });

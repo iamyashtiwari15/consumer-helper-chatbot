@@ -27,6 +27,7 @@ class GraphState(TypedDict):
     input_type: Literal["text", "image"]
     bypass_guardrails: bool
     messages: List[BaseMessage]
+    chat_history: Optional[List[dict]]
 
 # Node 1: Guardrails check
 def guardrails_node(state: GraphState):
@@ -54,16 +55,16 @@ def image_detection_node(state: GraphState):
 def route_to_agent(state: GraphState):
     if state["agent_name"] == "GUARDRAILS_BLOCK" or state["input_type"] == "image":
         return state
-    result = manager.process_query(state["input"])
+    # Pass chat_history to WorkflowManager
+    chat_history = state.get("chat_history", None)
+    result = manager.process_query(state["input"], chat_history=chat_history)
     if result.get("query_type") in ["greeting", "chitchat"]:
         agent_name = "CONVERSATION_AGENT"
     elif result.get("response") is not None:
-        # Route to RAG_AGENT whenever a response exists, regardless of sources
         agent_name = "RAG_AGENT"
     else:
         agent_name = "CONVERSATION_AGENT"
     logging.info(f"WorkflowManager selected agent: {agent_name}")
-    # Pass workflow_response explicitly in state
     return {**state, "agent_name": agent_name, "workflow_response": result}
 
 # Node 4: Call the routed agent

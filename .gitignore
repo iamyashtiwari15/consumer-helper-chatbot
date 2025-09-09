@@ -37,7 +37,7 @@ tokenizer.json
 config.json
 
 # PDF files (if you want to exclude them)
-medical_pdfs/
+CP Act 2019_1732700731 (2).pdf
 *.pdf
 
 # Jupyter Notebook checkpoints
