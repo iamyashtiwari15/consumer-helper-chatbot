@@ -156,6 +156,7 @@ Do not provide any source link that is not present in the context.
         chat_history: Optional[List[Dict[str, str]]] = None
     ) -> Dict[str, Any]:
         try:
+            self.logger.info(f"[LOG] Starting LLM response generation for query: {query}")
             # Get document texts and organize by relevance
             doc_texts_with_scores = []
             for doc in retrieved_docs:
@@ -181,12 +182,21 @@ Do not provide any source link that is not present in the context.
                 prompt = self._build_classified_prompt(query, context, query_classification, chat_history)
             else:
                 prompt = self._build_prompt(query, context, chat_history)
-                
+            self.logger.info(f"[LOG] Prompt sent to LLM: {prompt}")
             # Generate initial response
             initial_response = self.response_generator.invoke(prompt)
-            response_text = initial_response.content.strip()
+            response_text = initial_response.content.strip() if initial_response and hasattr(initial_response, 'content') else None
+            self.logger.info(f"[LOG] Raw LLM response: {response_text}")
 
             # Handle insufficient info case
+            if not response_text:
+                self.logger.warning(f"[LOG] LLM returned empty response for query: {query}")
+                return {
+                    "response": "Sorry, no information was found for your query. Please try rephrasing or ask about another topic.",
+                    "sources": [],
+                    "confidence": 0.0,
+                    "verification_result": None
+                }
             if response_text.startswith("{") and "Insufficient Information" in response_text:
                 return {
                     "response": response_text,
@@ -224,6 +234,7 @@ Do not provide any source link that is not present in the context.
                 for path in picture_paths:
                     final_response += f"\n- [{path.split('/')[-1]}]({path})"
 
+            self.logger.info(f"[LOG] Final response to user: {final_response}")
             return {
                 "response": final_response,
                 "sources": sources,

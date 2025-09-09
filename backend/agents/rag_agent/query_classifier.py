@@ -49,7 +49,13 @@ Query: {query}
 """
         result = self.classifier.invoke(prompt)
         try:
-            return self.parser.parse(result.content)
+            # Extract only the JSON part from the LLM output
+            content = result.content
+            json_start = content.find('{')
+            json_end = content.rfind('}') + 1
+            if json_start != -1 and json_end != -1:
+                content = content[json_start:json_end]
+            return self.parser.parse(content)
         except Exception as e:
             self.logger.error(f"Error parsing classification: {e}")
             return QueryClassification(
@@ -64,53 +70,31 @@ Query: {query}
     def get_response_strategy(self, classification: QueryClassification) -> Dict[str, Any]:
         """
         Determine the best strategy to answer the query based on its classification.
+        This is now the single source of truth for workflow strategy.
         """
         strategy = {
-            "use_rag": True,
-            "needs_web_search": False,
-            "needs_examples": False,
-            "needs_step_by_step": False,
-            "response_format": "default"
+            "use_rag": False,
+            "use_web": False,
+            "use_section": False,
+            "use_image": False,
+            "skip_response": False
         }
 
-        # Base type rules
         query_type = getattr(classification, "query_type", "general-info")
 
-        if query_type == "procedure":
-            strategy.update({
-                "needs_step_by_step": True,
-                "response_format": "steps",
-                "needs_examples": True
-            })
-
-        elif query_type == "complaint":
-            strategy.update({
-                "needs_web_search": True,
-                "needs_step_by_step": True,
-                "response_format": "steps"
-            })
-
-        # Handle external sources requirement
-        if getattr(classification, "requires_external_sources", False):
-            strategy["needs_web_search"] = True
-
-        # Handle actionable requests
-        if getattr(classification, "has_actionable_request", False):
-            strategy["needs_step_by_step"] = True
-
-        # Extra heuristic layer for robustness
-        query_text = getattr(classification, "query_text", "").lower()
-
-        # Time-based queries -> always need web
-        if any(keyword in query_text for keyword in ["before", "after", "since", "latest", "amendment", "update", "change", "2020", "2021", "2022", "2023", "2024"]):
-            strategy["needs_web_search"] = True
-
-        # Comparison queries -> set comparison mode
-        if any(keyword in query_text for keyword in ["compare", "difference", "vs", "versus"]):
-            strategy.update({
-                "needs_web_search": True,
-                "response_format": "comparison",
-                "needs_step_by_step": False
-            })
-
+        if query_type in ["chitchat", "greeting"]:
+            strategy["skip_response"] = True
+        elif query_type == "section-specific":
+            strategy["use_section"] = True
+            strategy["use_rag"] = True
+        elif query_type in ["procedure", "rights", "complaint", "general-info"]:
+            strategy["use_rag"] = True
+            web_keywords = [
+                "internet", "web", "online", "search", "google", "phone number", "contact", "website",
+                "latest", "current", "news", "address", "who is", "members", "recent", "find", "lookup",
+                "before", "after", "since", "amendment", "update", "change", "2020", "2021", "2022", "2023", "2024",
+                "compare", "difference", "vs", "versus"
+            ]
+            if getattr(classification, "requires_external_sources", False) or any(kw in getattr(classification, "query_text", "").lower() for kw in web_keywords):
+                strategy["use_web"] = True
         return strategy

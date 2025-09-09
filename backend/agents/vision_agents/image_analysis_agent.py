@@ -1,93 +1,73 @@
 
 
+# --- Consumer Protection Image Agent: OCR, Summarize, Forward ---
 import os
 from PIL import Image as PILImage
+import pytesseract
 from dotenv import load_dotenv
 from langchain_core.output_parsers import StrOutputParser
-from langchain_tavily import TavilySearch
 from langchain_groq import ChatGroq
 from langchain.prompts import ChatPromptTemplate
 
-load_dotenv()
 
-# ✅ Vision model from Groq
+load_dotenv()
+pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+
+# LLM for summarization
 llm = ChatGroq(
-    model="llama3-8b-8192",  # or mixtral-8x7b-32768
+    model="llama-3.3-70b-versatile",
     temperature=0.3,
 )
 
-# ✅ Tavily tool
-search_tool = TavilySearch()
+TEXT_SUMMARY_PROMPT = (
+    "You are a consumer protection workflow assistant. Your task is to read the extracted text from the image and set the context for the user's query in the workflow manager. Provide a clear, structured summary in bullet points, including:\n"
+    "- All relevant facts, dates, and parties involved\n"
+    "- The main issue, complaint, or request described\n"
+    "- Any terms, conditions, policies, or disclaimers mentioned\n"
+    "- Legal references, demands, or actions requested\n"
+    "- Recommended next steps for the user\n"
+    "- Any information that should influence the chatbot's workflow or response\n\n"
+    "Extracted text:\n{extracted_text}"
+)
 
-# ✅ Prompt
-IMAGE_ANALYSIS_QUERY = """
-You are a top-tier medical imaging expert. Carefully analyze the uploaded medical image and provide a structured markdown report:
-
-### 1. Image Type & Region
-- What imaging modality is used?
-- What part of the body is shown?
-- Is the image of good quality?
-
-### 2. Key Findings
-- Describe any abnormalities.
-- Include precise details (sizes, density, color differences).
-
-### 3. Diagnosis
-- Most likely condition(s).
-- Alternate possibilities with reasoning.
-
-### 4. Layman's Terms
-- Explain the above in simple language.
-
-### 5. Recent Research
-- Use Tavily to search for latest research/treatments on this condition.
-- Provide 2-3 bullet points from the findings.
-
-Respond in clean markdown format.
-"""
-
-# ✅ Analyzer function
-def analyze_image(filepath: str) -> str:
+def analyze_image(filepath: str) -> dict:
+    """
+    Extract text from an image, summarize it, and forward to workflow manager for context setting.
+    Returns a dict with keys: 'ocr_text', 'ocr_summary', 'workflow_response'
+    """
+    result = {
+        "ocr_text": None,
+        "ocr_summary": None,
+        "workflow_response": None
+    }
     try:
-        # Open and validate
         image = PILImage.open(filepath)
         if image.format not in ["JPEG", "PNG", "BMP", "GIF"]:
-            return "❌ Unsupported image format. Please upload JPG, PNG, BMP, or GIF."
+            result["ocr_text"] = "❌ Unsupported image format. Please upload JPG, PNG, BMP, or GIF."
+            return result
         if os.path.getsize(filepath) > 10 * 1024 * 1024:
-            return "❌ Image too large. Please upload an image smaller than 10MB."
+            result["ocr_text"] = "❌ Image too large. Please upload an image smaller than 10MB."
+            return result
         if image.mode in ("RGBA", "P"):
             image = image.convert("RGB")
 
-        # Resize
-        width, height = image.size
-        new_width = 500
-        new_height = int((new_width / width) * height)
-        resized = image.resize((new_width, new_height))
-        temp_path = "temp_resized_image.jpg"
-        resized.save(temp_path)
+        # --- OCR Text Extraction ---
+        ocr_text = pytesseract.image_to_string(image)
+        result["ocr_text"] = ocr_text.strip()
 
-        # Prepare image data
-        with open(temp_path, "rb") as f:
-            image_bytes = f.read()
+        # --- Summarize OCR Text ---
+        if ocr_text.strip():
+            summary_prompt = TEXT_SUMMARY_PROMPT.format(extracted_text=ocr_text)
+            summary_chain = ChatPromptTemplate.from_messages([("human", summary_prompt)]) | llm | StrOutputParser()
+            ocr_summary = summary_chain.invoke({"input": summary_prompt})
+            result["ocr_summary"] = ocr_summary.strip()
 
-        # LangChain vision models (if available)
-        prompt = ChatPromptTemplate.from_messages([("human", IMAGE_ANALYSIS_QUERY)])
-        chain = prompt | llm | StrOutputParser()
-        result = chain.invoke({"input": IMAGE_ANALYSIS_QUERY, "images": [image_bytes]})
 
-        # ✅ Tavily search (handling proper dict response)
-        query = "latest research on " + result[:100]
-        search_result = search_tool.invoke(query)
-
-        if search_result and isinstance(search_result, dict) and "results" in search_result:
-            result += "\n\n---\n\n### 🔍 Additional Research from Tavily:\n"
-            for doc in search_result["results"][:3]:
-                result += f"- [{doc.get('title', 'No Title')}]({doc.get('url', '#')})\n"
-
-        os.remove(temp_path)
         return result
 
     except PILImage.UnidentifiedImageError:
-        return "❌ The uploaded file is not a valid image."
+        result["ocr_text"] = "❌ The uploaded file is not a valid image."
+        return result
     except Exception as e:
-        return f"⚠️ Error analyzing image: {str(e)}"
+        result["ocr_text"] = f"⚠️ Error analyzing image: {str(e)}"
+        return result
