@@ -107,14 +107,30 @@ def call_agent(state: GraphState):
         return state
 
     workflow_response = state.get("workflow_response", {})
-    
+    agent_name = state.get("agent_name")
     image_context = state.get("image_context", "")
+
+    # Route greeting/chitchat to consumer_rights_chat_agent
+    if agent_name == "CONVERSATION_AGENT":
+        from agents.consumer_rights_chat_agent import get_consumer_rights_response
+        messages = state["messages"] + [HumanMessage(content=state["input"])]
+        ai_message = get_consumer_rights_response(messages)
+        workflow_response["response"] = ai_message.content
+        updated_agents = state.get("involved_agents", []) + [agent_name]
+        messages = state["messages"] + [ai_message]
+        return {
+            **state,
+            "response": workflow_response,
+            "involved_agents": updated_agents,
+            "messages": messages,
+        }
+
     if image_context and "❌" in image_context:
         original_response = workflow_response.get("response", "I was unable to provide a response.")
         workflow_response["response"] = f"{image_context}\n\nRegarding your text query: {original_response}"
 
     messages = state["messages"] + [AIMessage(content=str(workflow_response))]
-    updated_agents = state.get("involved_agents", []) + [state.get("agent_name")]
+    updated_agents = state.get("involved_agents", []) + [agent_name]
 
     return {
         **state,
