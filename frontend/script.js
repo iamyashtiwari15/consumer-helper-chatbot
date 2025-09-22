@@ -10,10 +10,111 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let selectedFile = null;
 
+    function addUserMessage(text) {
+        const msgHtml = `
+            <div class="message user">
+                <div class="message-content">${text}</div>
+            </div>`;
+        chatBox.insertAdjacentHTML('beforeend', msgHtml);
+        scrollToBottom();
+    }
+
+    function addUserImage(src) {
+        const msgHtml = `
+            <div class="message user">
+                <div class="message-content">
+                    <img src="${src}" style="max-width: 250px; border-radius: 8px;" />
+                </div>
+            </div>`;
+        chatBox.insertAdjacentHTML('beforeend', msgHtml);
+        scrollToBottom();
+    }
+
+    function addBotMessage(text) {
+        const renderedHtml = window.marked.parse(text);
+        const msgHtml = `
+            <div class="message bot">
+                <div class="avatar">🤖</div>
+                <div class="message-content">
+                    ${renderedHtml}
+                </div>
+            </div>`;
+        chatBox.insertAdjacentHTML('beforeend', msgHtml);
+        scrollToBottom();
+    }
+    
+    function addLoadingIndicator() {
+        const loadingHtml = `
+            <div class="message bot" id="loading-indicator">
+                <div class="avatar">🤖</div>
+                <div class="message-content loading">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+            </div>`;
+        chatBox.insertAdjacentHTML('beforeend', loadingHtml);
+        scrollToBottom();
+    }
+
+    function removeLoadingIndicator() {
+        const indicator = document.getElementById("loading-indicator");
+        if (indicator) indicator.remove();
+    }
+
+    function scrollToBottom() {
+        chatBox.scrollTop = chatBox.scrollHeight;
+    }
+
+    // Fetch and render chat history for the current session
+    async function fetchAndRenderHistory() {
+        let sessionId = localStorage.getItem("session_id");
+        if (!sessionId) {
+            sessionId = crypto.randomUUID();
+            localStorage.setItem("session_id", sessionId);
+        }
+        // Show loading indicator while fetching history
+        addLoadingIndicator();
+        try {
+            const response = await fetch("http://127.0.0.1:8000/history", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ session_id: sessionId })
+            });
+            if (!response.ok) throw new Error("Failed to fetch history");
+            const data = await response.json();
+            chatBox.innerHTML = "";
+            if (Array.isArray(data.history)) {
+                data.history.forEach(msg => {
+                    if (msg.role === "user") {
+                        addUserMessage(msg.content);
+                    } else if (msg.role === "assistant") {
+                        addBotMessage(msg.content);
+                    }
+                });
+            }
+        } catch (err) {
+            console.error("Error fetching chat history:", err);
+        } finally {
+            removeLoadingIndicator();
+        }
+    }
+
+    // Call on page load
+    fetchAndRenderHistory();
+
     // Auto-resize textarea as user types
     messageInput.addEventListener('input', () => {
         messageInput.style.height = 'auto';
         messageInput.style.height = (messageInput.scrollHeight) + 'px';
+    });
+
+    // Trigger form submit on Enter (without Shift)
+    messageInput.addEventListener("keydown", function(e) {
+        if (e.key === "Enter" && !e.shiftKey) {
+            e.preventDefault(); // Prevent newline
+            chatForm.requestSubmit(); // Trigger the form's submit event
+        }
     });
 
     // Handle image selection, rejecting other file types
@@ -79,8 +180,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (userFile) {
             addUserImage(fileSrc);
         }
-        
-        addLoadingIndicator();
+        addLoadingIndicator(); // Show loader while waiting for response
 
         // Prepare data for the backend
         const formData = new FormData();
@@ -106,71 +206,13 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
-            
             const data = await response.json();
             removeLoadingIndicator();
             addBotMessage(data.response || data.reply || "Sorry, I couldn't process that.");
-
         } catch (err) {
             console.error("Error submitting form:", err);
             removeLoadingIndicator();
             addBotMessage("⚠️ Oops! Something went wrong. Please try again.");
         }
     });
-
-    function addUserMessage(text) {
-        const msgHtml = `
-            <div class="message user">
-                <div class="message-content">${text}</div>
-            </div>`;
-        chatBox.insertAdjacentHTML('beforeend', msgHtml);
-        scrollToBottom();
-    }
-
-    function addUserImage(src) {
-        const msgHtml = `
-            <div class="message user">
-                <div class="message-content">
-                    <img src="${src}" style="max-width: 250px; border-radius: 8px;" />
-                </div>
-            </div>`;
-        chatBox.insertAdjacentHTML('beforeend', msgHtml);
-        scrollToBottom();
-    }
-
-    function addBotMessage(text) {
-        const renderedHtml = window.marked.parse(text);
-        const msgHtml = `
-            <div class="message bot">
-                <div class="avatar">🤖</div>
-                <div class="message-content">
-                    ${renderedHtml}
-                </div>
-            </div>`;
-        chatBox.insertAdjacentHTML('beforeend', msgHtml);
-        scrollToBottom();
-    }
-    
-    function addLoadingIndicator() {
-        const loadingHtml = `
-            <div class="message bot" id="loading-indicator">
-                <div class="avatar">🤖</div>
-                <div class="message-content loading">
-                    <div class="dot"></div>
-                    <div class="dot"></div>
-                    <div class="dot"></div>
-                </div>
-            </div>`;
-        chatBox.insertAdjacentHTML('beforeend', loadingHtml);
-        scrollToBottom();
-    }
-
-    function removeLoadingIndicator() {
-        const indicator = document.getElementById("loading-indicator");
-        if (indicator) indicator.remove();
-    }
-
-    function scrollToBottom() {
-        chatBox.scrollTop = chatBox.scrollHeight;
-    }
 });

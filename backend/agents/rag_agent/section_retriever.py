@@ -2,7 +2,7 @@ import logging
 from typing import List, Dict, Any, Optional, Tuple
 from pathlib import Path
 from langchain_chroma import Chroma
-from .llm_loader import get_embedding_model
+from .role_llm_loader import get_embedding_model
 
 logger = logging.getLogger(__name__)
 

@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 from agents.web_search.web_search_agent import WebSearchAgent
-from agents.llm_loader import get_llm  # Loads default LLM
+from agents.web_search.web_llm_loader import get_llm  # Loads web search specific LLM
 
 
 class WebSearchProcessor:

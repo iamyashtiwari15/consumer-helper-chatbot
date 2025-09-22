@@ -1,22 +1,3 @@
-# agents/llm_loader.py
-
-import os
-from langchain_groq import ChatGroq
-from langchain_huggingface import HuggingFaceEmbeddings
-
-from dotenv import load_dotenv
-
-load_dotenv()
-
-# agents/llm_loader.py
-
-import os
-from langchain_groq import ChatGroq
-from langchain_huggingface import HuggingFaceEmbeddings
-from langchain.schema.messages import SystemMessage
-from dotenv import load_dotenv
-
-load_dotenv()
 
 # agents/llm_loader.py
 
@@ -96,8 +77,4 @@ def get_embedding_model():
     """
     Loads the default sentence embedding model using HuggingFace.
     """
-    # model_name = os.getenv("EMBEDDING_MODEL_NAME", "sentence-transformers/all-MiniLM-L6-v2")
-    
-    # embedding = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
-    # return embedding
     return NamedHuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")

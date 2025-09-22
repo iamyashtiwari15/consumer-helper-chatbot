@@ -44,41 +44,70 @@ class WorkflowManager:
         return strategy
 
     def _gather_context(self, query: str, strategy: WorkflowStrategy, image_path: Optional[str], query_classification: Optional[Dict[str, Any]] = None) -> List[Dict[str, Any]]:
-        """Gather context from RAG, section retriever, web search, and image agent as needed."""
+        """Simplified context gathering with parallel execution for speed"""
         docs = []
-        # NOTE: The direct image context is now handled in process_query.
-        # This section could be used if you need to re-analyze the image for some reason.
         
-        # Section context
+        # Section retrieval (synchronous, usually fast)
         if strategy.get("use_section"):
             try:
                 section_num = self.section_retriever.extract_section_number(query)
                 docs = self.section_retriever.get_section(section_num) if section_num else []
             except Exception as e:
                 logger.warning(f"Section retrieval failed: {e}")
-        # RAG context
-        elif strategy.get("use_rag"):
-            try:
-                docs, _ = retrieve_documents(query, query_classification=query_classification)
-            except Exception as e:
-                logger.warning(f"RAG retrieval failed: {e}")
-        # Web context
-        if strategy.get("use_web"):
-            try:
-                trusted_sites = True
-                if query_classification and hasattr(query_classification, "query_type"):
-                    if getattr(query_classification, "query_type", "") == "general-info":
-                        trusted_sites = False
-                web_results = self.web_search_agent.search(query, trusted_sites_only=trusted_sites)
-                if web_results:
-                    docs.append({
-                        "content": web_results,
-                        "metadata": {"source": "web_search"},
-                        "score": 0.9
-                    })
-            except Exception as e:
-                logger.warning(f"Web search failed: {e}")
-        logger.info(f"[DEBUG] Gathered {len(docs)} docs for query: {query}")
+        
+        # Parallel RAG and Web search for better performance
+        elif strategy.get("use_rag") or strategy.get("use_web"):
+            import concurrent.futures
+            
+            def get_rag_docs():
+                if strategy.get("use_rag"):
+                    try:
+                        rag_docs, _ = retrieve_documents(query, query_classification=query_classification)
+                        return rag_docs
+                    except Exception as e:
+                        logger.warning(f"RAG retrieval failed: {e}")
+                return []
+            
+            def get_web_docs():
+                if strategy.get("use_web"):
+                    try:
+                        # Optimize web search based on query type
+                        trusted_only = True
+                        if query_classification and hasattr(query_classification, "query_type"):
+                            # Use broader search for general info and fraud cases
+                            if getattr(query_classification, "query_type", "") in ["general-info", "fraud-scam"]:
+                                trusted_only = False
+                        
+                        web_results = self.web_search_agent.search(query, trusted_sites_only=trusted_only)
+                        if web_results:
+                            return [{
+                                "content": web_results,
+                                "metadata": {"source": "web_search", "query_type": getattr(query_classification, "query_type", "unknown")},
+                                "score": 0.9
+                            }]
+                    except Exception as e:
+                        logger.warning(f"Web search failed: {e}")
+                return []
+            
+            # Execute in parallel with timeout
+            with concurrent.futures.ThreadPoolExecutor(max_workers=2) as executor:
+                futures = []
+                if strategy.get("use_rag"):
+                    futures.append(executor.submit(get_rag_docs))
+                if strategy.get("use_web"):
+                    futures.append(executor.submit(get_web_docs))
+                
+                for future in concurrent.futures.as_completed(futures, timeout=15):
+                    try:
+                        result = future.result()
+                        if result:
+                            docs.extend(result)
+                    except concurrent.futures.TimeoutError:
+                        logger.warning(f"Context gathering timed out")
+                    except Exception as e:
+                        logger.warning(f"Error in parallel context gathering: {e}")
+        
+        logger.info(f"Gathered {len(docs)} documents for query type: {getattr(query_classification, 'query_type', 'unknown')}")
         return docs
 
     def _generate_response(self, query: str, docs: List[Dict[str, Any]], classification: QueryClassification, chat_history: Optional[List[Dict[str, str]]]) -> WorkflowResponse:
@@ -118,7 +147,14 @@ class WorkflowManager:
 
         # Step 4: Handle simple cases like greetings
         if classification.query_type in ["greeting", "chitchat"]:
-            return {"response": "Hello! How can I assist you with consumer rights or complaints today?", "sources": [], "confidence": 1.0, "query_type": classification.query_type}
+            responses = {
+                "greeting": "Hello! How can I assist you with consumer rights or complaints today?",
+                "chitchat": "I'm here to help you with consumer rights and protection matters. What can I assist you with?"
+            }
+            return {
+                "response": responses.get(classification.query_type, responses["greeting"]), 
+                "sources": [], "confidence": 1.0, "query_type": classification.query_type
+            }
 
         # Step 5: Determine the strategy and gather documents
         strategy = self._determine_strategy(classification, merged_query, image_path)

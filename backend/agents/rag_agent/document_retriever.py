@@ -20,7 +20,7 @@ from agents.rag_agent.query_expander import QueryExpander
 from agents.rag_agent.query_classifier import QueryClassifier
 from agents.web_search.web_search_agent import WebSearchAgent
 from langchain.docstore.document import Document
-from agents.rag_agent.llm_loader import get_llm, get_embedding_model
+from agents.rag_agent.role_llm_loader import get_llm,get_embedding_model
 from langchain_chroma import Chroma
 
 # Configure logging
@@ -93,7 +93,7 @@ except Exception as e:
 # Initialize web search agent
 
 # Hybrid retrieve_documents function
-def retrieve_documents(query: str, k: int = 5, query_classification: Optional[Dict[str, Any]] = None) -> Tuple[List[Dict[str, Any]], Dict[str, Any]]:
+def retrieve_documents(query: str, k: int = 8,query_classification: Optional[Dict[str, Any]] = None) -> Tuple[List[Dict[str, Any]], Dict[str, Any]]:
     """
     Retrieve relevant documents using a hybrid approach:
     - Metadata filtering for section-specific queries
@@ -175,14 +175,7 @@ def retrieve_documents(query: str, k: int = 5, query_classification: Optional[Di
         logger.error("Full traceback:", exc_info=True)
         return [], query_classification
 
-# The `AgenticDocumentRetriever` class and its methods
-# (`_validate_documents`, `_deduplicate_and_rank`) were complex and
-# depended on the `rank_documents` function which was removed.
-# To make the code runnable and correct, these have been
-# commented out or removed entirely.
-# A simpler, more reliable retrieval function is provided above.
 
-# Example usage (for testing purposes)
 if __name__ == "__main__":
     test_query_with_section = "What is the penalty for fraud in Section 33?"
     test_query_general = "What are the rules regarding data privacy?"

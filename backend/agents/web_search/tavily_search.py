@@ -10,12 +10,9 @@ load_dotenv()  # Load TAVILY_API_KEY from .env file
 
 TRUSTED_SITES = [
     "consumerhelpline.gov.in",
-    "ncdrc.nic.in",
+    "ncdrc.nic.in", 
     "consumeraffairs.nic.in",
-    "pgportal.gov.in",
-    "indiankanoon.org",
-    "supremecourtofindia.nic.in",
-    "districts.ecourts.gov.in"
+    "indiankanoon.org"  # Reduced to top 4 most relevant sites for faster query processing
 ]
 
 class FlexibleTavilySearchAgent:
@@ -23,7 +20,7 @@ class FlexibleTavilySearchAgent:
     Flexible Tavily search agent supporting trusted-only and unrestricted search.
     """
     def __init__(self):
-        self.tavily_search = TavilySearch(max_results=5)
+        self.tavily_search = TavilySearch(max_results=2)  # Reduced from 5 to 2 for faster responses
         self.logger = logging.getLogger(__name__)
 
     def search(self, query: str, trusted_sites_only: bool = False) -> str:
@@ -49,7 +46,14 @@ class FlexibleTavilySearchAgent:
                 final_query = final_query[:400]
 
             # The API returns a dictionary, so we store it as such.
-            result_dict = self.tavily_search.invoke({"query": final_query})
+            # Add timeout handling for better performance
+            import asyncio
+            try:
+                result_dict = self.tavily_search.invoke({"query": final_query})
+            except Exception as api_error:
+                self.logger.warning(f"Tavily API call failed: {api_error}")
+                return "Web search temporarily unavailable. Please try again."
+            
             self.logger.info(f"Raw result: {str(result_dict)[:200]}")
 
             # The actual search results are in the "results" key of the dictionary.
@@ -57,9 +61,11 @@ class FlexibleTavilySearchAgent:
 
             # Now we check and process the list we extracted.
             if results_list and isinstance(results_list, list):
-                formatted_results = "\n\n".join(
-                    [f"Title: {item.get('title', 'N/A')}\nURL: {item.get('url', 'N/A')}\nSnippet: {item.get('content', 'N/A')}" for item in results_list]
-                )
+                # Truncate content for faster processing and limit to 2 results max
+                formatted_results = "\n\n".join([
+                    f"Title: {item.get('title', 'N/A')[:100]}{'...' if len(item.get('title', '')) > 100 else ''}\nURL: {item.get('url', 'N/A')}\nSnippet: {item.get('content', 'N/A')[:200]}{'...' if len(item.get('content', '')) > 200 else ''}" 
+                    for item in results_list[:2]  # Limit to first 2 results
+                ])
                 return formatted_results.strip()
 
             return "No relevant results were found from the web search."

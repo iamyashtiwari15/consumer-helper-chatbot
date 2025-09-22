@@ -1,6 +1,6 @@
 import logging
 from typing import List, Dict, Any, Optional
-from agents.rag_agent.llm_loader import get_llm
+from agents.rag_agent.role_llm_loader import get_llm
 from agents.rag_agent.classifier_schema import QueryClassification
 
 class ResponseGenerator:
@@ -147,6 +147,32 @@ Do not provide any source link that is not present in the context.
 
         return prompt
 
+    def _should_verify_response(self, query_classification: Optional[QueryClassification] = None) -> bool:
+        """
+        Determine if response verification is needed based on query type and risk level.
+        Only verify high-stakes queries to reduce API calls and improve performance.
+        """
+        if not query_classification:
+            return False  # Skip verification for unclassified queries
+            
+        # High-risk query types that need verification
+        high_risk_types = ["legal-advice", "complaint", "procedure", "refund"]
+        
+        # Check if query involves money, legal action, or official procedures
+        query_type = getattr(query_classification, "query_type", "")
+        topics = getattr(query_classification, "topics", [])
+        
+        # Verify if it's a high-risk type or involves financial/legal topics
+        if query_type in high_risk_types:
+            return True
+            
+        # Check for financial or legal topics
+        risk_topics = ["refund", "legal", "court", "complaint", "dispute", "warranty"]
+        if any(topic in risk_topics for topic in topics):
+            return True
+            
+        return False  # Skip verification for general info queries
+
     def generate_response(
         self,
         query: str,
@@ -205,20 +231,19 @@ Do not provide any source link that is not present in the context.
                     "verification_result": None
                 }
 
-            # Step 2: Fact check and verify the response
-            verification_result = self._verify_response(
-                response_text,
-                query,
-                context
-            )
-
-            # Step 3: Refine response if needed
-            final_response = self._refine_response(
-                response_text,
-                verification_result,
-                query,
-                context
-            )
+            # Step 2: Conditionally verify response (only for high-risk queries)
+            should_verify = self._should_verify_response(query_classification)
+            self.logger.info(f"[LOG] Verification needed: {should_verify}")
+            
+            if should_verify:
+                verification_result = self._verify_response(response_text, query, context)
+                # Step 3: Refine response if verification suggests improvements
+                final_response = self._refine_response(response_text, verification_result, query, context)
+            else:
+                # Skip verification for low-risk queries - significant performance boost
+                verification_result = {"verified": True, "details": "Verification skipped for performance"}
+                final_response = response_text
+            
 
             # Step 4: Add source documentation
             sources = self._extract_sources(retrieved_docs) if self.include_sources else []

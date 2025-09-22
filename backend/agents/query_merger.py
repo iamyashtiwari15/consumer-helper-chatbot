@@ -1,9 +1,9 @@
-from agents.rag_agent.llm_loader import get_llm
+from agents.rag_agent.role_llm_loader import get_llm
 
 
 class AdvancedQueryMerger:
     @staticmethod
-    def merge(current_query, chat_history, max_history=2):
+    def merge(current_query, chat_history, max_history=0):
         """
         Use an LLM to rewrite the user's query into a self-contained question based on chat history.
         Args:
