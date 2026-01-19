@@ -32,4 +32,6 @@ def get_embedding_model():
     """
     Loads the default sentence embedding model using HuggingFace.
     """
-    return NamedHuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
+    import torch
+    device = "cuda" if torch.cuda.is_available() else "cpu"
+    return NamedHuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2", device=device)
