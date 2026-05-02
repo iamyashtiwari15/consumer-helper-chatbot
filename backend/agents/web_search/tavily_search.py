@@ -6,13 +6,15 @@ import os
 from langchain_tavily import TavilySearch
 from dotenv import load_dotenv
 
+from core.config import get_settings
+
 load_dotenv()  # Load TAVILY_API_KEY from .env file
 
 TRUSTED_SITES = [
-    "consumerhelpline.gov.in",
-    "ncdrc.nic.in", 
-    "consumeraffairs.nic.in",
-    "indiankanoon.org"  # Reduced to top 4 most relevant sites for faster query processing
+    "wikipedia.org",
+    "reuters.com",
+    "apnews.com",
+    "bbc.com",
 ]
 
 class FlexibleTavilySearchAgent:
@@ -20,7 +22,8 @@ class FlexibleTavilySearchAgent:
     Flexible Tavily search agent supporting trusted-only and unrestricted search.
     """
     def __init__(self):
-        self.tavily_search = TavilySearch(max_results=2)  # Reduced from 5 to 2 for faster responses
+        settings = get_settings()
+        self.tavily_search = TavilySearch(max_results=settings.web_search_max_results)
         self.logger = logging.getLogger(__name__)
 
     def search(self, query: str, trusted_sites_only: bool = False) -> str:

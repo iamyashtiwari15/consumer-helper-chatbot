@@ -1,9 +1,6 @@
-
-
-# --- Consumer Protection Image Agent: OCR, Summarize, Forward ---
+# --- Image OCR and summarization for downstream routing ---
 import os
 from PIL import Image as PILImage
-import pytesseract
 from dotenv import load_dotenv
 from langchain_core.output_parsers import StrOutputParser
 from langchain_groq import ChatGroq
@@ -11,7 +8,6 @@ from langchain.prompts import ChatPromptTemplate
 
 
 load_dotenv()
-pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 
 # LLM for summarization
 llm = ChatGroq(
@@ -20,11 +16,11 @@ llm = ChatGroq(
 )
 
 TEXT_SUMMARY_PROMPT = (
-    "You are a consumer protection workflow assistant. Your task is to read the extracted text from the image and set the context for the user's query in the workflow manager. Provide a clear, structured summary in bullet points, including:\n"
+    "You are a workflow assistant. Your task is to read extracted text from an image and summarize the useful context for downstream question answering. Provide a clear, structured summary in bullet points, including:\n"
     "- All relevant facts, dates, and parties involved\n"
-    "- The main issue, complaint, or request described\n"
+    "- The main issue, request, or topic described\n"
     "- Any terms, conditions, policies, or disclaimers mentioned\n"
-    "- Legal references, demands, or actions requested\n"
+    "- Important entities, deadlines, or numeric values\n"
     "- Recommended next steps for the user\n"
     "- Any information that should influence the chatbot's workflow or response\n\n"
     "Extracted text:\n{extracted_text}"
@@ -41,6 +37,9 @@ def analyze_image(filepath: str) -> dict:
         "workflow_response": None
     }
     try:
+        import pytesseract
+
+        pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
         image = PILImage.open(filepath)
         if image.format not in ["JPEG", "PNG", "BMP", "GIF"]:
             result["ocr_text"] = "❌ Unsupported image format. Please upload JPG, PNG, BMP, or GIF."

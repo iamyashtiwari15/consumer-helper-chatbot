@@ -1,89 +1,12 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Consumer Rights Protection Assistant</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-</head>
-<body>
-  <div class="container">
-    <aside class="sidebar">
-      <h2><i class="fa-solid fa-scale-balanced"></i> Consumer Protection</h2>
-      <section>
-        <h3><i class="fa-solid fa-robot"></i> Available Agents</h3>
-        <ul>
-          <li><i class="fa-solid fa-comments"></i> Consumer Rights Advisor</li>
-          <li><i class="fa-solid fa-book"></i> Legal Document Search</li>
-          <li><i class="fa-solid fa-globe"></i> Web Search Agent</li>
-          <li><i class="fa-solid fa-file-lines"></i> Document Analysis</li>
-        </ul>
-      </section>
-      <section>
-        <h3><i class="fa-solid fa-gavel"></i> Domains Covered</h3>
-        <ul>
-          <li><i class="fa-solid fa-shopping-cart"></i> Consumer Protection Laws</li>
-          <li><i class="fa-solid fa-pen-to-square"></i> Complaint Procedures</li>
-          <li><i class="fa-solid fa-letter-magnifying-glass"></i> Legal Remedies</li>
-          <li><i class="fa-solid fa-landmark"></i> Consumer Courts</li>
-        </ul>
-      </section>
-      <section>
-        <h3><i class="fa-solid fa-star"></i> Features</h3>
-        <ul>
-            <li><i class="fa-solid fa-search"></i> Legal Document Search</li>
-            <li><i class="fa-solid fa-chart-simple"></i> Case Law Analysis</li>
-            <li><i class="fa-solid fa-shield-halved"></i> Rights Explanation</li>
-            <li><i class="fa-solid fa-mobile-screen-button"></i> E-commerce Rights</li>
-            <li><i class="fa-solid fa-check-to-slot"></i> Complaint Guidelines</li>
-            <li><i class="fa-solid fa-user-shield"></i> Safety Checks</li>
-        </ul>
-      </section>
-    </aside>
-
-    <main class="chat">
-      <div class="chat-header">
-        <h1>⚖️ Consumer Protection Assistant</h1>
-        <p>Your AI-powered guide for consumer rights, complaints, and legal remedies.</p>
-      </div>
-
-      <div class="chat-box" id="chatBox">
-        <div class="message bot">
-          <div class="avatar">🤖</div>
-          <div class="message-content">
-            <strong>Assistant:</strong><br>
-            Welcome! How can I assist you with your consumer rights today? Feel free to describe your issue or upload a relevant document/image.
-          </div>
-        </div>
-      </div>
-
-      <div class="chat-footer">
-        <form id="chat-form">
-          <div id="preview-container" class="preview-container" style="display: none;">
-            <img id="preview-image" class="preview-image" alt="Preview" />
-            <span id="preview-text"></span>
-            <button type="button" id="remove-image" class="remove-btn">
-              <i class="fas fa-times"></i>
-            </button>
-          </div>
-
-          <label for="image-upload" class="upload-btn">
-            <i class="fas fa-paperclip"></i>
-          </label>
-          <input type="file" id="image-upload" accept="image/*" hidden />
-
-          <textarea id="message-input" placeholder="Ask your question here..." rows="1"></textarea>
-
-          <button type="submit" class="send-btn">
-            <i class="fas fa-paper-plane"></i>
-          </button>
-        </form>
-      </div>
-    </main>
-  </div>
-
-  <script src="script.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document & Web Assistant</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>

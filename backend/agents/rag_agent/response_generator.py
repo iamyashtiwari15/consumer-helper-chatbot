@@ -5,7 +5,7 @@ from agents.rag_agent.classifier_schema import QueryClassification
 
 class ResponseGenerator:
     """
-    Generates consumer rights responses based on retrieved legal context and user query.
+    Generates grounded responses based on retrieved document or web context.
     """
     def __init__(self):
         self.logger = logging.getLogger(__name__)
@@ -60,7 +60,7 @@ class ResponseGenerator:
         # Format specific markers
         format_markers = "Steps:" if needs_steps else "Key Points:"
         
-        prompt = f"""You are a consumer rights assistant providing accurate information based on legal sources.
+        prompt = f"""You are a document question-answering assistant.
 
 User Query: {query}
 
@@ -79,7 +79,7 @@ Additional Instructions for this query type:
 
 {format_markers}
 
-Based on the provided context, please provide a structured response that specifically addresses the user's needs.
+Based on the provided context, provide a structured response that specifically addresses the user's needs.
 Focus on being practical and actionable while maintaining accuracy.
 
 If you're unsure or the information is not in the context, say so clearly.
@@ -92,8 +92,8 @@ If you're unsure or the information is not in the context, say so clearly.
         1. Answer based ONLY on the provided context
         2. Be clear, concise, and practical
         3. Use bullet points for clarity
-        4. Include relevant section references
-        5. Add a brief disclaimer
+        4. Quote or reference specific evidence when helpful
+        5. Say clearly when the answer is not supported by the context
         6. Format in markdown for readability
         """
 
@@ -117,16 +117,15 @@ If you're unsure or the information is not in the context, say so clearly.
            {
                "Insufficient Information", "I don't have enough information."
            }
-        3. Do not provide legal advice; only summarize the rights and rules from the provided sources.
+        3. Do not make up facts that are not supported by the provided context.
         4. Be concise, accurate, and avoid making assumptions not supported by the context.
         5. Format the answer with headings, subheadings, and tables (if applicable) in markdown.
-        6. Include a short disclaimer: "This information is for educational purposes and may not be legally binding."
-        7. If monetary or date values are provided, use them exactly as they appear in the context.
+        6. If numerical, date, or policy values are provided, use them exactly as they appear in the context.
         """
 
-        history_text = "\n".join([f"User: {msg['user']}\nAssistant: {msg['assistant']}" for msg in chat_history]) if chat_history else ""
+        history_text = "\n".join([f"{msg['role'].capitalize()}: {msg['content']}" for msg in chat_history]) if chat_history else ""
 
-        prompt = f"""You are a consumer rights assistant providing accurate and verified information based only on trusted legal sources such as official government websites, consumer protection acts, and related documentation.
+        prompt = f"""You are a grounded assistant. Answer using only the supplied context from uploaded documents or trusted web results.
 
 Here are the last few messages from our conversation:
 {history_text}
@@ -140,7 +139,7 @@ I've retrieved the following information to help answer this question:
 {table_instructions}
 {response_format_instructions}
 
-Based on the provided information, please answer the user's question thoroughly but concisely.
+Based on the provided information, answer the user's question thoroughly but concisely.
 If the information doesn't contain the answer, follow the insufficient information format exactly.
 Do not provide any source link that is not present in the context.
 """
@@ -189,7 +188,7 @@ Do not provide any source link that is not present in the context.
                 if isinstance(doc, tuple):  # If doc is (Document, score) tuple
                     doc_texts_with_scores.append((doc[0].page_content, doc[1]))
                 else:  # If doc is a dict with content
-                    doc_texts_with_scores.append((doc["content"], doc.get("score", 1.0)))
+                    doc_texts_with_scores.append((doc["content"], doc.get("score", doc.get("metadata", {}).get("score", 1.0))))
             
             # Sort by relevance score if available
             doc_texts_with_scores.sort(key=lambda x: x[1], reverse=True)
@@ -358,8 +357,8 @@ Do not provide any source link that is not present in the context.
         seen = set()
 
         for doc in documents:
-            title = doc.get("source")
-            path = doc.get("source_path")
+            title = doc.get("source") or doc.get("metadata", {}).get("source")
+            path = doc.get("source_path") or doc.get("metadata", {}).get("source_path")
             if not title or not path:
                 continue
 
@@ -370,7 +369,7 @@ Do not provide any source link that is not present in the context.
             sources.append({
                 "title": title,
                 "path": path,
-                "score": doc.get("combined_score", doc.get("rerank_score", doc.get("score", 0.0)))
+                "score": doc.get("combined_score", doc.get("rerank_score", doc.get("score", doc.get("metadata", {}).get("score", 0.0))))
             })
             seen.add(source_id)
 
@@ -383,8 +382,8 @@ Do not provide any source link that is not present in the context.
 
         keys = ["combined_score", "rerank_score", "score"]
         for key in keys:
-            if key in documents[0]:
-                scores = [doc.get(key, 0) for doc in documents[:3]]
+            if key in documents[0] or key in documents[0].get("metadata", {}):
+                scores = [doc.get(key, doc.get("metadata", {}).get(key, 0)) for doc in documents[:3]]
                 return sum(scores) / len(scores)
 
         return 0.0

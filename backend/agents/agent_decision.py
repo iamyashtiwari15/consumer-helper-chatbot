@@ -16,6 +16,7 @@ guard = LocalGuardrails(llm)
 
 class GraphState(TypedDict):
     input: str
+    session_id: str
     image: Optional[bytes]
     image_context: Optional[str]
     agent_name: str
@@ -38,6 +39,7 @@ def guardrails_node(state: GraphState):
             "agent_name": "GUARDRAILS_BLOCK",
             "response": {"response": result.content, "sources": [], "confidence": 1.0},
             "involved_agents": state.get("involved_agents", []) + ["GUARDRAILS_BLOCK"],
+            "messages": state.get("messages", []) + [AIMessage(content=result.content)],
         }
     return {**state, "bypass_guardrails": True}
 
@@ -92,12 +94,17 @@ def route_to_agent(state: GraphState):
         
     chat_history = state.get("chat_history", None)
     image_context = state.get("image_context", None)
-    result = manager.process_query(state["input"], chat_history=chat_history, image_context=image_context)
+    result = manager.process_query(
+        state["input"],
+        chat_history=chat_history,
+        image_context=image_context,
+        session_id=state.get("session_id"),
+    )
     
-    if result.get("query_type") in ["greeting", "chitchat"]:
+    if result.get("query_type") == "general":
         agent_name = "CONVERSATION_AGENT"
     else:
-        agent_name = "RAG_AGENT"
+        agent_name = "DOCUMENT_AGENT"
         
     logging.info(f"WorkflowManager selected agent: {agent_name}")
     return {**state, "agent_name": agent_name, "workflow_response": result}
@@ -110,11 +117,10 @@ def call_agent(state: GraphState):
     agent_name = state.get("agent_name")
     image_context = state.get("image_context", "")
 
-    # Route greeting/chitchat to consumer_rights_chat_agent
+    # Route greeting/chitchat to general chat agent
     if agent_name == "CONVERSATION_AGENT":
-        from agents.consumer_rights_chat_agent import get_consumer_rights_response
-        messages = state["messages"] + [HumanMessage(content=state["input"])]
-        ai_message = get_consumer_rights_response(messages)
+        from agents.general_chat_agent import get_general_chat_response
+        ai_message = get_general_chat_response(state["messages"])
         workflow_response["response"] = ai_message.content
         updated_agents = state.get("involved_agents", []) + [agent_name]
         messages = state["messages"] + [ai_message]
@@ -129,7 +135,7 @@ def call_agent(state: GraphState):
         original_response = workflow_response.get("response", "I was unable to provide a response.")
         workflow_response["response"] = f"{image_context}\n\nRegarding your text query: {original_response}"
 
-    messages = state["messages"] + [AIMessage(content=str(workflow_response))]
+    messages = state["messages"] + [AIMessage(content=workflow_response.get("response", ""))]
     updated_agents = state.get("involved_agents", []) + [agent_name]
 
     return {
@@ -140,13 +146,12 @@ def call_agent(state: GraphState):
     }
 
 # --- Correct Graph Building with Conditional Edges ---
-def build_consumer_rights_agent_graph():
+def build_assistant_graph():
     builder = StateGraph(GraphState)
 
     # Add all the nodes
     builder.add_node("Guardrails", guardrails_node)
-    
-    # --- FIX: ADD THE MISSING NODE HERE ---
+
     def image_detection_node(state):
         return state
     builder.add_node("ImageDetection", image_detection_node)
@@ -178,4 +183,4 @@ def build_consumer_rights_agent_graph():
 
     return builder.compile()
 
-consumer_rights_agent_graph = build_consumer_rights_agent_graph()
+assistant_graph = build_assistant_graph()

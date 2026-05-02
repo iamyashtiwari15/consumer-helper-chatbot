@@ -2,14 +2,20 @@
 # agents/llm_loader.py
 
 import os
+from functools import lru_cache
+
 from langchain_groq import ChatGroq
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain.prompts import ChatPromptTemplate, HumanMessagePromptTemplate
 from langchain.schema.messages import SystemMessage
 from dotenv import load_dotenv
 
+from agents.llm_loader import get_embedding_model as get_shared_embedding_model
+from agents.llm_loader import get_llm as get_base_llm
+
 load_dotenv()
 
+@lru_cache(maxsize=8)
 def get_llm(role: str = "default"):
     """
     Loads the LLM with specific system prompts based on role.
@@ -39,13 +45,11 @@ def get_llm(role: str = "default"):
             1. Identify key concepts in user queries
             2. Add relevant domain-specific terminology
             3. Include synonyms and related terms
-            4. Maintain query intent and context"""
+            4. Maintain query intent and context""",
+        "query_rewriter": "Rewrite follow-up questions into a standalone query without changing meaning.",
     }
     
-    llm = ChatGroq(
-        groq_api_key=groq_api_key,
-        model_name=model_name,
-    )
+    llm = get_base_llm(model_name=model_name)
     
     # Create a wrapped version that includes the system prompt in each call
     system_prompt = system_prompts.get(role, system_prompts["default"])
@@ -77,4 +81,4 @@ def get_embedding_model():
     """
     Loads the default sentence embedding model using HuggingFace.
     """
-    return NamedHuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
+    return get_shared_embedding_model()
